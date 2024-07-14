@@ -1,0 +1,48 @@
+{
+  "physical": {
+
+    "subClasses": {
+      "blunt": {
+
+      },
+      "piercing": {
+
+      },
+      "slashing": {
+
+      }
+    }
+  },
+  "elemental": {
+    "subClasses": {
+      "fire": {
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_fire"],
+        "particle": "minecraft:flame"
+      },
+      "frost": {
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen"],
+        "particle": "spell_engine:frost_hit"
+      },
+      "lightning": {
+        "onHit": ["rpgdamageoverhaul:particles"],
+        "particle": "spell_engine:electric_arc_a"
+      },
+      "soul": {
+        "onHit": ["rpgdamageoverhaul:particles"],
+        "particle": "minecraft:soul"
+      },
+      "holy": {
+        "onHit": ["rpgdamageoverhaul:particles"],
+        "particle": "spell_engine:holy_hit"
+      }
+    }
+  },
+  "arcane": {
+    "onHit": ["rpgdamageoverhaul:particles"],
+    "particle": "spell_engine:arcane_hit"
+  },
+  "true": {
+    "onHit": ["rpgdamageoverhaul:particles"],
+    "particle": "minecraft:end_rod"
+  }
+}
