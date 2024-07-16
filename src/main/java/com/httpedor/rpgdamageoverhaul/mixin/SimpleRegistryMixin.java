@@ -19,10 +19,7 @@ public abstract class SimpleRegistryMixin<T> implements MutableRegistry<T>{
     @Inject(method = "freeze", at = @At("RETURN"))
     private void freeze(CallbackInfoReturnable<T> cir) {
         if (key.equals(RegistryKeys.ATTRIBUTE) || key.equals(RegistryKeys.DAMAGE_TYPE))
-        {
-            System.out.println("UNFREEZING REGISTRY(i'm in danger!)");
             this.frozen = false;
-        }
     }
 
 }

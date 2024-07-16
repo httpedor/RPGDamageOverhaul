@@ -57,13 +57,9 @@ dependencies {
     modRuntimeOnly "maven.modrinth:lithium:mc1.20.1-0.11.2"
     modRuntimeOnly "maven.modrinth:sodium:mc1.20.1-0.5.11"
     modRuntimeOnly "maven.modrinth:modmenu:7.2.2"
+    modRuntimeOnly"maven.modrinth:better-combat:1.8.5+1.20.1-fabric"
+    modRuntimeOnly "maven.modrinth:bettercombat-extension:1.1.0"
 
-    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.2"
-    modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:5.2.2"
-    modImplementation "maven.modrinth:trinkets:3.7.2"
-    modImplementation "maven.modrinth:spell-engine:0.15.6+1.20.1"
-    modImplementation "maven.modrinth:bettercombat-extension:1.1.0"
-    modImplementation "maven.modrinth:better-combat:1.8.5+1.20.1-fabric"
 
     runtimeOnly("com.github.ZsoltMolnarrr:TinyConfig:2.3.2")
 
@@ -71,9 +67,9 @@ dependencies {
     modRuntimeOnly "maven.modrinth:playeranimator:1.0.2-rc1+1.20-fabric"
     modRuntimeOnly "maven.modrinth:cloth-config:11.1.118+fabric"
     modRuntimeOnly "maven.modrinth:spell-power:0.11.0+1.20.1"
-    modRuntimeOnly "maven.modrinth:runes:0.9.13+1.20.1"
-    modRuntimeOnly "maven.modrinth:azurelib-armor:DLqxipmE"
-    modRuntimeOnly "maven.modrinth:wizards:1.2.2+1.20.1"
+    modRuntimeOnly "maven.modrinth:customentityattributes:1.0"
+    modRuntimeOnly "maven.modrinth:cia:TnN1HIX9"
+    modRuntimeOnly "maven.modrinth:necronomicon:1.4.2"
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"

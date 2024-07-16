@@ -64,11 +64,7 @@ public class RPGDamageOverhaulAPI {
                     Registry.register(reg, "rpgdamageoverhaul:" + dmgClass.name, dt);
                     RPGDamageOverhaulAPI.rpgDamageTypes.add(dt);
 
-                    //This is to make sure that I can call LivingEntity#damage with as many damage types as I want in the same tick
-                    reg.populateTags(Map.of(
-                            TagKey.of(reg.getKey(), new Identifier("minecraft:bypasses_cooldown")), List.of(reg.getEntry(dt)),
-                            TagKey.of(reg.getKey(), new Identifier("minecraft:bypasses_armor")), List.of(reg.getEntry(dt))
-                    ));
+                    dmgClass.damageTypeEntry = reg.getEntry(dt);
                 });
             }
         }
@@ -125,5 +121,13 @@ public class RPGDamageOverhaulAPI {
     public static void registerOnHitEffect(Identifier id, TriConsumer<LivingEntity, DamageSource, Double> callback)
     {
         onHitEffectCallbacks.put(id, callback);
+    }
+
+    public static void unloadEverything()
+    {
+        dmgClasses.clear();
+        dmgOverrides.clear();
+        rpgDamageTypes.clear();
+        onHitEffectCallbacks.clear();
     }
 }

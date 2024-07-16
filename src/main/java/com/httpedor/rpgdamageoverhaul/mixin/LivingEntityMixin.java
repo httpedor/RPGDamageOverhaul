@@ -3,6 +3,8 @@ package com.httpedor.rpgdamageoverhaul.mixin;
 import com.httpedor.rpgdamageoverhaul.DamageClass;
 import com.httpedor.rpgdamageoverhaul.DamageHandler;
 import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaulAPI;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.entity.DamageUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -10,7 +12,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -34,6 +38,15 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Shadow public abstract double getAttributeValue(RegistryEntry<EntityAttribute> attribute);
 
+    @WrapOperation(method = "damage", at = @At(value="INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 3))
+    private boolean noCooldown(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
+    {
+        if (RPGDamageOverhaulAPI.isRPGDamageType(instance.getType()))
+            return true;
+        return original.call(instance, tag);
+    }
+
+
     @Inject(method = "applyDamage", at = @At("HEAD"), cancellable = true)
     private void damageOverrides(DamageSource source, float amount, CallbackInfo ci)
     {
@@ -55,6 +68,13 @@ public abstract class LivingEntityMixin extends Entity {
 
     }
 
+    @WrapOperation(method = "applyArmorToDamage", at = @At(value="INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z"))
+    private boolean noDefaultArmor(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
+    {
+        if (RPGDamageOverhaulAPI.isRPGDamageType(instance.getType()))
+            return true;
+        return original.call(instance, tag);
+    }
 
     @Inject(method = "applyArmorToDamage", at = @At("RETURN"), cancellable = true)
     private void applyDmgTypeArmor(DamageSource source, float amount, CallbackInfoReturnable<Float> cir)

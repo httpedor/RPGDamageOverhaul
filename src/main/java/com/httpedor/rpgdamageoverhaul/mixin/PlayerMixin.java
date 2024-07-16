@@ -4,6 +4,7 @@ import com.httpedor.rpgdamageoverhaul.DamageClass;
 import com.httpedor.rpgdamageoverhaul.DamageHandler;
 import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaulAPI;
 import com.mojang.authlib.GameProfile;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -32,6 +33,13 @@ public abstract class PlayerMixin extends LivingEntity {
     @Shadow
     protected abstract void applyDamage(DamageSource source, float amount);
 
+    @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;setOnFireFor(I)V", ordinal = 1))
+    private void fireDamage(Entity target, CallbackInfo ci)
+    {
+        var fireDc = RPGDamageOverhaulAPI.getDamageClass("fire");
+        if (fireDc != null)
+            target.damage(new DamageSource(fireDc.getDamageTypeEntry(), this), 2 * EnchantmentHelper.getFireAspect(this));
+    }
 
     @Inject(method = "attack", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
     private void damageAttributes(Entity target, CallbackInfo ci)
@@ -40,7 +48,7 @@ public abstract class PlayerMixin extends LivingEntity {
         {
             double dmg = getAttributeValue(dc.dmgAttribute);
             if (dmg > 0)
-                target.damage(new DamageSource(getWorld().getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(dc.damageType), this), (float)dmg);
+                target.damage(new DamageSource(dc.getDamageTypeEntry(), this), (float)dmg);
         }
     }
 

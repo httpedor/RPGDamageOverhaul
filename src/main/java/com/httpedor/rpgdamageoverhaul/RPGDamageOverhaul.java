@@ -8,6 +8,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.particle.ParticleEffect;
 import net.minecraft.registry.Registries;
@@ -15,6 +17,7 @@ import net.minecraft.resource.Resource;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.Identifier;
 
 import java.io.InputStream;
@@ -56,7 +59,7 @@ public class RPGDamageOverhaul implements ModInitializer {
             }
         });
         RPGDamageOverhaulAPI.registerOnHitEffect(new Identifier("rpgdamageoverhaul", "set_fire"), (target, source, dmg) -> {
-            target.setFireTicks(target.getFireTicks() + (int) Math.round(dmg/3 * 20));
+            target.setOnFireFor((int) Math.round(dmg/3));
             target.setFrozenTicks(0);
         });
         RPGDamageOverhaulAPI.registerOnHitEffect(new Identifier("rpgdamageoverhaul", "set_frozen"), (target, source, dmg) -> {
@@ -90,11 +93,17 @@ public class RPGDamageOverhaul implements ModInitializer {
                     }
                 }
 
+                if (name.equals("fire"))
+                {
+                    StatusEffects.FIRE_RESISTANCE.addAttributeModifier(dc.resistanceAttribute, "1183f8ac-b2f0-4771-ac4b-8268ca41f3f9", 1, EntityAttributeModifier.Operation.ADDITION);
+                }
+
             }
 
             @Override
             public void reload(ResourceManager manager) {
-                
+                RPGDamageOverhaulAPI.unloadEverything();
+
                 //Read damage classes
                 for (Map.Entry<Identifier, Resource> entry : manager.findResources("rpgdamageoverhaul", path -> path.getPath().equals("rpgdamageoverhaul/damage_classes.json")).entrySet())
                 {
@@ -111,7 +120,7 @@ public class RPGDamageOverhaul implements ModInitializer {
                 }
 
                 //Read damage overrides
-                for (Map.Entry<Identifier, Resource> entry : manager.findResources("rpgdamageoverhaul", path -> path.equals("rpgdamageoverhaul/damage_overrides.json")).entrySet())
+                for (Map.Entry<Identifier, Resource> entry : manager.findResources("rpgdamageoverhaul", path -> path.getPath().equals("rpgdamageoverhaul/damage_overrides.json")).entrySet())
                 {
                     try (InputStream stream = manager.getResource(entry.getKey()).get().getInputStream()) {
                         InputStreamReader reader = new InputStreamReader(stream);

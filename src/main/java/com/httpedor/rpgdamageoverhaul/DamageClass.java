@@ -2,9 +2,15 @@ package com.httpedor.rpgdamageoverhaul;
 
 
 import com.google.gson.JsonElement;
+import net.fabricmc.fabric.api.event.registry.DynamicRegistries;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 
 import java.util.HashMap;
@@ -20,6 +26,7 @@ public class DamageClass {
     public final EntityAttribute absorptionAttribute;
     public final EntityAttribute resistanceAttribute;
     public final RegistryKey<DamageType> damageType;
+    RegistryEntry<DamageType> damageTypeEntry;
     public final Set<Identifier> onHitEffects;
     public Map<String, JsonElement> properties;
     public final String parentName;
@@ -51,6 +58,11 @@ public class DamageClass {
     public void removeOnHitEffect(Identifier effect)
     {
         onHitEffects.remove(effect);
+    }
+
+    public RegistryEntry<DamageType> getDamageTypeEntry()
+    {
+        return damageTypeEntry;
     }
 
     @Override
