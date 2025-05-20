@@ -16,6 +16,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.*;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.text.TextColor;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.util.TriConsumer;
 
@@ -315,5 +317,26 @@ public class RPGDamageOverhaulAPI {
         itemOverrides.clear();
         tagItemOverrides.clear();
         betterCombatAttacks.clear();
+    }
+
+    public static TextColor getDamageClassColor(DamageClass dc)
+    {
+        return getDamageClassColor(dc, TextColor.fromFormatting(Formatting.WHITE));
+    }
+    public static TextColor getDamageClassColor(DamageClass dc, TextColor def)
+    {
+        TextColor color = null;
+        if (dc.properties.containsKey("color"))
+        {
+            var dcColor = dc.properties.get("color").getAsString().toLowerCase();
+            color = TextColor.parse(dcColor);
+
+            if (color == null)
+                RPGDamageOverhaul.LOGGER.error("Failed to find color {} for damage class {}", dcColor, dc.name);
+        }
+        if (color == null)
+            color = def;
+
+        return color;
     }
 }

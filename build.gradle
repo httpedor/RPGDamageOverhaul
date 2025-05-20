@@ -82,6 +82,7 @@ dependencies {
     modRuntimeOnly "maven.modrinth:cloth-config:11.1.118+fabric"
     modImplementation "maven.modrinth:simply-swords:1.55.0-1.20.1"
     modImplementation "maven.modrinth:mariums-soulslike-weaponry:1.1.4.2-1.20.1-fabric"
+    modImplementation "maven.modrinth:jade:11.12.3+fabric"
     modRuntimeOnly "maven.modrinth:spell-power:0.11.0+1.20.1"
     modRuntimeOnly "maven.modrinth:attributesetter:1.5"
     modRuntimeOnly "maven.modrinth:necronomicon:1.4.2"
