@@ -18,15 +18,12 @@ import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Text;
-import net.minecraft.text.TextColor;
-import net.minecraft.text.TranslatableTextContent;
+import net.minecraft.text.*;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.text.DecimalFormat;
+import java.util.*;
 
 public class RPGDamageOverhaulClient implements ClientModInitializer {
     private record DTEntry(String identifier, int rawId) {}
@@ -61,23 +58,74 @@ public class RPGDamageOverhaulClient implements ClientModInitializer {
         });
 
         ItemTooltipCallback.EVENT.register((stack, ctx, lines) -> {
-            for (var it = lines.listIterator(); it.hasNext();)
-            {
-                var txt = it.next();
-                var content = txt.getContent();
-                if (content instanceof TranslatableTextContent ttc && ttc.getKey().startsWith("attribute.modifier"))
+            List<Text> dcLines = new ArrayList<>();
+            int atkLineIndex = -1;
+            int armorLineIndex = -1;
+            boolean isArmor = false;
+            int i = 0;
+            for (Iterator<Text> it = lines.iterator(); it.hasNext();) {
+
+                var line = it.next();
+                var content = line.getContent();
+                if (content instanceof TranslatableTextContent ttc)
                 {
-                    var attrName = ((TranslatableTextContent)((MutableText)ttc.getArg(1)).getContent()).getKey();
-                    if (attrName.indexOf('.') == -1)
-                        return;
-                    var dcName = attrName.substring(0, attrName.indexOf('.'));
-                    var dc = RPGDamageOverhaulAPI.getDamageClass(dcName);
-                    if (dc != null && dc.properties.containsKey("color"))
+                    if (ttc.getKey().equals("item.modifiers.mainhand"))
+                        atkLineIndex = i+1;
+                    else if (ttc.getKey().startsWith("item.modifiers.") && !ttc.getKey().endsWith("offhand"))
+                        isArmor = true;
+
+                    if (ttc.getArgs() != null && ttc.getArgs().length == 2 && ttc.getArgs()[1] instanceof MutableText mc && mc.getContent() instanceof TranslatableTextContent tc)
                     {
-                        it.set(((MutableText)txt).formatted(Formatting.byName(dc.properties.get("color").getAsString())));
+                        if (tc.getKey().equals("attribute.name.generic.attack_damage"))
+                        {
+                            atkLineIndex = i;
+                        }
+                        else if (tc.getKey().equals("attribute.name.generic.armor"))
+                        {
+                            armorLineIndex = i;
+                            isArmor = true;
+                        }
+
+                        if (tc.getKey().startsWith("attribute.name.generic"))
+                        {
+                            i++;
+                            continue;
+                        }
+                        var splitted = tc.getKey().split("\\.");
+                        var attrName = splitted[0];
+                        String attrType = null;
+                        if (splitted.length > 1)
+                            attrType = splitted[1];
+                        var dc = RPGDamageOverhaulAPI.getDamageClass(attrName);
+                        if (dc != null) {
+                            var key = ttc.getKey();
+                            if (!isArmor && (key.startsWith("attribute.modifier.plus") && (attrType == null || !attrType.contains("resistance"))))
+                                key = "attribute.modifier.equals.0";
+                            if (attrType != null && attrType.contains("resistance") && ttc.getArgs()[0] instanceof String str)
+                            {
+                                try {
+                                    ttc.getArgs()[0] = new DecimalFormat("0.#").format(Double.parseDouble(str) * 100) + "%";
+                                } catch (Exception ignored) {}
+                            }
+                            TextColor color = RPGDamageOverhaulAPI.getDamageClassColor(dc, isArmor ? TextColor.fromFormatting(Formatting.BLUE) : TextColor.fromFormatting(Formatting.DARK_GREEN));
+
+                            dcLines.add((!isArmor ? Text.literal(" ") : Text.literal("")).append(Text.translatable(key, ttc.getArgs()).setStyle(Style.EMPTY.withColor(color))));
+                            it.remove();
+                            i--;
+                        }
                     }
                 }
+                i++;
             }
+
+            if (dcLines.isEmpty())
+                return;
+            if (atkLineIndex != -1)
+                lines.addAll(Math.min(atkLineIndex + 1, lines.size()-1), dcLines);
+            else if (armorLineIndex != -1)
+                lines.addAll(Math.min(armorLineIndex + 1, lines.size()-1), dcLines);
+            else
+                lines.addAll(dcLines);
         });
     }
 }
