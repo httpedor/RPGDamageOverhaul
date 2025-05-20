@@ -1,0 +1,23 @@
+{
+  "#c:swords": { "slashing": 0.8, "piercing": 0.2},
+  "#minecraft:swords": { "slashing": 0.8, "piercing": 0.2},
+  "#c:axes": { "slashing": 1.0 },
+  "#minecraft:axes": { "slashing": 1.0 },
+  "#c:pickaxes": { "piercing": 1.0 },
+  "#minecraft:pickaxes": { "piercing": 1.0 },
+  "#c:spears": { "piercing": 0.8, "slashing": 0.2 },
+  "#minecraft:spears": { "piercing": 0.8, "slashing": 0.2 },
+  "#c:shovels": { "blunt": 1.0 },
+  "#minecraft:shovels": { "blunt": 1.0 },
+  "#c:hammers": { "blunt": 1.0 },
+  "#minecraft:hammers": { "blunt": 1.0 },
+  "#c:hoes": { "piercing": 0.5, "slashing": 0.5 },
+  "#minecraft:hoes": { "piercing": 0.5, "slashing": 0.5 },
+  "#c:scythes": { "slashing": 0.8, "piercing": 0.2 },
+  "#minecraft:scythes": { "slashing": 0.8, "piercing": 0.2 },
+
+  "create_dd:deforester_saw": {"slashing": 1},
+  "create_dd:excavation_drill": {"piercing": 1},
+
+  "create_sa:portable_drill": {"piercing": 1}
+}

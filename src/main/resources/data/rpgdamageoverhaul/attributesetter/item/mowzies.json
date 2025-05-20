@@ -1,0 +1,26 @@
+{
+  "mowziesmobs:naga_fang_dagger": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 2
+    }
+  ],
+  "mowziesmobs:wrought_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.armor",
+      "value": 2
+    }
+  ],
+  "mowziesmobs:sol_visage": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.75,
+      "operation": "MULTIPLY_BASE"
+    }
+  ]
+}

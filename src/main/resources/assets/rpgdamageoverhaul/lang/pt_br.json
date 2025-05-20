@@ -42,5 +42,27 @@
   "slashing.damage": "Dano Cortante",
   "slashing.resistance": "Resistência Cortante",
   "slashing.absorption": "Absorção Cortante",
-  "slashing.armor": "Armadura Cortante"
+  "slashing.armor": "Armadura Cortante",
+  "sharp.damage": "Dano Afiado",
+  "sharp.resistance": "Resistência Afiada",
+  "sharp.absorption": "Absorção Afiada",
+  "sharp.armor": "Armadura Afiada",
+  "wither.damage": "Dano de Wither",
+  "wither.resistance": "Resistência a Wither",
+  "wither.absorption": "Absorção de Wither",
+  "wither.armor": "Armadura de Wither",
+  "poison.damage": "Dano de Veneno",
+  "poison.resistance": "Resistência a Veneno",
+  "poison.absorption": "Absorção de Veneno",
+  "poison.armor": "Armadura de Veneno",
+  "elemental.damage": "Dano Elemental",
+  "elemental.resistance": "Resistência Elemental",
+  "elemental.absorption": "Absorção Elemental",
+  "elemental.armor": "Armadura Elemental",
+  "blood.damage": "Dano de Sangue",
+  "blood.resistance": "Resistência a Sangue",
+  "blood.absorption": "Absorção de Sangue",
+  "blood.armor": "Armadura de Sangue",
+  "config.jade.plugin_rpgdamageoverhaul.resistances": "Resistências de Entidades"
+
 }

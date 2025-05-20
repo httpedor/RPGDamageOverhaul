@@ -1,0 +1,225 @@
+{
+  "ars_elemental:air_mage": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:earth_mage": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:fire_mage": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:water_mage": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:firenando_entity": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:firenando_familiar": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:flashing_weald_walker": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:siren_entity": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:siren_familiar": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:summon_vhex": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.7,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:summon_wskeleton": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_elemental:summon_strider": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "ars_nouveau:ally_vex": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.7,
+      "operation": "BASE"
+    }
+  ],
+  "ars_nouveau:amethyst_golem": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_nouveau:blazing_weald_walker": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_nouveau:cascading_weald_walker": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_nouveau:flourishing_weald_walker": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_nouveau:vexing_weald_walker": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "ars_nouveau:wilden_boss": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ]
+}

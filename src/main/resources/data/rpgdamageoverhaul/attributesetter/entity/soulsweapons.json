@@ -1,0 +1,328 @@
+{
+  "soulsweapons:accursed_lord_boss": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:chaos_monarch": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:dark_sorcerer": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.15,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.15,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:day_stalker": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.15,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:draugr_boss": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:evil_forlorn": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:forlorn": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:frost_giant": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:moonknight": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.75,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:returning_knight": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.75,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:night_prowler": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:night_shade": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:remnant": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:rime_spectre": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:soul_reaper_ghost": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:soulmass": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:warmth_entity": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "soulsweapons:withered_demon": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "alexscaves:atlatitan": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:caniac": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": -0.2,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:caramel_cube": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:corrodent": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.4,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:tremorsaurus": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:luxtructosaurus": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "#alexscaves:resists_acid": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "#alexscaves:resist_radiation": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:deep_one": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.3,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:deep_one_knight": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:deep_one_mage": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:ferrouslime": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:forsaken": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:gossamer_worm": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:grottoceratops": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:gummy_bear": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:hullbreaker": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:lanternfish": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:mine_guardian": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:relicheirus": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:sea_pig": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:teletor": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:tremorzilla": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:underzealot": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:watcher": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:magnetron": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:boundroid": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:boundroid_winch": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexscaves:notor": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ]
+}

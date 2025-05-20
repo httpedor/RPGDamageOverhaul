@@ -1,0 +1,9 @@
+{
+  "enderblob_shield": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 2,
+      "slot": "offhand"
+    }
+  ]
+}

@@ -1,0 +1,600 @@
+{
+  "soulsweapons:bluemoon_shortsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 2
+    }
+  ],
+  "soulsweapons:bluemoon_greatsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "soulsweapons:moonlight_shortsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "soulsweapons:moonlight_greatsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:pure_moonlight_greatsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 6
+    }
+  ],
+  "soulsweapons:dragon_staff": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 5
+    }
+  ],
+  "soulsweapons:withered_wabbajack": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 5
+    }
+  ],
+  "soulsweapons:dragonslayer_swordspear": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:rageblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 2
+    }
+  ],
+  "soulsweapons:nightfall": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 6
+    }
+  ],
+  "soulsweapons:comet_spear": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:lich_bane": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "soulsweapons:translucent_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 2
+    }
+  ],
+  "soulsweapons:translucent_glaive": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 2
+    }
+  ],
+  "soulsweapons:translucent_double_greatsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 2
+    }
+  ],
+  "soulsweapons:dawnbreaker": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:soul_reaper": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:forlorn_scythe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:leviathan_axe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:mjolnir": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 6
+    }
+  ],
+  "soulsweapons:silver_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 1
+    }
+  ],
+  "soulsweapons:holy_greatsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 2
+    }
+  ],
+  "soulsweapons:holy_moonlight_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:holy_moonlight_greatsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 6
+    }
+  ],
+  "soulsweapons:frostmourne": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3,
+      "uuid": "1c9bd43f-2f86-4957-a932-daae9e269830"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3,
+      "uuid": "8b348925-600b-41b8-a8ef-a721c73af5b3"
+    }
+  ],
+  "soulsweapons:master_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:nights_edge_item": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:empowered_dawnbreaker": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4,
+      "uuid": "d62670fa-e1dc-4db5-bb0a-9d04cf82c286"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 2,
+      "uuid": "cbd7e390-1883-41ef-953c-33a3c5cad493"
+    }
+  ],
+  "soulsweapons:arkenplate": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 8,
+      "slot": "chest",
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 3,
+      "slot": "chest",
+      "uuid": "183212fe-b38c-496c-8132-a635b862f161"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "slot": "chest",
+      "uuid": "95ef71fc-7531-47f1-9cde-bea8a8d0d1b7"
+    }
+  ],
+  "soulsweapons:enhanced_arkenplate": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 8,
+      "slot": "chest",
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 3,
+      "slot": "chest",
+      "uuid": "4d2ffdca-64a1-49e2-b236-ca07bb244194"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "slot": "chest",
+      "uuid": "3960392d-d3c3-4825-833b-15a06c1fa88d"
+    }
+  ],
+  "soulsweapons:withered_chest": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 8,
+      "slot": "chest",
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 2,
+      "slot": "chest",
+      "uuid": "4d2ffdca-64a1-49e2-b236-ca07bb244194"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "slot": "chest",
+      "uuid": "3960392d-d3c3-4825-833b-15a06c1fa88d"
+    }
+  ],
+  "soulsweapons:enhanced_withered_chest": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 8,
+      "slot": "chest",
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 2,
+      "slot": "chest",
+      "uuid": "deed11f1-a31f-4cdf-b91d-18f69eaf5c65"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "slot": "chest",
+      "uuid": "87eacf91-73a4-47f0-9d03-328e390f315d"
+    }
+  ],
+  "soulsweapons:chaos_crown": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 1,
+      "uuid": "730c7882-e988-4210-ac7b-e6311eefbce8"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.1,
+      "uuid": "9570819f-b362-4a6d-b6ee-13eb92b0250e",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "soulsweapons:chaos_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 1,
+      "uuid": "730c7882-e988-4210-ac7b-e6311eefbce8"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.25,
+      "uuid": "9570819f-b362-4a6d-b6ee-13eb92b0250e",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "soulsweapons:chaos_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 4,
+      "uuid": "e7893f02-f70c-4db9-8120-ec7e36989dcf"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.25,
+      "uuid": "fb8a4473-2448-4d2b-bcca-7b72201299e1",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "soulsweapons:soul_ingot_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2,
+      "slot": "head"
+    }
+  ],
+  "soulsweapons:soul_ingot_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3,
+      "slot": "chest"
+    }
+  ],
+  "soulsweapons:soul_ingot_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3,
+      "slot": "legs"
+    }
+  ],
+  "soulsweapons:soul_ingot_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2,
+      "slot": "feet"
+    }
+  ],
+  "soulsweapons:soul_robes_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2,
+      "uuid": "d200c892-d3dd-42d9-a0a8-0e13abeaf97f"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "dabd6f89-5c7d-4368-8423-8345b4164177"
+    }
+  ],
+  "soulsweapons:soul_robes_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3,
+      "uuid": "90a30c23-a86e-4b52-a134-cd5925745d9b"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "dabd6f89-5c7d-4368-8423-8345b4164177"
+    }
+  ],
+  "soulsweapons:soul_robes_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3,
+      "uuid": "74fa3bd4-c85a-43b6-bc83-c1c7984b4e54"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "dabd6f89-5c7d-4368-8423-8345b4164177"
+    }
+  ],
+  "soulsweapons:soul_robes_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2,
+      "uuid": "2f321825-fecf-4755-aa2e-be7e015c64a2"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "dabd6f89-5c7d-4368-8423-8345b4164177"
+    }
+  ],
+  "soulsweapons:forlorn_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2,
+      "slot": "head"
+    }
+  ],
+  "soulsweapons:forlorn_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3,
+      "slot": "chest"
+    }
+  ],
+  "soulsweapons:forlorn_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3,
+      "slot": "legs"
+    }
+  ],
+  "soulsweapons:forlorn_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2,
+      "slot": "feet"
+    }
+  ],
+  "soulsweapons:bloodthirster": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 2
+    }
+  ],
+  "soulsweapons:darkin_blade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:whirligig_sawblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 4
+    }
+  ],
+  "soulsweapons:darkin_scythe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 8
+    }
+  ],
+  "soulsweapons:shadow_assassin_scythe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 13,
+      "operation": "BASE"
+    }
+  ]
+}

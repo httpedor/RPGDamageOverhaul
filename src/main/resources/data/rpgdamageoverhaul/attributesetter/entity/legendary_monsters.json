@@ -1,0 +1,180 @@
+{
+  "ancient_guardian": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.2
+    }
+  ],
+  "chorusling": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.2
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.2
+    }
+  ],
+  "cloud_golem": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.2
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5
+    }
+  ],
+  "dune_sentinel": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.65
+    }
+  ],
+  "endersent": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.5
+    }
+  ],
+  "frostbitten_golem": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.25
+    }
+  ],
+  "guard": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.1
+    }
+  ],
+  "haunted_guard": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.25
+    }
+  ],
+  "haunted_knight": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.5
+    }
+  ],
+  "knights_armor": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.2
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.2
+    }
+  ],
+  "lava_eater": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.25
+    }
+  ],
+  "mossy_golem": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.7
+    }
+  ],
+  "overgrown_colossus": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.7
+    }
+  ],
+  "posessed_paladin": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.3
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.25
+    }
+  ],
+  "shulker_mimic": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25
+    }
+  ],
+  "skeletosaurus": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.25
+    }
+  ],
+  "skeloraptor": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.25
+    }
+  ],
+  "warped_fungussus": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.2
+    }
+  ],
+  "withered_abomination": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.9
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25
+    }
+  ]
+}

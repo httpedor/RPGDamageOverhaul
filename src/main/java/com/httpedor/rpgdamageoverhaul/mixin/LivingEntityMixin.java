@@ -1,8 +1,11 @@
 package com.httpedor.rpgdamageoverhaul.mixin;
 
-import com.httpedor.rpgdamageoverhaul.DamageClass;
-import com.httpedor.rpgdamageoverhaul.DamageHandler;
-import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaulAPI;
+import com.google.gson.JsonPrimitive;
+import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
+import com.httpedor.rpgdamageoverhaul.api.DamageClass;
+import com.httpedor.rpgdamageoverhaul.api.DamageHandler;
+import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
+import com.httpedor.rpgdamageoverhaul.ducktypes.DCDamageSource;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.entity.DamageUtil;
@@ -20,6 +23,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -38,6 +42,8 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Shadow public abstract double getAttributeValue(RegistryEntry<EntityAttribute> attribute);
 
+    @Shadow public abstract float getHealth();
+
     @WrapOperation(method = "damage", at = @At(value="INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 3))
     private boolean noCooldown(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
     {
@@ -53,7 +59,8 @@ public abstract class LivingEntityMixin extends Entity {
         DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.getType());
         if (dc != null)
         {
-            DamageHandler.executeOnHitEffects(dc, (LivingEntity)((Object)this), source, amount);
+            if (((DCDamageSource)source).shouldTriggerOnHitEffects())
+                DamageHandler.executeOnHitEffects(dc, (LivingEntity)((Object)this), source, amount);
 
             return;
         }
@@ -76,14 +83,18 @@ public abstract class LivingEntityMixin extends Entity {
         return original.call(instance, tag);
     }
 
-    @Inject(method = "applyArmorToDamage", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "applyArmorToDamage", at = @At("HEAD"), cancellable = true)
     private void applyDmgTypeArmor(DamageSource source, float amount, CallbackInfoReturnable<Float> cir)
     {
-        System.out.println("APPLIED DAMAGE: " + source + " : " + amount + " TO " + this);
         DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.getType());
         if (dc != null)
         {
-            double armor = this.getAttributeValue(dc.armorAttribute);
+            if (dc.properties.getOrDefault("ignoreArmor", new JsonPrimitive(false)).getAsBoolean())
+            {
+                cir.setReturnValue(amount);
+                return;
+            }
+            double armor = this.getAttributeValue(dc.armorAttribute) + this.getAttributeValue(EntityAttributes.GENERIC_ARMOR);
             DamageClass parent = RPGDamageOverhaulAPI.getDamageClass(dc.parentName);
             while (parent != null)
             {
@@ -95,14 +106,53 @@ public abstract class LivingEntityMixin extends Entity {
         }
     }
 
-    @Inject(method = "modifyAppliedDamage", at = @At("RETURN"), cancellable = true)
-    private void applyDmgTypeResistance(DamageSource source, float amount, CallbackInfoReturnable<Float> cir)
+    @Inject(method = "applyDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setHealth(F)V"))
+    private void logDamage(DamageSource source, float amount, CallbackInfo ci)
+    {
+        System.out.println("APPLIED DAMAGE: " + source + " : " + amount + " TO " + this);
+    }
+
+
+    @WrapOperation(method = "applyDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;modifyAppliedDamage(Lnet/minecraft/entity/damage/DamageSource;F)F"))
+    private float applyResistances(LivingEntity instance, DamageSource source, float amount, Operation<Float> original)
     {
         DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.getType());
         if (dc != null)
         {
             double resistance = this.getAttributeValue(dc.resistanceAttribute);
-            cir.setReturnValue((float)(amount * (1d - resistance)));
+            DamageClass parent = RPGDamageOverhaulAPI.getDamageClass(dc.parentName);
+            while (parent != null)
+            {
+                resistance += this.getAttributeValue(parent.resistanceAttribute);
+                parent = RPGDamageOverhaulAPI.getDamageClass(parent.parentName);
+            }
+            amount = (float)(amount * (1d - resistance));
         }
+        return original.call(instance, source, amount);
+    }
+
+    @ModifyVariable(method = "setHealth", at = @At("HEAD"), ordinal = 0, argsOnly = true)
+    private float applyHealBlock(float health)
+    {
+        if (health > getHealth() && RPGDamageOverhaul.noHealingUntil.containsKey(this))
+        {
+            var heal = health - getHealth();
+            var pair = RPGDamageOverhaul.noHealingUntil.get(this);
+            if (pair.getRight() > System.currentTimeMillis())
+                return getHealth() + (heal * (1 - pair.getLeft()));
+            else
+                RPGDamageOverhaul.noHealingUntil.remove(this);
+        }
+        if (health < getHealth() && RPGDamageOverhaul.increasedDamage.containsKey(this))
+        {
+            var dmg = getHealth() - health;
+            var pair = RPGDamageOverhaul.increasedDamage.get(this);
+            if (pair.getRight() > System.currentTimeMillis())
+                return getHealth() - (dmg * pair.getLeft());
+            else
+                RPGDamageOverhaul.increasedDamage.remove(this);
+        }
+
+        return health;
     }
 }

@@ -1,0 +1,440 @@
+{
+  "terramity:ruby_armor_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "terramity:ruby_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 4
+    }
+  ],
+  "terramity:ruby_armor_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "terramity:ruby_armor_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 2
+    }
+  ],
+  "terramity:ruby_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 3
+    }
+  ],
+  "terramity:sapphire_armor_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    }
+  ],
+  "terramity:sapphire_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 4
+    }
+  ],
+  "terramity:sapphire_armor_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    }
+  ],
+  "terramity:sapphire_armor_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2
+    }
+  ],
+  "terramity:sapphire_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3
+    }
+  ],
+  "terramity:topaz_armor_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3
+    }
+  ],
+  "terramity:topaz_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 4
+    }
+  ],
+  "terramity:topaz_armor_leggings": [
+      {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3
+      }
+  ],
+  "terramity:topaz_armor_boots": [
+      {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 2
+      }
+  ],
+  "terramity:topaz_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 3
+    }
+  ],
+  "terramity:onyx_armor_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "terramity:onyx_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4
+    }
+  ],
+  "terramity:onyx_armor_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "terramity:onyx_armor_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2
+    }
+  ],
+  "terramity:onyx_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "terramity:dimlite_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3
+    }
+  ],
+  "terramity:dimlite_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 4
+    }
+  ],
+  "terramity:dimlite_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 3
+    }
+  ],
+  "terramity:dimlite_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2
+    }
+  ],
+  "terramity:dimlite_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3
+    }
+  ],
+  "terramity:virentium_armor_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3
+    }
+  ],
+  "terramity:virentium_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 4
+    }
+  ],
+  "terramity:virentium_armor_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3
+    }
+  ],
+  "terramity:virentium_armor_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2
+    }
+  ],
+  "terramity:virentium_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 3
+    }
+  ],
+  "terramity:cosmilite_armor_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "terramity:cosmilite_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4
+    }
+  ],
+  "terramity:cosmilite_armor_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "terramity:cosmilite_armor_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2
+    }
+  ],
+  "terramity:cosmilite_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "terramity:void_mage_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "terramity:void_mage_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4
+    }
+  ],
+  "terramity:void_mage_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "terramity:void_mage_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2
+    }
+  ],
+  "terramity:void_mage_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 4
+    }
+  ],
+  "terramity:conductite_scouter_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3
+    }
+  ],
+  "terramity:conductite_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 4
+    }
+  ],
+  "terramity:conductite_armor_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3
+    }
+  ],
+  "terramity:conductite_armor_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 2
+    }
+  ],
+  "terramity:conductite_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ],
+  "terramity:hellspec_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3
+    }
+  ],
+  "terramity:hellspec_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 4
+    }
+  ],
+  "terramity:hellspec_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3
+    }
+  ],
+  "terramity:hellspec_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 2
+    }
+  ],
+  "terramity:hellspec_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 4
+    }
+  ],
+  "terramity:hellrok_gigaton_hammer": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 4
+    }
+  ],
+  "terramity:simmeredge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 3
+    }
+  ],
+  "terramity:icebrand": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3
+    }
+  ],
+  "terramity:stratus_storm_ruler": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ],
+  "terramity:orders_end": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 4
+    }
+  ],
+  "terramity:guiding_moonlight": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "terramity:crescent_moonblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.damage",
+      "value": 3
+    }
+  ],
+  "terramity:hero_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 5
+    }
+  ]
+}

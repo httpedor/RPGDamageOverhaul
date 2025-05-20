@@ -1,0 +1,47 @@
+{
+  "aquamirae:anglerfish": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "aquamirae:captain_cornelia": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 4,
+      "operation": "BASE"
+    }
+  ],
+  "aquamirae:eel": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "aquamirae:maw": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "aquamirae:maze_mother": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ]
+}

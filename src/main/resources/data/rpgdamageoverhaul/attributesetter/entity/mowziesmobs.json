@@ -1,0 +1,46 @@
+{
+  "ferrous_wroughtnaut": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": -0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5
+    }
+  ],
+  "frostmaw": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.2
+    }
+  ],
+  "grottol": [
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:piercing.resistance",
+      "value": -0.5
+    }
+  ],
+  "umvuthi": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.75
+    }
+  ]
+}

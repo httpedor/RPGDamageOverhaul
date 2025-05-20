@@ -1,0 +1,416 @@
+{
+  "irons_spellbooks:blood_staff": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 2
+    }
+  ],
+  "irons_spellbooks:amethyst_rapier": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:ice_staff": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 2
+    }
+  ],
+  "irons_spellbooks:lightning_rod": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 2
+    }
+  ],
+  "irons_spellbooks:pyromancer_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "3c89e951-0ed0-47d8-ad4b-0fcb1b877726"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "uuid": "51071ee9-3e00-430f-9ea0-1a0fdf34605a"
+    }
+  ],
+  "irons_spellbooks:pyromancer_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "4be7bf6d-1e11-45a6-aa2c-2feeaa6c4f28"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 8,
+      "uuid": "4cf097b6-1e03-44d4-9828-6c9ed472eb41"
+    }
+  ],
+  "irons_spellbooks:pyromancer_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "a3707849-b00b-41b8-8370-08e5c934cfdc"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 6,
+      "uuid": "2dd82b29-fdca-400d-a5e7-40a56697055f"
+    }
+  ],
+  "irons_spellbooks:pyromancer_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "60d0f8e3-4387-4fa6-beb7-a46f59a4a540"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "uuid": "a461ee03-94fc-4085-a38b-cb98efafb0d2"
+    }
+  ],
+  "irons_spellbooks:electromancer_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "aebb9b80-1808-408e-ab5d-f5e0694b9918"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3,
+      "uuid": "9f11c1ff-02d8-490d-ae86-864f7ebf2f55"
+    }
+  ],
+  "irons_spellbooks:electromancer_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "258026a2-3354-4c9f-828a-a8b3eeb7c4f7"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 8,
+      "uuid": "6ad637e4-e0a4-42cd-bded-9b4dee73537c"
+    }
+  ],
+  "irons_spellbooks:electromancer_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "41968fdf-f991-49a7-bde2-5cf3a41e7483"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 6,
+      "uuid": "a5e94a5f-adb7-4afe-a2ef-bbe966397a03"
+    }
+  ],
+  "irons_spellbooks:electromancer_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "f43540e1-1cec-4f92-9fd9-ab2ad9f6178f"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3,
+      "uuid": "33a749ae-aa9f-4fec-a388-23afbde94e81"
+    }
+  ],
+  "irons_spellbooks:cultist_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "e56fbde5-c477-40e6-b8de-f05cbf9a3272"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3,
+      "uuid": "eeeaee64-e524-4187-975e-2d5c4c8d50ff"
+    }
+  ],
+  "irons_spellbooks:cultist_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "4221729b-4928-430a-9d4a-f564fccf0411"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 8,
+      "uuid": "3ffc5168-5285-4540-b5e7-900b54dd2e2d"
+    }
+  ],
+  "irons_spellbooks:cultist_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "42dbc2d1-3443-4174-8f4e-cc958732c5fc"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 6,
+      "uuid": "11663d57-49bb-4977-9ffc-5a331092bdff"
+    }
+  ],
+  "irons_spellbooks:cultist_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "863c21df-f61d-442e-a83b-9ff6d2723a53"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3,
+      "uuid": "4cc1b862-6b7e-4b17-99a5-4a6015dbcb3c"
+    }
+  ],
+  "irons_spellbooks:cryomancer_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "2396b75b-3e0c-47bf-bf60-e4bdcb249915"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3,
+      "uuid": "d878cb5c-6285-48d1-b690-18308f3b8af0"
+    }
+  ],
+  "irons_spellbooks:cryomancer_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "781c482b-3a09-44fd-b408-e47dc476f713"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 8,
+      "uuid": "6d2dd248-f161-47b5-91b8-ea78d954c334"
+    }
+  ],
+  "irons_spellbooks:cryomancer_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "d3100864-1a32-4794-a8b2-5646026e288f"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 6,
+      "uuid": "b0c21123-98ac-4d32-b307-f662a0373b82"
+    }
+  ],
+  "irons_spellbooks:cryomancer_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "f875751c-b81d-49e5-9649-f6a83f5b8f6d"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3,
+      "uuid": "9986fb76-99e7-4e79-b920-4ed7d9e2d640"
+    }
+  ],
+  "irons_spellbooks:shadowwalker_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "84d8a16d-fd7c-4c58-bb9b-dc61d592a43a"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3,
+      "uuid": "f84d3e6f-8fb9-4c44-927a-cbf6480486b3"
+    }
+  ],
+  "irons_spellbooks:shadowwalker_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "9a37db5b-2457-4480-833b-4ff745981375"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 8,
+      "uuid": "e9a7963f-12c4-4769-96eb-f8d444ae8a71"
+    }
+  ],
+  "irons_spellbooks:shadowwalker_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "d7d94fef-2875-475a-b84e-d90cbe370363"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 6,
+      "uuid": "68a5a4ab-c077-4d28-a56a-57947e82ec30"
+    }
+  ],
+  "irons_spellbooks:shadowwalker_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "f887264e-1e0b-456a-a0b2-ce1f9283d657"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3,
+      "uuid": "ae94b22c-48f9-428d-ba8c-01f8185801db"
+    }
+  ],
+  "irons_spellbooks:priest_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "7674ea99-5e16-4c77-8da7-740516e8e6a6"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 3,
+      "uuid": "642e5df0-78f9-4972-99a1-91241ad69be1"
+    }
+  ],
+  "irons_spellbooks:priest_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "17f37d6d-9680-4a91-aefa-0ab8275573ce"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 8,
+      "uuid": "769dc9ad-306c-49dd-9953-7f4c3df4217f"
+    }
+  ],
+  "irons_spellbooks:priest_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "957751fe-1455-4957-8ef3-f1052ab86bf4"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 6,
+      "uuid": "82cd66f9-416e-4994-8207-157dc68d0467"
+    }
+  ],
+  "irons_spellbooks:priest_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "5bc41d0f-aa71-4dd3-b946-030e866a49a4"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 3,
+      "uuid": "da5ae306-95c4-42dd-a3fa-ae26eed844e3"
+    }
+  ],
+  "irons_spellbooks:plagued_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "4a55b0c6-a40d-4a60-8016-9061a1872a9d"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 3,
+      "uuid": "d06d9a87-5294-4ff3-8f30-3d5335f7345c"
+    }
+  ],
+  "irons_spellbooks:plagued_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "735084f5-3b3c-45f2-92bd-ede77f726d04"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 8,
+      "uuid": "5af3c90a-3006-4bac-8e7f-ae7de5c1b939"
+    }
+  ],
+  "irons_spellbooks:plagued_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "ae711092-eadb-4d34-9165-e05852da8fe9"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 6,
+      "uuid": "d46bbbff-118b-4ddc-955d-7576071b5959"
+    }
+  ],
+  "irons_spellbooks:plagued_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "f77abb73-34ab-45ae-8276-529a390cf3b1"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 3,
+      "uuid": "cc8cf8b5-9888-443f-b2a1-2e406e3db6a5"
+    }
+  ],
+  "irons_spellbooks:tarnished_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 6
+    }
+  ]
+}

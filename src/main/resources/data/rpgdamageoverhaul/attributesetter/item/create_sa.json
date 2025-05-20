@@ -1,0 +1,13 @@
+{
+  "create_sa:blazing_cleaver": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 2.5
+    }
+  ]
+}

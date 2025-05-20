@@ -1,0 +1,83 @@
+{
+  "aquamirae:terrible_sword":[
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 2
+    }
+  ],
+  "aquamirae:terrible_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3,
+      "uuid": "e52e386e-df7b-49ac-8088-43f90a8c7e0b"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3,
+      "uuid": "e60b2e1e-c137-47f4-b5da-ae7128c5f72a"
+    }
+  ],
+  "aquamirae:terrible_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 4,
+      "uuid": "3cad20c4-f428-4cb2-b396-9c12546a152e"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 4,
+      "uuid": "ffdd0901-43f6-43bd-b62b-078b69467d5c"
+    }
+  ],
+  "aquamirae:terrible_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3,
+      "uuid": "149c68c0-446a-4b67-8e97-727e1cf4cc76"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3,
+      "uuid": "0f309d7c-732a-4c6a-b442-20b480f0db2a"
+    }
+  ],
+  "aquamirae:terrible_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2,
+      "uuid": "96eac2b9-e487-488c-86a0-b3f8ee31856b"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2,
+      "uuid": "c87f324d-e41b-4fc7-b8a8-2a10be745676"
+    }
+  ],
+  "aquamirae:remnants_saber": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 2
+    }
+  ],
+  "aquamirae:poisoned_blade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 2
+    }
+  ]
+}

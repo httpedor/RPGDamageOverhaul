@@ -1,0 +1,465 @@
+{
+  "simplyswords:arcanethyst": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 8
+    }
+  ],
+  "simplyswords:awakened_lichblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 6
+    }
+  ],
+  "simplyswords:brimstone_claymore": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:tainted_relic": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 2
+    }
+  ],
+  "simplyswords:righteous_relic": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 2
+    }
+  ],
+  "simplyswords:emberblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:emberlash": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:flamewind": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 3
+    }
+  ],
+  "simplyswords:frostfall": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:harbinger": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:hearthflame": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 6
+    }
+  ],
+  "simplyswords:icewhisper": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 8
+    }
+  ],
+  "simplyswords:livyatan": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3
+    }
+  ],
+  "simplyswords:magiblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:magiscythe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:magispear": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:mjolnir": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:molten_edge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 6
+    }
+  ],
+  "simplyswords:slumbering_lichblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 10,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 2
+    }
+  ],
+  "simplyswords:soulkeeper": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 9,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:soulpyre": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3,
+      "uuid": "18e477ba-40f0-431a-a8bb-12b30760bb01"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 3,
+      "uuid": "84c40dea-a032-434a-8068-54f7300b95ff"
+    }
+  ],
+  "simplyswords:soulrender": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:soulstealer": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3
+    }
+  ],
+  "simplyswords:stars_edge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:stormbringer": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:storms_edge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:sunfire": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:tempest": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3,
+      "uuid": "0d2e2f37-8075-4d5d-aae6-278fd5263a73"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 3,
+      "uuid": "ef508a43-3083-4f54-ba48-0bf3f3471ac9"
+    }
+  ],
+  "simplyswords:thunderbrand": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 8
+    }
+  ],
+  "simplyswords:waking_lichblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:waxweaver": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:wickpiercer": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 3
+    }
+  ],
+  "simplyswords:bramblethorn": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 3
+    }
+  ],
+  "simplyswords:watcher_claymore": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 6
+    }
+  ],
+  "simplyswords:watching_warglaive": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:toxic_longsword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:hiveheart": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:caelestis": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 6
+    }
+  ],
+  "simplyswords:shadowsting": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "simplyswords:ribboncleaver": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 4
+    }
+  ],
+  "simplyswords:whisperwind": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ]
+}

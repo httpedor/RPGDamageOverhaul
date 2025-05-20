@@ -44,12 +44,26 @@ repositories {
         name = 'Ladysnake Mods'
         url = 'https://maven.ladysnake.org/releases'
     }
+
+    maven {
+        url 'https://jitpack.io'
+    }
+    maven {
+        name = 'GeckoLib'
+        url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+        content {
+            includeGroupByRegex("software\\.bernie.*")
+            includeGroup("com.eliotlash.mclib")
+        }
+    }
+
 }
 
 dependencies {
     // To change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    include(implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-fabric:0.1.2-beta.4")))
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 
@@ -57,19 +71,24 @@ dependencies {
     modRuntimeOnly "maven.modrinth:lithium:mc1.20.1-0.11.2"
     modRuntimeOnly "maven.modrinth:sodium:mc1.20.1-0.5.11"
     modRuntimeOnly "maven.modrinth:modmenu:7.2.2"
-    modRuntimeOnly"maven.modrinth:better-combat:1.8.5+1.20.1-fabric"
-    modRuntimeOnly "maven.modrinth:bettercombat-extension:1.1.0"
+    modImplementation "maven.modrinth:better-combat:1.8.5+1.20.1-fabric"
 
 
     runtimeOnly("com.github.ZsoltMolnarrr:TinyConfig:2.3.2")
 
     modRuntimeOnly "maven.modrinth:structure-pool-api:1.0+1.20.1"
     modRuntimeOnly "maven.modrinth:playeranimator:1.0.2-rc1+1.20-fabric"
+    modRuntimeOnly "maven.modrinth:spell-engine:0.15.7+1.20.1"
     modRuntimeOnly "maven.modrinth:cloth-config:11.1.118+fabric"
+    modImplementation "maven.modrinth:simply-swords:1.55.0-1.20.1"
+    modImplementation "maven.modrinth:mariums-soulslike-weaponry:1.1.4.2-1.20.1-fabric"
     modRuntimeOnly "maven.modrinth:spell-power:0.11.0+1.20.1"
-    modRuntimeOnly "maven.modrinth:customentityattributes:1.0"
-    modRuntimeOnly "maven.modrinth:cia:TnN1HIX9"
+    modRuntimeOnly "maven.modrinth:attributesetter:1.5"
     modRuntimeOnly "maven.modrinth:necronomicon:1.4.2"
+    modRuntimeOnly "maven.modrinth:ranged-weapon-api:1.1.4+1.20.1"
+    modRuntimeOnly "maven.modrinth:attributefix:21.0.4"
+    implementation "com.eliotlash.mclib:mclib:20"
+    modImplementation "software.bernie.geckolib:geckolib-fabric-${minecraft_version}:4.4.9"
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"

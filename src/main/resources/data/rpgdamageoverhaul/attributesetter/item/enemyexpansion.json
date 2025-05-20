@@ -1,0 +1,28 @@
+{
+  "enemyexpansion:headbiter_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "enemyexpansion:horsehead_helmet": [
+    {
+      "attribute": "minecraft:generic.movement_speed",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "enemyexpansion:meathead_helmet": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 1
+    }
+  ],
+  "enemyexpansion:scorpion_tail": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 2
+    }
+  ]
+}

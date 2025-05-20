@@ -1,0 +1,169 @@
+{
+  "legendary_monsters:chorus_blade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 3
+    }
+  ],
+  "legendary_monsters:fiery_jaw": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 3
+    }
+  ],
+  "legendary_monsters:withered_scythe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 4
+    }
+  ],
+  "legendary_monsters:the_great_frost": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 4
+    }
+  ],
+  "legendary_monsters:axe_of_lightning": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4,
+      "uuid": "a8381523-fc8a-484f-8d6c-a70cfabf3915"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.25,
+      "uuid": "2b187c16-8fd3-4c4e-b499-16c7d947e945"
+    }
+  ],
+  "legendary_monsters:mossy_hammer": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 3
+    }
+  ],
+  "legendary_monsters:knights_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 3
+    }
+  ],
+  "legendary_monsters:soul_great_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3
+    }
+  ],
+  "legendary_monsters:withered_ribcage": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.35
+    }
+  ],
+  "legendary_monsters:mossy_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.35
+    }
+  ],
+  "legendary_monsters:frostbitten_shield": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 4,
+      "slot": "offhand"
+    }
+  ],
+  "legendary_monsters:shulker_shield": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4,
+      "slot": "offhand"
+    }
+  ],
+  "legendary_monsters:atmospheric_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 4
+    }
+  ],
+  "legendary_monsters:dinosaur_bone_shield": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 4
+    }
+  ],
+  "legendary_monsters:dinosaur_bone_club": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "legendary_monsters:shulker_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "fiery_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 4
+    }
+  ],
+  "chorus_mask": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3,
+      "uuid": "d54a1346-02fa-451c-bde5-7a32ab60fa1e"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 3,
+      "uuid": "7578d4f9-ae4d-4ee6-9e73-f2587d18b817"
+    }
+  ]
+}

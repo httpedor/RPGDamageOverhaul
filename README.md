@@ -29,7 +29,23 @@ For example, in the default datapack, the warden's sonic boom deals 40% soul dam
 ```
 "minecraft:sonic_boom": {"arcane": 0.4, "soul": 0.4, "true": 0.2},
 ```
+
+## Item Overrides
+You can also set what damage type each item does at `data/namespace/rpgdamageoverhaul/item_overrides.json`. The file follows this format:
+```
+{
+  [item]: {[damage class]: multiplier, [damage class]: multiplier}
+}
+```
+
+For example, in the default datapack, all swords deal 80% slashing damage and 20% piercing damage:
+```
+"#c:swords": { "slashing": 0.8, "piercing": 0.2},
+```
 Again, you can check the defaults in the default datapack.
+
+## 
+
 ## Damage Classes
 All damage classes come with 4 attributes:
 ```
@@ -60,6 +76,7 @@ The json format is:
 For example, this is how physical damage is defined:
 ```
   "physical": {
+    "armor": "minecraft:generic.armor",
 
     "subClasses": {
       "blunt": {
@@ -72,18 +89,33 @@ For example, this is how physical damage is defined:
 
       }
     }
-  }
+  },
 ```
 
 
-For more examples, check the default datapack.
+For more examples, check the default data.
 
 ## Properties
 For now, the only default properties are:
+### armor
+Which attribute will be used as the armor attribute. If none is specified, it creates one with the name `rpgdamageoverhaul:[damage name].armor`
+### resistance
+Which attribute will be used as the resistance attribute. If none is specified, it creates one with the name `rpgdamageoverhaul:[damage name].resistance`
+### damage
+Which attribute will be used as the damage attribute. If none is specified, it creates one with the name `rpgdamageoverhaul:[damage name].damage`
+### absorption
+Which attribute will be used as the absorption attribute. If none is specified, it creates one with the name `rpgdamageoverhaul:[damage name].absorption`
 ### onHit
 Defines what happens when a damageclass is applied to an entity. The only default on hit effects are `rpgdamageoverhaul:set_fire`, `rpgdamageoverhaul:set_frozen`, and `rpgdamageoverhaul:particles`, which require the `particle` property. You can register your own onHitEffects through code.
 ### particle
 If the DamageClass has the `rpgdamageoverhaul:particles` onHitEffect, it spawns this particle type. For example, in the fire damage class, you have `"particle": "minecraft:flame"`
+### healBlock
+If the DamageClass has the `rpgdamageoverhaul:anti_heal` onHitEffect, this section will determine how the effect will behave
+#### percentBlocked
+Any healing by the affected entity will be multiplied by (1 - amount). For example, if you set this to 0.5, all healing will be halved.
+#### durationPerHeart
+How many seconds will the effect last per heart of damage dealt on hit.
+
 
 ## For Developers
 You can register and get damage classes, overrides and OnHitEffects by using the `RPGDamageOverhaulAPI` class. Also, all `DamageClass` objects come with a `properties` map even if a certain property doesn't have any effect. Use this to use custom properties.

@@ -1,0 +1,105 @@
+{
+  "alexscaves:extinction_spear": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 4
+    }
+  ],
+  "alexscaves:hazmat_mask": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2
+    }
+  ],
+  "alexscaves:hazmat_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 4
+    }
+  ],
+  "alexscaves:hazmat_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 4
+    }
+  ],
+  "alexscaves:hazmat_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2
+    }
+  ],
+  "alexscaves:hood_of_darkness": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.5,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "alexscaves:cloak_of_darkness": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.5,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "alexscaves:desolate_dagger": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 3
+    }
+  ],
+  "alexscaves:diving_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2
+    }
+  ],
+  "alexscaves:diving_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 6
+    }
+  ],
+  "alexscaves:diving_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 5
+    }
+  ],
+  "alexscaves:diving_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2
+    }
+  ],
+  "alexscaves:frostmint_spear": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 6
+    }
+  ],
+  "resistor_shield": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3,
+      "slot": "offhand",
+      "uuid": "6e251e3a-abcf-40c2-812a-420736fdff35"
+    }
+  ]
+}

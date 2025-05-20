@@ -1,0 +1,28 @@
+{
+  "alexsmobs:crocodile_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.armor",
+      "value": 2
+    }
+  ],
+  "alexsmobs:emu_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2
+    }
+  ],
+  "alexsmobs:froststalker_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    }
+  ],
+  "shield_of_the_deep": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3,
+      "slot": "offhand",
+      "uuid": "2d1d93d0-09dd-40c8-8cdb-c124a76038c0"
+    }
+  ]
+}

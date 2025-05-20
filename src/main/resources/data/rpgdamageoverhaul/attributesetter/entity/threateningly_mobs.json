@@ -1,0 +1,92 @@
+{
+  "baby_beast_horsehoecrab": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25
+    }
+  ],
+  "beast_horseshoe_crab": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25
+    }
+  ],
+  "earth_drill": [
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:piercing.resistance",
+      "value": -0.25
+    }
+  ],
+  "earth_loong": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": -0.25
+    }
+  ],
+  "frostbite": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.9
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5
+    }
+  ],
+  "lich": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.25
+    }
+  ],
+  "rock_snail": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": -0.5
+    }
+  ],
+  "sandworm": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5
+    }
+  ],
+  "solscarab_maximus": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "enigmaticlegacy:forbidden_axe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 2
+    }
+  ],
+  "enigmaticlegacy:blazing_core": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "d23d64e8-919e-4b8b-8ce3-566b9091eec0"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -1,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "1d7137b8-cf4b-4b10-b4df-71bdd9f51958"
+    }
+  ],
+  "enigmaticlegacy:ocean_stone": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.4,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "e8d4500d-47c9-49b7-b5bf-faa44bc8516b"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "d9ef9def-39a9-4b3b-9c05-4022e25fdbb9"
+    }
+  ],
+  "enigmaticlegacy:angel_blessing": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": -0.35,
+      "slot": "curio:spellstone",
+      "operation": "BASE"
+    }
+  ],
+  "enigmaticaddons:forgotten_ice": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 1,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "37c48c7b-afda-4faa-a711-07cb99921599"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -1,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "1a32adf1-b36f-40d0-bf2e-8926a230d87f"
+    }
+  ],
+  "enigmaticaddons:revival_leaf": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.4,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "e77e9ae5-accf-4111-8d71-f95a6efe40d2"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "slot": "curio:spellstone",
+      "operation": "BASE",
+      "uuid": "43fe01a5-946f-42bd-931b-987a2ef0bb41"
+    }
+  ],
+  "enigmaticaddons:lost_engine": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": -0.4,
+      "slot": "curio:spellstone",
+      "operation": "BASE"
+    }
+  ]
+}

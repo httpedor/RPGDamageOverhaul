@@ -1,48 +1,193 @@
 {
   "physical": {
+    "color": "GRAY",
 
     "subClasses": {
+      "sharp": {
+        "color": "GRAY",
+        "subClasses": {
+
+          "piercing": {
+            "color": "GRAY"
+          },
+
+          "slashing": {
+            "color": "GRAY"
+          }
+
+        }
+      },
+
       "blunt": {
-
-      },
-      "piercing": {
-
-      },
-      "slashing": {
-
+        "color": "GRAY"
       }
     }
   },
   "elemental": {
     "subClasses": {
       "fire": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_fire"],
-        "particle": "minecraft:flame"
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_fire", "rpgdamageoverhaul:stacking"],
+        "particle": "minecraft:flame",
+        "color": "RED",
+        "potions": {
+          "resistance": { "minecraft:fire_resistance": 0.75 }
+        },
+        "stacking": {
+          "duration": 2,
+          "maxStacks": 3,
+          "formula": "dmg/3"
+        },
+        "enchantments": {
+          "damage": {
+            "minecraft:fire_aspect": 2
+          },
+          "resistance": {
+            "minecraft:fire_protection": 0.04
+          }
+        },
+        "damageTypes": ["minecraft:on_fire"],
+        "tags": ["minecraft:is_fire"]
       },
       "frost": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen"],
-        "particle": "spell_engine:frost_hit"
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen", "rpgdamageoverhaul:attribute_modifier"],
+        "particle": "minecraft:snowflake",
+        "enchantments": {
+          "resistance": {
+            "enigmaticaddons:frost_protection": 0.04,
+            "origins:water_protection": 0.04
+          },
+          "damage": {
+            "enigmaticaddons:frost_aspect": 2
+          }
+        },
+        "attributeModifier": {
+          "FrostSlowAtk": {
+            "attribute": "minecraft:generic.attack_speed",
+            "operation": "MULTIPLY_TOTAL",
+            "amount": "MAX(-0.05 * dmg, -0.6)",
+            "id": "f4a681ca-9f90-462c-9390-5db4355f90e1",
+            "duration": "dmg/2",
+            "replaceType": "LOWER"
+          },
+          "FrostSlowMov": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "MULTIPLY_TOTAL",
+            "amount": "MAX(-0.035 * dmg, -0.5)",
+            "id": "c6012dfe-ed47-4828-bc25-1dd5766f54af",
+            "duration": "dmg/2",
+            "replaceType": "LOWER"
+          }
+        },
+        "color": "#D0F9FF",
+        "damageTypes": ["minecraft:freeze"],
+        "tags": ["minecraft:is_freezing"]
       },
       "lightning": {
-        "onHit": ["rpgdamageoverhaul:particles"],
-        "particle": "spell_engine:electric_arc_a"
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:chain_lightning"],
+        "particle": "minecraft:wax_on",
+        "chainLightning": {
+          "range": 5,
+          "maxTargets": 3,
+          "damagePercentage": 0.75
+        },
+        "color": "AQUA",
+        "damageTypes": ["minecraft:lightning_bolt"],
+        "tags": ["minecraft:is_lightning"]
       },
       "soul": {
-        "onHit": ["rpgdamageoverhaul:particles"],
-        "particle": "minecraft:soul"
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:attribute_modifier"],
+        "particle": "minecraft:sculk_soul",
+        "color": "DARK_AQUA",
+        "attributeModifier": {
+          "SoulHealth": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "MULTIPLY_TOTAL",
+            "amount": "MAX(-0.05 * dmg, -0.6)",
+            "id": "ca274e67-f0d2-4a4d-ab3d-36b64bdd735f",
+            "duration": "dmg/2",
+            "replaceType": "LOWER"
+          }
+        }
       },
       "holy": {
-        "onHit": ["rpgdamageoverhaul:particles"],
-        "particle": "spell_engine:holy_hit"
+        "onHit": ["rpgdamageoverhaul:increase_damage"],
+        "color": "GOLD",
+        "increaseDamage": {
+          "duration": 5,
+          "multiplier": "1 + MAX(dmg * 0.05)",
+          "except": ["holy"]
+        },
+        "enchantments": {
+          "damage": {
+            "minecraft:smite": 2
+          }
+        },
+        "potions": {
+          "resistance": {
+            "mowziesmobs:suns_blessing": 0.75
+          },
+          "damage": {
+            "mowziesmobs:suns_blessing": 2
+          }
+        }
+      },
+      "blood": {
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:heal"],
+        "particle": "minecraft:crimson_spore",
+        "color": "DARK_RED",
+        "heal": 0.45
+      },
+      "wither": {
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:apply_potion", "rpgdamageoverhaul:anti_heal"],
+        "color": "DARK_GRAY",
+        "applyPotion": {
+          "minecraft:wither": 3
+        },
+        "antiHeal": {
+          "percentBlockedPerHP": 0.1,
+          "durationPerHeart": 4
+        },
+        "particle": "minecraft:smoke",
+        "damageTypes": ["minecraft:wither"],
+        "subClasses": {
+          "poison": {
+            "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:apply_potion", "rpgdamageoverhaul:anti_heal"],
+            "particle": "minecraft:falling_spore_blossom",
+            "color": "GREEN",
+            "antiHeal": {
+              "percentBlockedPerHP": 0.05,
+              "durationPerHeart": 3
+            },
+            "applyPotion": {
+              "minecraft:poison": 5
+            },
+            "potions": {
+              "resistance": {
+                "netherexp:poison_immunity": 0.95,
+                "alexsmobs:poison_resistance": 0.75,
+                "mowziesmobs:poison_resist": 0.75
+              }
+            }
+          }
+        }
       }
     }
   },
   "arcane": {
-    "onHit": ["rpgdamageoverhaul:particles"],
-    "particle": "spell_engine:arcane_hit"
+    "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:apply_potion"],
+    "particle": "minecraft:portal",
+    "color": "DARK_PURPLE",
+    "armorEffectiveness": 0.5,
+    "applyPotion": {
+      "minecraft:glowing": 30
+    },
+    "damageTypes": ["minecraft:magic", "minecraft:indirect_magic"]
   },
   "true": {
     "onHit": ["rpgdamageoverhaul:particles"],
-    "particle": "minecraft:end_rod"
+    "particle": "minecraft:end_rod",
+    "color": "WHITE",
+    "armorEffectiveness": 0,
+    "tags": ["minecraft:bypasses_resistance", "minecraft:bypasses_enchantments", "minecraft:bypasses_effects", "minecraft:bypasses_armor"]
   }
 }

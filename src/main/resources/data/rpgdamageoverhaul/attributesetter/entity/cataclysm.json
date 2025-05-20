@@ -1,0 +1,276 @@
+{
+  "cataclysm:amethyst_crab": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:ancient_ancient_remnant": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.35,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:ancient_remnant": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.35,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:aptrgangr": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:ender_golem": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:ender_guardian": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.4,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:endermaptera": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:ignis": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:ignited_berserker": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:ignited_revenant": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:kobolediator": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:koboleton": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:maledictus": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:modern_remnant": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.35,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:netherite_monstrosity": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:royal_draugr": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.15,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:the_baby_leviathan": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:the_harbinger": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": -1.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:the_leviathan": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.15,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:the_prowler": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:the_watcher": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:wadjet": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ]
+}

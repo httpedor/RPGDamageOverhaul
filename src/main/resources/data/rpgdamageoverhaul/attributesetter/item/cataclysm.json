@@ -1,0 +1,244 @@
+{
+  "cataclysm:the_incinerator": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 8
+    }
+  ],
+  "cataclysm:void_forge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 2,
+      "uuid": "cebc79d0-785e-447a-84d4-8e24c81a78dd"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 6,
+      "uuid": "5041967b-448b-411d-a1d3-65bf5bf8bd87"
+    }
+  ],
+  "cataclysm:infernal_forge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 6
+    }
+  ],
+  "cataclysm:bone_reptile_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 4
+    }
+  ],
+  "cataclysm:bone_reptile_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 5
+    }
+  ],
+  "cataclysm:ignitium_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "cataclysm:ignitium_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 5.5
+    }
+  ],
+  "cataclysm:ignitium_elytra_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 5
+    }
+  ],
+  "cataclysm:ignitium_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 4.5
+    }
+  ],
+  "cataclysm:ignitium_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "cataclysm:monstrous_helm": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 2,
+      "uuid": "673a2ee8-c358-44d7-a4e1-6d91d4328854"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 2,
+      "uuid": "dc950fac-47c8-4dd1-a37a-517a1e4399bf"
+    }
+  ],
+  "cataclysm:bloom_stone_pauldrons": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4
+    }
+  ],
+  "cataclysm:gauntlet_of_guard": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 6
+    }
+  ],
+  "cataclysm:gauntlet_of_bulwark": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 6,
+      "uuid": "7fc7b372-d7bf-4156-befb-525f8aac5325"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 2,
+      "uuid": "9f654a53-67e9-4354-b656-e3fbf232db84"
+    }
+  ],
+  "cataclysm:tidal_claws": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3
+    }
+  ],
+  "cataclysm:soul_render": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 10,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "cataclysm:the_annihilator": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3.5
+    }
+  ],
+  "cataclysm:meat_shredder": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 2
+    }
+  ],
+  "cataclysm:ancient_spear": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "cataclysm:cursium_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2.5
+    }
+  ],
+  "cataclysm:cursium_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 4
+    }
+  ],
+  "cataclysm:cursium_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 4
+    }
+  ],
+  "cataclysm:cursium_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2.5
+    }
+  ],
+  "cataclysm:black_steel_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 2
+    }
+  ],
+  "cataclysm:black_steel_axe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 4
+    }
+  ],
+  "black_steel_targe": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2,
+      "slot": "offhand"
+    }
+  ],
+  "bulwark_of_the_flame": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 4,
+      "slot": "offhand"
+    }
+  ]
+}

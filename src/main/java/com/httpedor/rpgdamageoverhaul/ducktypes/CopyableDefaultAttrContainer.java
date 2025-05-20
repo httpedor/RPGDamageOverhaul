@@ -4,6 +4,6 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 
 public interface CopyableDefaultAttrContainer {
 
-    public void copyTo(DefaultAttributeContainer.Builder builder);
+    void copyTo(DefaultAttributeContainer.Builder builder);
 
 }

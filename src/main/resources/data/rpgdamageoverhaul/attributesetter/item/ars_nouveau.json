@@ -1,0 +1,403 @@
+{
+  "ars_elemental:fire_hat": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 2,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.10,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:fire_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "uuid": "22ddbcc3-fa28-431b-8549-4f9a5592b1b5"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.10,
+      "uuid": "b0355f4a-b41b-4fbe-8b94-cc608ec5b249",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:fire_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 2,
+      "uuid": "fd62a924-d86d-428e-b795-60e270bad2e8"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.10,
+      "uuid": "f11ed60c-8166-4d81-a22d-5c9062afa73a",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:fire_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 1,
+      "uuid": "7cb1b0b4-9e1f-4b3c-9b4e-99410ab299b2"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.10,
+      "uuid": "9f6dfc06-1dbc-4771-b4a1-78e69f876f30",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:air_hat": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 2,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.10,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:air_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3,
+      "uuid": "22ddbcc3-fa28-431b-8549-4f9a5592b1b5"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.10,
+      "uuid": "b0355f4a-b41b-4fbe-8b94-cc608ec5b249",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:air_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 2,
+      "uuid": "fd62a924-d86d-428e-b795-60e270bad2e8"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.10,
+      "uuid": "f11ed60c-8166-4d81-a22d-5c9062afa73a",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:air_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 1,
+      "uuid": "7cb1b0b4-9e1f-4b3c-9b4e-99410ab299b2"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.10,
+      "uuid": "9f6dfc06-1dbc-4771-b4a1-78e69f876f30",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:earth_hat": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.10,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:earth_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3,
+      "uuid": "22ddbcc3-fa28-431b-8549-4f9a5592b1b5"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.10,
+      "uuid": "b0355f4a-b41b-4fbe-8b94-cc608ec5b249",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:earth_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2,
+      "uuid": "fd62a924-d86d-428e-b795-60e270bad2e8"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.10,
+      "uuid": "f11ed60c-8166-4d81-a22d-5c9062afa73a",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:earth_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 1,
+      "uuid": "7cb1b0b4-9e1f-4b3c-9b4e-99410ab299b2"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.10,
+      "uuid": "9f6dfc06-1dbc-4771-b4a1-78e69f876f30",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:aqua_hat": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.10,
+      "uuid": "a7c8c6f7-321e-44af-8f17-830370e96231",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:aqua_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3,
+      "uuid": "22ddbcc3-fa28-431b-8549-4f9a5592b1b5"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.10,
+      "uuid": "b0355f4a-b41b-4fbe-8b94-cc608ec5b249",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:aqua_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2,
+      "uuid": "fd62a924-d86d-428e-b795-60e270bad2e8"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.10,
+      "uuid": "f11ed60c-8166-4d81-a22d-5c9062afa73a",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_elemental:aqua_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 1,
+      "uuid": "7cb1b0b4-9e1f-4b3c-9b4e-99410ab299b2"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.10,
+      "uuid": "9f6dfc06-1dbc-4771-b4a1-78e69f876f30",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "ars_nouveau:sorcerer_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2
+    }
+  ],
+  "ars_nouveau:sorcerer_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "ars_nouveau:sorcerer_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4
+    }
+  ],
+  "ars_nouveau:sorcerer_hood": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2
+    }
+  ],
+  "ars_nouveau:arcanist_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1
+    }
+  ],
+  "ars_nouveau:arcanist_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2
+    }
+  ],
+  "ars_nouveau:arcanist_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "ars_nouveau:arcanist_hood": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1
+    }
+  ],
+  "ars_nouveau:battlemage_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1
+    }
+  ],
+  "ars_nouveau:battlemage_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2
+    }
+  ],
+  "ars_nouveau:battlemage_robes": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "ars_nouveau:battlemage_hood": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1
+    }
+  ],
+
+  "ars_elemental:fire_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.25,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:water_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.25,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:air_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.25,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:earth_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.25,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:necrotic_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.25,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:lesser_fire_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:lesser_water_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:lesser_air_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:lesser_earth_focus": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:an_focus"
+    }
+  ],
+  "ars_elemental:base_bangle": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:bracelet"
+    }
+  ],
+  "ars_elemental:fire_bangle": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:bracelet"
+    }
+  ],
+  "ars_elemental:water_bangle": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:bracelet"
+    }
+  ],
+  "ars_elemental:air_bangle": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:bracelet"
+    }
+  ],
+  "ars_elemental:earth_bangle": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:bracelet"
+    }
+  ],
+  "ars_elemental:anima_bangle": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE",
+      "slot": "curio:bracelet"
+    }
+  ]
+}

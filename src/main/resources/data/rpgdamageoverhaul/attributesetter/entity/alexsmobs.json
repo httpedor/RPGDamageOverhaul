@@ -1,0 +1,329 @@
+{
+  "alexsmobs:alligator_snapping_turtle": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:bison": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:bone_serpent": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:bone_serpent_part": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:bufungus": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:cachalot_whale": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:caiman": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:centipede_body": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:centipede_tail": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:cockroach": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:cosmaw": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:crimson_mosquito": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:crocodile": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:dropbear": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:elephant": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:endergrade": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:froststalker": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.8,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexmobs:gorilla": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:grizzly_bear": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexmobs:laviathan": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:mimicube": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:mungus": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:orca": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:raccoon": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:rhinoceros": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:rocky_roller": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:seal": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:skreecher": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:soul_vulture": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:straddler": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:stradpole": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:sunbird": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:tusklin": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:underminer": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.9,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.9,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -2,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:void_worm": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.7,
+      "operation": "BASE"
+    }
+  ],
+  "alexsmobs:warped_mosco": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ]
+}

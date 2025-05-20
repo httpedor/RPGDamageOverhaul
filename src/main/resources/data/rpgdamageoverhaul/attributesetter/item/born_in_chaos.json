@@ -1,0 +1,182 @@
+{
+  "born_in_chaos_v1:dark_metal_armor_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 4
+    }
+  ],
+  "born_in_chaos_v1:dark_metal_armor_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 8
+    }
+  ],
+  "born_in_chaos_v1:dark_metal_armor_leggings": [
+      {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 5
+      }
+  ],
+  "born_in_chaos_v1:dark_metal_armor_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.armor",
+      "value": 3
+    }
+  ],
+  "born_in_chaos_v1:darkwarblade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 11,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 8
+    }
+  ],
+  "born_in_chaos_v1:skullbreaker_hammer": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 4
+    }
+  ],
+  "born_in_chaos_v1:nightmare_scythe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 4
+    }
+  ],
+  "born_in_chaos_v1:soul_cutlass": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "born_in_chaos_v1:spider_bite_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 2,
+      "uuid": "c96e8dcf-f3f4-4d32-af51-0d186fa7a2b1"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 3,
+      "uuid": "7e3c5bf9-b02f-42fe-8b17-24f1b1b178ff"
+    }
+  ],
+  "born_in_chaos_v1:dark_ritual_dagger": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 3
+    }
+  ],
+  "born_in_chaos_v1:spiritual_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3
+    }
+  ],
+  "born_in_chaos_v1:sharpened_dark_metal_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 3
+    }
+  ],
+  "born_in_chaos_v1:shell_mace": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3
+    }
+  ],
+  "born_in_chaos_v1:soulbane": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 6
+    }
+  ],
+  "born_in_chaos_v1:great_reaper_axe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 4
+    }
+  ],
+  "born_in_chaos_v1:lord_pumpkinheads_hat_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25,
+      "uuid": "de9b3b1b-4c44-42b9-900f-979a0c4e97c9"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.armor",
+      "value": 2,
+      "operation": "BASE",
+      "uuid": "62a4c1f8-117d-4cba-9a77-af39a2fafae2"
+    }
+  ],
+  "born_in_chaos_v1:frostbitten_blade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3
+    }
+  ]
+}

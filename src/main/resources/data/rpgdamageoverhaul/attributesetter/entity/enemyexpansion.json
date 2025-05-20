@@ -1,0 +1,42 @@
+{
+  "troll": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "trollenraged": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "vampbiter": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "vampflyer": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "vampire": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ]
+}

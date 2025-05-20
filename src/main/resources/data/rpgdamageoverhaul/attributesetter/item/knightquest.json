@@ -1,0 +1,1267 @@
+{
+  "crimson_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "minecraft:generic.attack_speed",
+      "value": -2.4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 1.5
+    }
+  ],
+  "water_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "minecraft:generic.attack_speed",
+      "value": -2.4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 1.5
+    }
+  ],
+  "paladin_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 4
+    }
+  ],
+  "khopesh_claymore": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 3
+    }
+  ],
+  "kukri_dagger": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 2
+    }
+  ],
+  "water_axe": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:water.damage",
+      "value": 1.5
+    }
+  ],
+  "bamboo_green_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_green_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 5
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 6,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_green_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 4
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_green_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_blue_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_blue_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 5
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 6,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_blue_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 4
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_blue_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    }
+    ],
+  "bow_helmet": [
+    {
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    }
+  ],
+  "bow_chestplate": [
+    {
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 5,
+      "operation": "BASE"
+    }
+  ],
+  "bow_leggings": [
+    {
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 3.5,
+      "operation": "BASE"
+    }
+  ],
+  "bow_boots": [
+    {
+      "attribute": "minecraft:generic.amor",
+      "value": 2.5,
+      "operation":"BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+    ],
+  "apple_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "apple_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "apple_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "apple_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }],
+  "shinobi_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "shinobi_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "shinobi_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "shinobi_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }],
+  "pirate_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],"pirate2_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "pirate_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "pirate_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "pirate_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }],
+  "warlord_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "warlord_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "warlord_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "warlord_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }],
+  "shield_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "shield_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "shield_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "shield_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }],
+  "silverfish_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "silverfish_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "silverfish_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "silverfish_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }],
+  "skeleton_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "skeleton_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "skeleton_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "skeleton_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }],
+  "spider_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    { "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.03,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "spider_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 4.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },{ "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "spider_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },{ "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.04,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "spider_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },{ "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 0.03,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],"path_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "path_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "path_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],"phantom_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "phantom_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "phantom_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "phantom_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "creeper_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "creeper_chestplate": [
+    {
+      "attribute": "minecraft:generic armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "creeper_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+    
+  ],
+  "creeper_boots": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 1,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_helmet": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 2.5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {"attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 2,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_chestplate": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {"attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_leggings": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {"attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 2,
+      "operation": "BASE"
+    }
+  ],
+  "bamboo_boots": [
+   {
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {"attribute": "minecraft:generic.armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {"attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 2,
+      "operation": "BASE"
+    }
+  ],
+  "blaze_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "blaze_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "blaze_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "blaze_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "enderman_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "enderman_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 5
+    }
+  ],
+  "enderman_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4
+    }
+  ],
+  "enderman_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "dragon_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "dragon_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "dragon_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "dragon_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "hollow_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "hollow_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "hollow_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "hollow_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "nether_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "nether_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 5
+    }
+  ],
+  "nether_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 4
+    }
+  ],
+  "nether_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "sea_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "sea_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 5,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "sea_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "sea_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE"
+    },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "silver_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3,
+      "uuid": "b3a48ec2-48cd-4649-ba3b-63f9df7d9f41"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.06,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "0435c42e-fca6-489b-abc8-699aea945625"
+    }
+  ],
+  "silver_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 5,
+      "uuid": "84bea2d0-8ef5-4d0c-a701-9edb5b04e5cf"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.06,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "c794b446-f5db-4bd8-bb7f-d8cba36f7378"
+    }
+  ],
+  "silver_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 4,
+      "uuid": "00238bfe-ae0b-44e0-87b3-bb4963131c57"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.06,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "eed0f5f5-4e92-42be-bb27-627687bf594d"
+    }
+  ],
+  "silver_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3,
+      "uuid": "08c18054-2228-4e5a-9a9d-7c8368157c7e"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.06,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "5d51e345-f914-4af1-b291-358bc0b26793"
+    }
+  ],
+  "strawhat_helmet": [
+    {
+      "attribute": "forge:swim_speed",
+      "operation": "MULTIPLY_BASE",
+      "value": 0.1
+    }
+  ],
+  "strawhat_chestplate": [
+    {
+      "attribute": "forge:swim_speed",
+      "operation": "MULTIPLY_BASE",
+      "value": 0.1
+    }
+  ],
+  "strawhat_leggings": [
+    {
+      "attribute": "forge:swim_speed",
+      "operation": "MULTIPLY_BASE",
+      "value": 0.1
+    }
+  ],
+  "strawhat_boots": [
+    {
+      "attribute": "forge:swim_speed",
+      "operation": "MULTIPLY_BASE",
+      "value": 0.1
+    }
+  ],
+  "conquistador_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "conquistador_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "conquistador_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "conquistador_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "zombie_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "c2613aaf-cd5a-4209-90a4-d0e90a6c6715"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": -3,
+      "uuid": "fb6e30c6-4b5b-41d6-a572-a853e88ceb4b"
+    }
+  ],
+  "zombie_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": -5,
+      "uuid": "52fd3749-3f17-4d28-9d68-b0a3187fa2d8"
+    }
+  ],
+  "zombie_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": -4,
+      "uuid": "52fd3749-3f17-4d28-9d68-b0a3187fa2d8"
+    }
+  ],
+  "zombie_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": -3,
+      "uuid": "7c091665-81c7-451a-9862-61fba3938576"
+    }
+  ],
+  "wither_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "wither_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "wither_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "wither_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "evoker_helmet": [
+    {
+      "attribute": "irons_spellbooks:spell_resist",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+      },{
+      "attribute": "minecraft:generic.armor",
+      "value": 2,
+      "operation": "BASE" 
+      },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE" 
+      }
+  ],
+  "evoker_chestplate": [
+    {
+      "attribute": "irons_spellbooks:spell_resist",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "BASE" 
+      },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE" 
+      }
+  ],
+  "evoker_leggings": [
+    {
+      "attribute": "irons_spellbooks:spell_resist",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 3,
+      "operation": "BASE" 
+      },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE" 
+      }
+  ],
+  "evoker_boots": [
+    {
+      "attribute": "irons_spellbooks:spell_resist",
+      "value": 0.1,
+      "operation": "MULTIPLY_BASE"
+    },{
+      "attribute": "minecraft:generic.armor",
+      "value": 1.5,
+      "operation": "BASE" 
+      },{
+      "attribute": "minecraft:armor_toughness",
+      "value": 0.5,
+      "operation": "BASE" 
+      }
+  ],
+  "witch_helmet": [
+    {
+      "attribute": "irons_spellbooks:spell_power",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "ce6b1287-6473-4c6c-9ebb-59f2a6309428"
+    },
+    {
+      "attribute": "irons_spellbooks:mana_regen",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "ee25004c-ce22-44ae-8ca6-44ebe5eb21db"
+    }
+  ],
+  "witch_chestplate": [
+    {
+      "attribute": "irons_spellbooks:spell_power",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "788fd6ad-a5fb-4ffd-acba-27d09adf68ce"
+    },
+    {
+      "attribute": "irons_spellbooks:mana_regen",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "dfda33c1-8d32-4f73-b25f-0490166383fd"
+    }
+  ],
+  "witch_leggings": [
+    {
+      "attribute": "irons_spellbooks:spell_power",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "1827d419-b449-4e8f-9d62-fa639d3398bc"
+    },
+    {
+      "attribute": "irons_spellbooks:mana_regen",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "cc791689-264f-4dc7-861a-40faee76669c"
+    }
+  ],
+  "witch_boots": [
+    {
+      "attribute": "irons_spellbooks:spell_power",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "6e249e89-5166-4612-865d-0411571e479e"
+    },
+    {
+      "attribute": "irons_spellbooks:mana_regen",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE",
+      "uuid": "1293242e-1138-42b2-bc13-ae4c3877f7e9"
+    }
+  ],
+  "polar_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    }
+  ],
+  "polar_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 5
+    }
+  ],
+  "polar_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 4
+    }
+  ],
+  "polar_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "born_in_chaos_v1:bone_imp": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:bone_imp_minion": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:bonescaller": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 12,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:bonescaller_not_despawn": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:dire_hound_leader": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:dread_hound": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:dread_hound_not_despawn": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:fallen_chaos_knight": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:firelight": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:firelight_not_despawn": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:infernal_spirit": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:lifestealer": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:lifestealer_true_form": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:lord_pumpkinhead": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:lord_pumpkinhead_head": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:lord_pumpkinhead_withouta_horse": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:missioner": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos:spider_mother": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos:nightmare_stalker": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:pumpkin_spirit": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:pumpkin_head": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:restless_spirit": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:felsteed": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:riding_felsteed": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:riding_lord_felsteed": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:scarlet_persecutor": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.7,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:seared_spirit": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:seared_spirit_not_despawn": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:senor_pumpkin": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:siamese_skeletons": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:siamese_skeletonsleft": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:siamese_skeletonsright": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:sir_pumpkinhead": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:sir_pumpkinhead_without_horse": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:skeleton_demoman": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:skeleton_thrasher": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:skeleton_thrasher_not_despawn": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:spirit_guide": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:spirit_guide_assistant": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.damage",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:spiritof_chaos": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:supreme_bonescaller": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 20,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:supreme_bonescaller_not_despawn": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 20,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:supreme_bonescaller_stage_2": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 20,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:swarmer": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "born_in_chaos_v1:thornshell_crab": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ]
+}

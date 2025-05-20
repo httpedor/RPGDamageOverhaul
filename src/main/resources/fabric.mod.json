@@ -12,6 +12,9 @@
   "icon": "assets/rpgdamageoverhaul/icon.png",
   "environment": "*",
   "entrypoints": {
+    "mixinsquared": [
+      "com.httpedor.rpgdamageoverhaul.OptionalMixinCanceler"
+    ],
     "client": [
       "com.httpedor.rpgdamageoverhaul.client.RPGDamageOverhaulClient"
     ],
@@ -26,5 +29,11 @@
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
     "minecraft": "${minecraft_version}"
+  },
+  "recommends": {
+    "attributesetter": "*"
+  },
+  "suggests": {
+    "bettercombatextension": "*"
   }
 }

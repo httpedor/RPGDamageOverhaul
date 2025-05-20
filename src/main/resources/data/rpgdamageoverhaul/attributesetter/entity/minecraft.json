@@ -1,0 +1,353 @@
+{
+  "minecraft:allay": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:blaze": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:camel": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:cave_spider": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:dolphin": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:drowned": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:elder_guardian": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:ender_dragon": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:endermite": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:evoker": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:fox": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:ghast": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:hoglin": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:husk": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:iron_golem": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:magma_cube": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.7,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:phantom": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:piglin": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:piglin_brute": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:polar_bear": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:ravager": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:slime": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.7,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:strider": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -1,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:spider": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.2,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:stray": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:vex": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.7,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:warden": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.25,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:shulker": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:snow_golem": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:witch": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:wither_skeleton": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:wither": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1,
+      "operation": "BASE"
+    }
+  ],
+  "minecraft:skeleton": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.25
+    }
+  ]
+}
