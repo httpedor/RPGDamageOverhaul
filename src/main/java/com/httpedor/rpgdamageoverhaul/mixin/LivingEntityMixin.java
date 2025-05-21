@@ -13,12 +13,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -40,9 +42,13 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Shadow public abstract double getAttributeValue(EntityAttribute attribute);
 
-    @Shadow public abstract double getAttributeValue(RegistryEntry<EntityAttribute> attribute);
-
     @Shadow public abstract float getHealth();
+
+    @Shadow @Nullable public abstract EntityAttributeInstance getAttributeInstance(EntityAttribute attribute);
+
+    @Shadow public abstract float getMaxHealth();
+
+    @Shadow public abstract void setHealth(float health);
 
     @WrapOperation(method = "damage", at = @At(value="INVOKE", target = "Lnet/minecraft/entity/damage/DamageSource;isIn(Lnet/minecraft/registry/tag/TagKey;)Z", ordinal = 3))
     private boolean noCooldown(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
@@ -154,5 +160,38 @@ public abstract class LivingEntityMixin extends Entity {
         }
 
         return health;
+    }
+
+    @Inject(method = "tick", at = @At(value = "HEAD"))
+    private void removeModifiers(CallbackInfo ci)
+    {
+        if (!RPGDamageOverhaul.transientModifiersDuration.containsKey(this) || getWorld().isClient)
+            return;
+
+        var modifiers = RPGDamageOverhaul.transientModifiersDuration.get(this);
+        for (var entry : modifiers.entrySet())
+        {
+            var attrId = entry.getKey();
+            var duration = entry.getValue();
+            if (System.currentTimeMillis() > duration)
+            {
+                var attr = RPGDamageOverhaul.transientModifiers.get(attrId);
+                if (this.getAttributeInstance(attr) != null)
+                {
+                    Float healthRatio = null;
+                    if (attr == EntityAttributes.GENERIC_MAX_HEALTH)
+                    {
+                        healthRatio = getHealth() / getMaxHealth();
+                    }
+                    this.getAttributeInstance(attr).removeModifier(attrId);
+                    if (healthRatio != null)
+                        setHealth(getMaxHealth() * healthRatio);
+                }
+                modifiers.remove(attrId);
+                RPGDamageOverhaul.transientModifiers.remove(attrId);
+            }
+        }
+        if (modifiers.isEmpty())
+            RPGDamageOverhaul.transientModifiersDuration.remove(this);
     }
 }

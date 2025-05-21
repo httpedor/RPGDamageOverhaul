@@ -367,8 +367,13 @@ public class RPGDamageOverhaul implements ModInitializer {
                         return;
                     }
                 }
+                double healthRatio = target.getHealth() / target.getMaxHealth();
                 target.getAttributeInstance(attribute).addTemporaryModifier(mod);
                 transientModifiers.put(id, attribute);
+                if (attribute == EntityAttributes.GENERIC_MAX_HEALTH)
+                {
+                    target.setHealth((float) (target.getMaxHealth() * healthRatio));
+                }
             }
         });
 
