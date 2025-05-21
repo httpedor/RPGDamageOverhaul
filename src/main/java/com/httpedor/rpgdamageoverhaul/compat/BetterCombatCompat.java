@@ -2,7 +2,7 @@ package com.httpedor.rpgdamageoverhaul.compat;
 
 import net.bettercombat.api.AttackHand;
 import net.bettercombat.api.EntityPlayer_BetterCombat;
-import net.minecraft.entity.Entity;
+import net.minecraft.world.entity.Entity;
 
 public class BetterCombatCompat {
 

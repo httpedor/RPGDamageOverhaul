@@ -1,7 +1,7 @@
 package com.httpedor.rpgdamageoverhaul.mixin;
 
 import com.httpedor.rpgdamageoverhaul.ducktypes.DCDamageSource;
-import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.world.damagesource.DamageSource;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

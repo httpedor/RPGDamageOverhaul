@@ -4,13 +4,14 @@ import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import net.bettercombat.api.AttackHand;
 import net.bettercombat.api.EntityPlayer_BetterCombat;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
-import net.minecraft.entity.damage.DamageType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKey;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -21,20 +22,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(DamageSources.class)
 public abstract class DamageSourcesMixin {
 
-    @Shadow public abstract DamageSource create(RegistryKey<DamageType> key, @Nullable Entity attacker);
+    @Shadow
+    protected abstract DamageSource source(ResourceKey<DamageType> key, @Nullable Entity attacker);
 
     @Inject(method = "playerAttack", at = @At("RETURN"), cancellable = true)
-    public void onPlayerAttack(PlayerEntity attacker, CallbackInfoReturnable<DamageSource> cir) {
+    public void onPlayerAttack(Player attacker, CallbackInfoReturnable<DamageSource> cir) {
+        if (!ModList.get().isLoaded("bettercombat"))
+            return;
         AttackHand attackHand = ((EntityPlayer_BetterCombat) attacker).getCurrentAttack();
         if (attackHand != null)
         {
-            DamageClass[] attackOverrides = RPGDamageOverhaulAPI.getBetterCombatAttackOverrides(Registries.ITEM.getId(attackHand.itemStack().getItem()));
-            if (attackOverrides != null)
+            DamageClass[] attackOverrides = RPGDamageOverhaulAPI.getBetterCombatAttackOverrides(ForgeRegistries.ITEMS.getKey(attackHand.itemStack().getItem()));
+            if (attackOverrides != null && attackOverrides.length > 0)
             {
 
                 int combo = attackHand.combo().current()-1;
                 if (combo < attackOverrides.length)
-                    cir.setReturnValue(create(attackOverrides[combo].damageType, attacker));
+                    cir.setReturnValue(source(attackOverrides[combo].damageTypeKey, attacker));
             }
         }
     }

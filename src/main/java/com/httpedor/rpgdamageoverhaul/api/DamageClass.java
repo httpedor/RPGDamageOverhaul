@@ -3,14 +3,14 @@ package com.httpedor.rpgdamageoverhaul.api;
 
 import com.google.gson.JsonElement;
 import com.httpedor.rpgdamageoverhaul.ducktypes.DCDamageSource;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.attribute.EntityAttribute;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageType;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,22 +20,22 @@ import java.util.Set;
 public class DamageClass {
 
     public final String name;
-    public final EntityAttribute dmgAttribute;
-    public final EntityAttribute armorAttribute;
-    public final EntityAttribute absorptionAttribute;
-    public final EntityAttribute resistanceAttribute;
-    public final RegistryKey<DamageType> damageType;
-    RegistryEntry<DamageType> damageTypeEntry;
-    public final Set<Identifier> onHitEffects;
+    public final Attribute dmgAttribute;
+    public final Attribute armorAttribute;
+    public final Attribute absorptionAttribute;
+    public final Attribute resistanceAttribute;
+    public final ResourceKey<DamageType> damageTypeKey;
+    public DamageType damageType;
+    public final Set<ResourceLocation> onHitEffects;
     public Map<String, JsonElement> properties;
     public final String parentName;
 
     DamageClass(String name,
-                EntityAttribute dmgAttribute,
-                EntityAttribute armorAttribute,
-                EntityAttribute absorptionAttribute,
-                EntityAttribute resistanceAttribute,
-                RegistryKey<DamageType> damageType,
+                Attribute dmgAttribute,
+                Attribute armorAttribute,
+                Attribute absorptionAttribute,
+                Attribute resistanceAttribute,
+                ResourceKey<DamageType> damageType,
                 String parentName
     )
     {
@@ -44,40 +44,38 @@ public class DamageClass {
         this.armorAttribute = armorAttribute;
         this.absorptionAttribute = absorptionAttribute;
         this.resistanceAttribute = resistanceAttribute;
-        this.damageType = damageType;
+        this.damageTypeKey = damageType;
         this.parentName = parentName;
         this.onHitEffects = new HashSet<>();
         this.properties = new HashMap<>();
     }
 
-    public void addOnHitEffect(Identifier effect)
+    public void addOnHitEffect(ResourceLocation effect)
     {
         onHitEffects.add(effect);
     }
-    public void removeOnHitEffect(Identifier effect)
+    public void removeOnHitEffect(ResourceLocation effect)
     {
         onHitEffects.remove(effect);
     }
 
-    public RegistryEntry<DamageType> getDamageTypeEntry()
+    public Holder<DamageType> getDamageType()
     {
-        return damageTypeEntry;
+        return Holder.direct(damageType);
     }
 
     public boolean isChildOf(String parentName)
     {
-        boolean isChild = false;
-        DamageClass parent = RPGDamageOverhaulAPI.getDamageClass(parentName);
+        DamageClass parent = RPGDamageOverhaulAPI.getDamageClass(this.parentName);
         while (parent != null)
         {
             if (parent.name.equals(parentName))
             {
-                isChild = true;
-                break;
+                return true;
             }
             parent = RPGDamageOverhaulAPI.getDamageClass(parent.parentName);
         }
-        return isChild;
+        return false;
     }
     public boolean isChildOf(DamageClass parent)
     {
@@ -92,7 +90,7 @@ public class DamageClass {
     {
         return createDamageSource(attacker, source, true);
     }
-    public DamageSource createDamageSource(Vec3d position)
+    public DamageSource createDamageSource(Vec3 position)
     {
         return createDamageSource(position, true);
     }
@@ -103,25 +101,25 @@ public class DamageClass {
 
     public DamageSource createDamageSource(Entity attacker, boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry, attacker);
+        DamageSource ret = new DamageSource(getDamageType(), attacker);
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }
     public DamageSource createDamageSource(Entity attacker, Entity source, boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry, attacker, source);
+        DamageSource ret = new DamageSource(getDamageType(), attacker, source);
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }
-    public DamageSource createDamageSource(Vec3d position, boolean triggerOnHitEffects)
+    public DamageSource createDamageSource(Vec3 position, boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry, position);
+        DamageSource ret = new DamageSource(getDamageType(), position);
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }
     public DamageSource createDamageSource(boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry);
+        DamageSource ret = new DamageSource(getDamageType());
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }

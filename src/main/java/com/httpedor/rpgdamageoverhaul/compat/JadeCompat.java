@@ -1,7 +1,7 @@
 package com.httpedor.rpgdamageoverhaul.compat;
 
 import com.httpedor.rpgdamageoverhaul.compat.jade.ResistanceComponentProvider;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.world.entity.LivingEntity;
 import snownee.jade.api.IWailaClientRegistration;
 import snownee.jade.api.IWailaCommonRegistration;
 import snownee.jade.api.IWailaPlugin;

@@ -1,12 +1,13 @@
 package com.httpedor.rpgdamageoverhaul.compat.jade;
 
+import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.LivingEntity;
 import snownee.jade.api.EntityAccessor;
 import snownee.jade.api.IEntityComponentProvider;
 import snownee.jade.api.IServerDataProvider;
@@ -24,28 +25,28 @@ public enum ResistanceComponentProvider implements IEntityComponentProvider, ISe
     public void appendTooltip(ITooltip iTooltip, EntityAccessor entityAccessor, IPluginConfig iPluginConfig) {
         ITooltip box = IElementHelper.get().tooltip();
         var resistancesNbt = entityAccessor.getServerData().getCompound("Resistances");
-        for (var dcName : resistancesNbt.getKeys())
+        for (var dcName : resistancesNbt.getAllKeys())
         {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(dcName);
             double val = resistancesNbt.getDouble(dcName);
             String lang = val > 0 ? "attribute.modifier.plus.1" : "attribute.modifier.take.1";
-            box.add(Text.translatable(lang, new DecimalFormat("0.#").format(Math.abs(val * 100)), Text.translatable(dc.resistanceAttribute.getTranslationKey())).setStyle(Style.EMPTY.withColor(RPGDamageOverhaulAPI.getDamageClassColor(dc))));
+            box.add(Component.translatable(lang, new DecimalFormat("0.#").format(Math.abs(val * 100)), Component.translatable(dc.resistanceAttribute.getDescriptionId())).withStyle(Style.EMPTY.withColor(RPGDamageOverhaulAPI.getDamageClassColor(dc))));
         }
         iTooltip.add(IElementHelper.get().box(box, BoxStyle.DEFAULT));
     }
 
     @Override
-    public Identifier getUid() {
-        return new Identifier("rpgdamageoverhaul", "resistances");
+    public ResourceLocation getUid() {
+        return new ResourceLocation(RPGDamageOverhaul.MODID, "resistances");
     }
 
     @Override
-    public void appendServerData(NbtCompound nbt, EntityAccessor entityAccessor) {
+    public void appendServerData(CompoundTag nbt, EntityAccessor entityAccessor) {
         LivingEntity le = (LivingEntity) entityAccessor.getEntity();
-        NbtCompound map = new NbtCompound();
+        CompoundTag map = new CompoundTag();
         for (var dc : RPGDamageOverhaulAPI.getAllDamageClasses())
         {
-            if (le.getAttributeInstance(dc.resistanceAttribute) == null)
+            if (le.getAttribute(dc.resistanceAttribute) == null)
                 continue;
             var val = le.getAttributeValue(dc.resistanceAttribute);
             if (val == 0)

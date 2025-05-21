@@ -8,14 +8,15 @@ import com.httpedor.rpgdamageoverhaul.compat.BetterCombatCompat;
 import com.httpedor.rpgdamageoverhaul.ducktypes.DCDamageSource;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.world.World;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.level.Level;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,34 +26,34 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mixin(PlayerEntity.class)
+@Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity {
 
 
-    protected PlayerMixin(EntityType<? extends LivingEntity> entityType, World world) {
+    protected PlayerMixin(EntityType<? extends LivingEntity> entityType, Level world) {
         super(entityType, world);
     }
 
     @Shadow
-    protected abstract void applyDamage(DamageSource source, float amount);
+    protected abstract void actuallyHurt(DamageSource source, float amount);
 
-    @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getFireAspect(Lnet/minecraft/entity/LivingEntity;)I"))
+    @Inject(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/enchantment/EnchantmentHelper;getFireAspect(Lnet/minecraft/world/entity/LivingEntity;)I"))
     private void enchantmentDamage(Entity target, CallbackInfo ci)
     {
         for (var entry : RPGDamageOverhaul.damageEnchantments.entrySet())
         {
             var enchantment = entry.getKey();
-            var dc = entry.getValue().getLeft();
-            var multiplier = entry.getValue().getRight();
-            int level = EnchantmentHelper.getEquipmentLevel(enchantment, this);
+            var dc = entry.getValue().getA();
+            var multiplier = entry.getValue().getB();
+            int level = EnchantmentHelper.getEnchantmentLevel(enchantment, this);
             if (level > 0)
             {
-                target.damage(dc.createDamageSource(this), level * multiplier);
+                target.hurt(dc.createDamageSource(this), level * multiplier);
             }
         }
     }
 
-    @WrapOperation(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/Entity;damage(Lnet/minecraft/entity/damage/DamageSource;F)Z"))
+    @WrapOperation(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
     private boolean otherDamageAttacks(Entity target, DamageSource source, float amount, Operation<Boolean> original)
     {
         boolean ret = false;
@@ -61,25 +62,25 @@ public abstract class PlayerMixin extends LivingEntity {
             double dmg = getAttributeValue(dc.dmgAttribute);
             if (dmg > 0)
             {
-                ret |= target.damage(dc.createDamageSource(this), (float)dmg);
+                ret |= target.hurt(dc.createDamageSource(this), (float)dmg);
             }
         }
-        if (FabricLoader.getInstance().isModLoaded("bettercombat"))
+        if (ModList.get().isLoaded("bettercombat"))
         {
-            if (BetterCombatCompat.shouldBCHandleAttack((PlayerEntity)(Object)this))
+            if (BetterCombatCompat.shouldBCHandleAttack((Player)(Object)this))
                 return original.call(target, source, amount) || ret;
         }
 
-        var is = getMainHandStack();
+        var is = getMainHandItem();
         Map<DamageClass, Double> newDamages = new HashMap<>();
         RPGDamageOverhaulAPI.applyItemOverrides(is, newDamages);
         if (newDamages.isEmpty())
         {
             DamageClass blunt = RPGDamageOverhaulAPI.getDamageClass("blunt");
             if (blunt != null)
-                return ret || target.damage(blunt.createDamageSource(this), amount);
+                return target.hurt(blunt.createDamageSource(this), amount) || ret;
             else
-                return ret || original.call(target, source, amount);
+                return original.call(target, source, amount) || ret;
         }
         else
         {
@@ -87,17 +88,23 @@ public abstract class PlayerMixin extends LivingEntity {
             {
                 var dc = entry.getKey();
                 var dmg = entry.getValue();
-                ret |= target.damage(dc.createDamageSource(this), dmg.floatValue());
+                ret |= target.hurt(dc.createDamageSource(this), dmg.floatValue());
             }
             return ret;
         }
     }
 
+    @Inject(method = "actuallyHurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;setHealth(F)V"))
+    private void logDamage(DamageSource source, float amount, CallbackInfo ci)
+    {
+        System.out.println("APPLIED DAMAGE: (" + source.type().msgId() + ", " + (source.getDirectEntity() != null ? ForgeRegistries.ENTITY_TYPES.getKey(source.getDirectEntity().getType()) : "NULL") + ", " + (source.getEntity() != null ? ForgeRegistries.ENTITY_TYPES.getKey(source.getEntity().getType()) : "NULL") + ") : " + amount + " TO " + this.getType());
+    }
 
-    @Inject(method = "applyDamage", at = @At("HEAD"), cancellable = true)
+
+    @Inject(method = "actuallyHurt", at = @At("HEAD"), cancellable = true)
     private void damageOverrides(DamageSource source, float amount, CallbackInfo ci)
     {
-        DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.getType());
+        DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
         if (dc != null)
         {
             if (((DCDamageSource)source).shouldTriggerOnHitEffects())
@@ -110,7 +117,7 @@ public abstract class PlayerMixin extends LivingEntity {
         if (newDamages != null)
         {
             for (Map.Entry<DamageSource, Double> entry : newDamages.entrySet())
-                applyDamage(entry.getKey(), entry.getValue().floatValue());
+                actuallyHurt(entry.getKey(), entry.getValue().floatValue());
             ci.cancel();
         }
     }

@@ -1,9 +1,10 @@
 package com.httpedor.rpgdamageoverhaul.ducktypes;
 
-import net.minecraft.entity.attribute.DefaultAttributeContainer;
+
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 
 public interface CopyableDefaultAttrContainer {
 
-    void copyTo(DefaultAttributeContainer.Builder builder);
+    void copyTo(AttributeSupplier.Builder builder);
 
 }

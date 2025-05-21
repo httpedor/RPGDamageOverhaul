@@ -1,43 +1,43 @@
 package com.httpedor.rpgdamageoverhaul.api;
 
 import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
-import com.httpedor.rpgdamageoverhaul.ducktypes.CopyableDefaultAttrContainer;
-import com.httpedor.rpgdamageoverhaul.events.DamageClassRegisteredCallback;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.attribute.*;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageType;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.*;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.text.TextColor;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.TextColor;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.ForgeRegistry;
 import org.apache.logging.log4j.util.TriConsumer;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class RPGDamageOverhaulAPI {
     static final Map<String, DamageClass> dmgClasses = new HashMap<>();
-    static final Map<Identifier, Map<DamageClass, Double>> dmgOverrides = new HashMap<>();
+    static final Map<ResourceLocation, Map<DamageClass, Double>> dmgOverrides = new HashMap<>();
     static final Set<String> rpgDamageTypes = new HashSet<>();
-    static final Map<Identifier, TriConsumer<LivingEntity, DamageSource, Double>> onHitEffectCallbacks = new HashMap<>();
-    static final Map<Identifier, Map<DamageClass, Double>> itemOverrides = new HashMap<>();
-    static final Map<Identifier, Map<DamageClass, Double>> tagItemOverrides = new HashMap<>();
-    static final Map<Identifier, DamageClass[]> betterCombatAttacks = new HashMap<>();
-    static final Map<Identifier, Map<DamageClass, Double>> entityOverrides = new HashMap<>();
-    static final Map<Identifier, Map<DamageClass, Double>> tagEntityOverrides = new HashMap<>();
+    static final Map<ResourceLocation, TriConsumer<LivingEntity, DamageSource, Double>> onHitEffectCallbacks = new HashMap<>();
+    static final Map<ResourceLocation, Map<DamageClass, Double>> itemOverrides = new HashMap<>();
+    static final Map<ResourceLocation, Map<DamageClass, Double>> tagItemOverrides = new HashMap<>();
+    static final Map<ResourceLocation, DamageClass[]> betterCombatAttacks = new HashMap<>();
+    static final Map<ResourceLocation, Map<DamageClass, Double>> entityOverrides = new HashMap<>();
+    static final Map<ResourceLocation, Map<DamageClass, Double>> tagEntityOverrides = new HashMap<>();
 
     public record DamageClassAttributes(String dmg, String armor, String absorption, String resistance) {}
 
     public static DamageClass registerDamage(String dmgName, String parent, DamageClassAttributes attr)
     {
+        var wasFrozen = ((ForgeRegistry)ForgeRegistries.ATTRIBUTES).isLocked();
+        ((ForgeRegistry)ForgeRegistries.ATTRIBUTES).unfreeze();
         if (attr == null)
         {
             attr = new DamageClassAttributes("rpgdamageoverhaul:" + dmgName + ".damage",
@@ -48,65 +48,63 @@ public class RPGDamageOverhaulAPI {
         DamageClass dmgClass;
         if (getDamageClass(dmgName) == null)
         {
-            EntityAttribute dmgAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.dmg));
+            Attribute dmgAttribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(attr.dmg));
             if (dmgAttribute == null)
-                dmgAttribute = Registry.register(Registries.ATTRIBUTE, attr.dmg, new ClampedEntityAttribute(dmgName + ".damage", 0, 0, 1024));
-            EntityAttribute armorAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.armor));
-            if (armorAttribute == null)
-                armorAttribute = Registry.register(Registries.ATTRIBUTE, attr.armor, new ClampedEntityAttribute(dmgName + ".armor", 0, 0, 1024));
-            EntityAttribute absorptionAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.absorption));
-            if (absorptionAttribute == null)
-                absorptionAttribute = Registry.register(Registries.ATTRIBUTE, attr.absorption, new ClampedEntityAttribute(dmgName + ".absorption", 0, 0, 1024));
-            EntityAttribute resistanceAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.resistance));
-            if (resistanceAttribute == null)
-                resistanceAttribute = Registry.register(Registries.ATTRIBUTE, attr.resistance, new ClampedEntityAttribute(dmgName + ".resistance", 0, -10, 10));
-
-            RegistryKey<DamageType> dmgTypeKey = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier("rpgdamageoverhaul", dmgName));
-            dmgClass = new DamageClass(dmgName, dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute, dmgTypeKey, parent);
-
-            ServerLifecycleEvents.SERVER_STARTED.register((server) -> {
-                var reg = server.getCombinedDynamicRegistries().getCombinedRegistryManager().get(RegistryKeys.DAMAGE_TYPE);
-
-                DamageType dt = new DamageType(dmgClass.name, 1.0f);
-                if (!reg.contains(dmgClass.damageType))
-                    Registry.register(reg, "rpgdamageoverhaul:" + dmgClass.name, dt);
-                //Register damage type
-                RPGDamageOverhaulAPI.rpgDamageTypes.add(dt.msgId());
-
-                dmgClass.damageTypeEntry = reg.getEntry(dt);
-            });
-
-            //Add attribute to all entities
-            for (var etEntry : Registries.ENTITY_TYPE.getEntrySet())
             {
-                try
-                {
-                    var entityType = (EntityType<? extends LivingEntity>)etEntry.getValue();
-                    var attrContainer = DefaultAttributeRegistry.get(entityType);
-                    if (attrContainer == null)
-                        continue;
-
-                    var builder = DefaultAttributeContainer.builder();
-                    ((CopyableDefaultAttrContainer)attrContainer).copyTo(builder);
-                    builder.add(dmgAttribute);
-                    builder.add(armorAttribute);
-                    builder.add(absorptionAttribute);
-                    builder.add(resistanceAttribute);
-
-                    FabricDefaultAttributeRegistry.register(entityType, builder);
-                } catch (ClassCastException ignored) {
-
-                }
+                dmgAttribute = new RangedAttribute(dmgName + ".damage", 0, 0, 1024);
+                ForgeRegistries.ATTRIBUTES.register(new ResourceLocation(attr.dmg), dmgAttribute);
             }
+            Attribute armorAttribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(attr.armor));
+            if (armorAttribute == null)
+            {
+                armorAttribute = new RangedAttribute(dmgName + ".armor", 0, 0, 1024);
+                ForgeRegistries.ATTRIBUTES.register(new ResourceLocation(attr.armor), armorAttribute);
+            }
+            Attribute absorptionAttribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(attr.absorption));
+            if (absorptionAttribute == null)
+            {
+                absorptionAttribute = new RangedAttribute(dmgName + ".absorption", 0, 0, 1024);
+                ForgeRegistries.ATTRIBUTES.register(new ResourceLocation(attr.absorption), absorptionAttribute);
+            }
+            Attribute resistanceAttribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(attr.resistance));
+            if (resistanceAttribute == null)
+            {
+                resistanceAttribute = new RangedAttribute(dmgName + ".resistance", 0, -10, 10);
+                ForgeRegistries.ATTRIBUTES.register(new ResourceLocation(attr.resistance), resistanceAttribute);
+            }
+
+            ResourceKey<DamageType> dmgTypeKey = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("rpgdamageoverhaul", dmgName));
+            dmgClass = new DamageClass(dmgName, dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute, dmgTypeKey, parent);
+            RPGDamageOverhaul.LOGGER.info("Registered damage class: {}", dmgName);
         }
         else
+        {
+            RPGDamageOverhaul.LOGGER.warn("Overwriting damage class: {}", dmgName);
             dmgClass = getDamageClass(dmgName);
+        }
 
         dmgClasses.put(dmgName, dmgClass);
-        DamageClassRegisteredCallback.EVENT.invoker().interact(dmgClass);
 
-        RPGDamageOverhaul.LOGGER.info("Registered damage class: {}", dmgName);
+        for (var entityType: ForgeRegistries.ENTITY_TYPES.getValues())
+        {
+            try {
+                if (!DefaultAttributes.hasSupplier(entityType))
+                    continue;
+                var existingAttrs = DefaultAttributes.getSupplier((EntityType<? extends LivingEntity>) entityType);
+                var builder = new AttributeSupplier.Builder(existingAttrs);
+                builder.add(dmgClass.dmgAttribute);
+                builder.add(dmgClass.armorAttribute);
+                builder.add(dmgClass.absorptionAttribute);
+                builder.add(dmgClass.resistanceAttribute);
 
+                ForgeHooks.FORGE_ATTRIBUTES.put((EntityType<? extends LivingEntity>) entityType, builder.build());
+            } catch (ClassCastException ignored) {
+
+            }
+        }
+
+        if (wasFrozen)
+            ((ForgeRegistry)ForgeRegistries.ATTRIBUTES).freeze();
         return dmgClass;
     }
 
@@ -135,59 +133,59 @@ public class RPGDamageOverhaulAPI {
         return Set.copyOf(rpgDamageTypes);
     }
 
-    public static void registerOverride(Identifier mcDamageType, Map<DamageClass, Double> overrides)
+    public static void registerOverride(ResourceLocation mcDamageType, Map<DamageClass, Double> overrides)
     {
         dmgOverrides.put(mcDamageType, overrides);
     }
 
-    public static Map<DamageClass, Double> getDamageOverrides(Identifier mcDamageType)
+    public static Map<DamageClass, Double> getDamageOverrides(ResourceLocation mcDamageType)
     {
         return dmgOverrides.getOrDefault(mcDamageType, null);
     }
 
     public static Map<DamageClass, Double> getDamageOverrides(DamageSource source)
     {
-        return getDamageOverrides(source.getTypeRegistryEntry().getKey().get().getValue());
+        return getDamageOverrides(source.typeHolder().unwrapKey().get().location());
     }
 
-    public static void registerItemOverrides(Identifier itemId, Map<DamageClass, Double> overrides)
+    public static void registerItemOverrides(ResourceLocation itemId, Map<DamageClass, Double> overrides)
     {
         itemOverrides.put(itemId, overrides);
     }
-    public static void registerItemTagOverrides(Identifier tagId, Map<DamageClass, Double> overrides)
+    public static void registerItemTagOverrides(ResourceLocation tagId, Map<DamageClass, Double> overrides)
     {
         tagItemOverrides.put(tagId, overrides);
     }
 
-    public static void registerEntityOverrides(Identifier entityId, Map<DamageClass, Double> overrides)
+    public static void registerEntityOverrides(ResourceLocation entityId, Map<DamageClass, Double> overrides)
     {
         entityOverrides.put(entityId, overrides);
     }
 
-    public static void registerEntityTagOverrides(Identifier tagId, Map<DamageClass, Double> overrides)
+    public static void registerEntityTagOverrides(ResourceLocation tagId, Map<DamageClass, Double> overrides)
     {
         tagEntityOverrides.put(tagId, overrides);
     }
 
-    public static Map<DamageClass, Double> getItemOverrides(Identifier itemId)
+    public static Map<DamageClass, Double> getItemOverrides(ResourceLocation itemId)
     {
         return itemOverrides.getOrDefault(itemId, null);
     }
-    public static Map<DamageClass, Double> getItemTagOverrides(Identifier tagId)
+    public static Map<DamageClass, Double> getItemTagOverrides(ResourceLocation tagId)
     {
         return tagItemOverrides.getOrDefault(tagId, null);
     }
     public static Map<DamageClass, Double> getItemOverrides(Item item)
     {
-        var ret = getItemOverrides(Registries.ITEM.getId(item));
+        var ret = getItemOverrides(ForgeRegistries.ITEMS.getKey(item));
         if (ret == null)
+            ret = new HashMap<>();
+        for (var entry : tagItemOverrides.entrySet())
         {
-            for (var entry : tagItemOverrides.entrySet())
-            {
-                if (new ItemStack(item).isIn(TagKey.of(RegistryKeys.ITEM, entry.getKey())))
-                    return entry.getValue();
-            }
+            if (new ItemStack(item).is(TagKey.create(Registries.ITEM, entry.getKey())))
+                ret.putAll(entry.getValue());
         }
+
         return ret;
     }
     public static Map<DamageClass, Double> getItemOverrides(ItemStack is)
@@ -197,11 +195,11 @@ public class RPGDamageOverhaulAPI {
 
     public static void applyItemOverrides(ItemStack is, Map<DamageClass, Double> newDamages, double extraDmg) {
         var itemOverrides = RPGDamageOverhaulAPI.getItemOverrides(is);
-        if (itemOverrides != null)
+        if (!itemOverrides.isEmpty())
         {
             double itemDmg = extraDmg;
-            for (var mod : is.getAttributeModifiers(EquipmentSlot.MAINHAND).get(EntityAttributes.GENERIC_ATTACK_DAMAGE))
-                itemDmg += mod.getValue();
+            for (var mod : is.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE))
+                itemDmg += mod.getAmount();
             for (var entry : itemOverrides.entrySet())
             {
                 var dc = entry.getKey();
@@ -217,12 +215,12 @@ public class RPGDamageOverhaulAPI {
         applyItemOverrides(is, newDamages, 0);
     }
 
-    public static Map<DamageClass, Double> getEntityOverrides(Identifier entityId)
+    public static Map<DamageClass, Double> getEntityOverrides(ResourceLocation entityId)
     {
         return entityOverrides.getOrDefault(entityId, null);
     }
 
-    public static Map<DamageClass, Double> getEntityTagOverrides(Identifier tagId)
+    public static Map<DamageClass, Double> getEntityTagOverrides(ResourceLocation tagId)
     {
         return tagEntityOverrides.getOrDefault(tagId, null);
     }
@@ -233,11 +231,11 @@ public class RPGDamageOverhaulAPI {
 
         for (var entry : tagEntityOverrides.entrySet())
         {
-            if (entity.getType().isIn(TagKey.of(RegistryKeys.ENTITY_TYPE, entry.getKey())))
+            if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, entry.getKey())))
                 ret.putAll(entry.getValue());
         }
 
-        var ent = getEntityOverrides(Registries.ENTITY_TYPE.getId(entity.getType()));
+        var ent = getEntityOverrides(ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()));
         if (ent != null)
             ret.putAll(ent);
 
@@ -258,9 +256,9 @@ public class RPGDamageOverhaulAPI {
             }
         }
 
-        for (var tag : mob.getType().getRegistryEntry().streamTags().toList())
+        for (var tag : mob.getType().getTags().toList())
         {
-            entityOverrides = RPGDamageOverhaulAPI.getEntityTagOverrides(tag.id());
+            entityOverrides = RPGDamageOverhaulAPI.getEntityTagOverrides(tag.location());
             if (!entityOverrides.isEmpty())
             {
                 for (var entry : entityOverrides.entrySet())
@@ -289,22 +287,22 @@ public class RPGDamageOverhaulAPI {
         return dmgClasses.values().stream().filter(Objects::nonNull).toList();
     }
 
-    public static void registerBetterCombatAttackOverrides(Identifier id, DamageClass[] damages)
+    public static void registerBetterCombatAttackOverrides(ResourceLocation id, DamageClass[] damages)
     {
         betterCombatAttacks.put(id, damages);
     }
 
-    public static Map<Identifier, DamageClass[]> getAllBetterCombatAttackOverrides()
+    public static Map<ResourceLocation, DamageClass[]> getAllBetterCombatAttackOverrides()
     {
         return Map.copyOf(betterCombatAttacks);
     }
 
-    public static DamageClass[] getBetterCombatAttackOverrides(Identifier id)
+    public static DamageClass[] getBetterCombatAttackOverrides(ResourceLocation id)
     {
         return betterCombatAttacks.getOrDefault(id, null);
     }
 
-    public static void registerOnHitEffect(Identifier id, TriConsumer<LivingEntity, DamageSource, Double> callback)
+    public static void registerOnHitEffect(ResourceLocation id, TriConsumer<LivingEntity, DamageSource, Double> callback)
     {
         onHitEffectCallbacks.put(id, callback);
     }
@@ -317,11 +315,20 @@ public class RPGDamageOverhaulAPI {
         itemOverrides.clear();
         tagItemOverrides.clear();
         betterCombatAttacks.clear();
+        entityOverrides.clear();
+    }
+
+    public static void reloadDamageType(DamageClass dc)
+    {
+        var msg = dc.damageType.msgId();
+        if (rpgDamageTypes.contains(msg))
+            return;
+        rpgDamageTypes.add(msg);
     }
 
     public static TextColor getDamageClassColor(DamageClass dc)
     {
-        return getDamageClassColor(dc, TextColor.fromFormatting(Formatting.WHITE));
+        return getDamageClassColor(dc, TextColor.fromLegacyFormat(ChatFormatting.WHITE));
     }
     public static TextColor getDamageClassColor(DamageClass dc, TextColor def)
     {
@@ -329,7 +336,7 @@ public class RPGDamageOverhaulAPI {
         if (dc.properties.containsKey("color"))
         {
             var dcColor = dc.properties.get("color").getAsString().toLowerCase();
-            color = TextColor.parse(dcColor);
+            color = TextColor.parseColor(dcColor);
 
             if (color == null)
                 RPGDamageOverhaul.LOGGER.error("Failed to find color {} for damage class {}", dcColor, dc.name);
