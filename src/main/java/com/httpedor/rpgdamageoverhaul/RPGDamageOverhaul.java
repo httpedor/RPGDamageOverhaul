@@ -21,6 +21,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.MinecraftForge;
@@ -444,8 +445,13 @@ public class RPGDamageOverhaul {
                         return;
                     }
                 }
+                double healthRatio = target.getHealth() / target.getMaxHealth();
                 target.getAttribute(attribute).addTransientModifier(mod);
                 transientModifiers.put(id, attribute);
+                if (attribute == Attributes.MAX_HEALTH)
+                {
+                    target.setHealth((float) (target.getMaxHealth() * healthRatio));
+                }
             }
         });
     }
