@@ -20,6 +20,9 @@
     ],
     "main": [
       "com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul"
+    ],
+    "jade": [
+      "com.httpedor.rpgdamageoverhaul.compat.JadeCompat"
     ]
   },
   "mixins": [

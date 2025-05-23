@@ -71,7 +71,7 @@
       "operation": "BASE"
     },
     {
-      "attribute": "rpgdamageoverhaul:water.damage",
+      "attribute": "rpgdamageoverhaul:frost.damage",
       "value": 1.5
     }
   ],
@@ -190,7 +190,7 @@
   ],
   "bow_boots": [
     {
-      "attribute": "minecraft:generic.amor",
+      "attribute": "minecraft:generic.armor",
       "value": 2.5,
       "operation":"BASE"
     },{
@@ -212,7 +212,7 @@
   ],
   "apple_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 5,
       "operation": "BASE"
     },
@@ -255,7 +255,7 @@
   ],
   "shinobi_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 5,
       "operation": "BASE"
     },
@@ -308,7 +308,7 @@
   ],
   "pirate_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 5,
       "operation": "BASE"
     },
@@ -351,7 +351,7 @@
   ],
   "warlord_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 3,
       "operation": "BASE"
     },
@@ -394,7 +394,7 @@
   ],
   "shield_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 3,
       "operation": "BASE"
     },
@@ -437,7 +437,7 @@
   ],
   "silverfish_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 3,
       "operation": "BASE"
     },
@@ -480,7 +480,7 @@
   ],
   "skeleton_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 3,
       "operation": "BASE"
     },
@@ -527,7 +527,7 @@
   ],
   "spider_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 4.5,
       "operation": "BASE"
     },
@@ -579,7 +579,7 @@
   ],
   "path_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 5,
       "operation": "BASE"
     },
@@ -611,7 +611,7 @@
   ],
   "phantom_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 5,
       "operation": "BASE"
     },
@@ -655,7 +655,7 @@
   ],
   "creeper_chestplate": [
     {
-      "attribute": "minecraft:generic armor",
+      "attribute": "minecraft:generic.armor",
       "value": 2.5,
       "operation": "BASE"
     },

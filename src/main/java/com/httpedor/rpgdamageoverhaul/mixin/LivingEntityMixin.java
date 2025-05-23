@@ -169,7 +169,7 @@ public abstract class LivingEntityMixin extends Entity {
             return;
 
         var modifiers = RPGDamageOverhaul.transientModifiersDuration.get(this);
-        for (var entry : modifiers.entrySet())
+        for (var entry : modifiers.entrySet().stream().toList())
         {
             var attrId = entry.getKey();
             var duration = entry.getValue();

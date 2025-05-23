@@ -1,0 +1,200 @@
+{
+  "badlands_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "cave_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "coral_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "crimson_forest_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "dark_oak_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:piercing.resistance",
+      "value": 0.1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": -0.1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "desert_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "end_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5
+    }
+  ],
+  "end_islands_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.15
+    }
+  ],
+  "hammerhead_pet_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.5
+    }
+  ],
+  "ice_spikes_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25
+    }
+  ],
+  "mushroom_fields_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "nether_wastes_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "pet_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "savanna_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "snowy_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "soulsand_valley_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "swamp_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "warped_forest_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ],
+  "windswept_hills_enderman": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.25
+    }
+  ]
+}

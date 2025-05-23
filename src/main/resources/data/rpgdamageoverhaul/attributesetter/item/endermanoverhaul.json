@@ -1,0 +1,31 @@
+{
+  "badlands_hood": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 2
+    }
+  ],
+  "savanna_hood": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2
+    }
+  ],
+  "snowy_hood": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 2
+    }
+  ],
+  "corrupted_blade": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ]
+}
