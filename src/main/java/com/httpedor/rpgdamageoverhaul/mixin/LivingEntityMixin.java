@@ -112,13 +112,6 @@ public abstract class LivingEntityMixin extends Entity {
         }
     }
 
-    @Inject(method = "applyDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setHealth(F)V"))
-    private void logDamage(DamageSource source, float amount, CallbackInfo ci)
-    {
-        System.out.println("APPLIED DAMAGE: " + source + " : " + amount + " TO " + this);
-    }
-
-
     @WrapOperation(method = "applyDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;modifyAppliedDamage(Lnet/minecraft/entity/damage/DamageSource;F)F"))
     private float applyResistances(LivingEntity instance, DamageSource source, float amount, Operation<Float> original)
     {

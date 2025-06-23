@@ -1,0 +1,70 @@
+{
+  "armored_spider": [
+    {
+      "attribute": "rpgdamageoverhaul:slashing.resistance",
+      "value": 0.5
+    }
+  ],
+  "bloated_corpse": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.9
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25
+    }
+  ],
+  "corsair": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.15
+    }
+  ],
+  "executioner": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.15
+    }
+  ],
+  "frozen_zombie": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5
+    }
+  ],
+  "lava_slime": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.7
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.5
+    }
+  ],
+  "soul_stealer": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": 0.5
+    }
+  ],
+  "toxic_slime": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 1
+    }
+  ]
+}

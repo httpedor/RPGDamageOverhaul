@@ -219,12 +219,12 @@ public class RPGDamageOverhaulAPI {
 
     public static Map<DamageClass, Double> getEntityOverrides(Identifier entityId)
     {
-        return entityOverrides.getOrDefault(entityId, null);
+        return entityOverrides.getOrDefault(entityId, new HashMap<>());
     }
 
     public static Map<DamageClass, Double> getEntityTagOverrides(Identifier tagId)
     {
-        return tagEntityOverrides.getOrDefault(tagId, null);
+        return tagEntityOverrides.getOrDefault(tagId, new HashMap<>());
     }
 
     public static Map<DamageClass, Double> getEntityOverrides(Entity entity)

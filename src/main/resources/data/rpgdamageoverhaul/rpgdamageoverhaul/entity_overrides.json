@@ -1,7 +1,7 @@
 {
   "minecraft:bee": {"piercing": 0.8, "poison": 0.2},
   "minecraft:blaze": {"fire": 1},
-  "minecraft:cave_spider": {"piercing": 1},
+  "minecraft:cave_spider": {"piercing": 0.8, "poison": 0.2},
   "minecraft:drowned": {"frost": 0.25},
   "minecraft:ender_dragon": {"arcane": 0.25, "blunt": 0.75},
   "minecraft:elder_guardian": {"arcane": 1},
@@ -488,5 +488,15 @@
   "endermanoverhaul:swamp_enderman": {"blunt": 0.75, "poison": 0.25},
   "endermanoverhaul:warped_forest_enderman": {"blunt": 0.75, "arcane": 0.25},
   "endermanoverhaul:windswept_hills_enderman": {"blunt": 0.75, "arcane": 0.25},
-  "endermanoverhaul:badlands_enderman": {"blunt": 0.75, "arcane": 0.25}
+
+  "frycmobvariants:armored_spider": {"piercing": 0.9, "poison": 0.1},
+  "frycmobvariants:bloated_corpse": {"blunt": 1},
+  "frycmobvariants:corsair": {"slashing": 1},
+  "frycmobvariants:executioner": {"wither": 0.33, "slashing": 0.66},
+  "frycmobvariants:explorer": {"blunt": 1},
+  "frycmobvariants:forgotten": {"blunt": 1},
+  "frycmobvariants:frozen_zombie": {"blunt": 0.5, "frost": 0.5},
+  "frycmobvariants:lava_slime": {"fire": 1},
+  "frycmobvariants:soul_stealer": {"blunt": 0.75, "soul": 0.25},
+  "frycmobvariants:toxic_slime": {"poison": 1}
 }
