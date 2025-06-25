@@ -1,0 +1,42 @@
+{
+  "lich": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.15
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5
+    }
+  ],
+  "obsidilith": [
+    {
+      "attribute": "rpgdamageoverhaul:soul.resistance",
+      "value": -0.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.25
+    }
+  ],
+  "gauntlet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.25
+    }
+  ],
+  "void_blossom": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.75
+    }
+  ]
+}

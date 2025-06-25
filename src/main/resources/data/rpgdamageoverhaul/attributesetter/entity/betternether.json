@@ -1,0 +1,40 @@
+{
+  "naga": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.25
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.resistance",
+      "value": -0.25
+    }
+  ],
+  "hydrogen_jellyfish": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.25
+    }
+  ],
+  "skull": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.75
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": -0.25
+    }
+  ]
+}

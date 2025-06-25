@@ -1,0 +1,8 @@
+{
+  "end_slime": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.resistance",
+      "value": 0.65
+    }
+  ]
+}

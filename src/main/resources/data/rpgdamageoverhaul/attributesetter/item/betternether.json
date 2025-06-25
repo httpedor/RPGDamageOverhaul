@@ -1,0 +1,77 @@
+{
+  "nether_ruby_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 1
+    }
+  ],
+  "nether_ruby_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "nether_ruby_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "nether_ruby_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 1
+    }
+  ],
+  "flaming_ruby_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.05
+    }
+  ],
+  "flaming_ruby_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.05
+    }
+  ],
+  "flaming_ruby_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.05
+    }
+  ],
+  "flaming_ruby_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 1
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.05
+    }
+  ],
+  "flaming_ruby_sword": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 4
+    }
+  ]
+}

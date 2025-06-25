@@ -283,7 +283,8 @@
   "minecraft:turtle_helmet": [
     {
       "attribute": "rpgdamageoverhaul:physical.armor",
-      "value": 2
+      "value": 2,
+      "slot": "head"
     }
   ],
   "minecraft:trident": [

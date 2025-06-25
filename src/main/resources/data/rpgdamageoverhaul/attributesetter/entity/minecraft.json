@@ -85,11 +85,6 @@
       "attribute": "rpgdamageoverhaul:arcane.resistance",
       "value": 0.5,
       "operation": "BASE"
-    },
-    {
-      "attribute": "rpgdamageoverhaul:frost.resistance",
-      "value": -0.25,
-      "operation": "BASE"
     }
   ],
   "minecraft:endermite": [

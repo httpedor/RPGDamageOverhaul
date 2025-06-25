@@ -1,0 +1,206 @@
+{
+  "blade_of_the_grotesque": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.1
+    }
+  ],
+  "cindergorge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 3
+    }
+  ],
+  "culterex": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 3
+    }
+  ],
+  "deaths_eyrie": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 4
+    }
+  ],
+  "glimmerstep": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 2
+    }
+  ],
+  "grandfrost": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 6
+    }
+  ],
+  "great_slither": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 3
+    }
+  ],
+  "matterbane": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 5
+    }
+  ],
+  "molten_flare": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 6
+    }
+  ],
+  "myrmedge": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 2
+    }
+  ],
+  "perforiscus": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 6,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 3
+    }
+  ],
+  "smouldering_ruin": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 2
+    }
+  ],
+  "soul_foreseer": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 4
+    }
+  ],
+  "stasis": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 5
+    }
+  ],
+  "the_blood_harvester": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 4
+    }
+  ],
+  "the_vessel_breach": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 3
+    }
+  ],
+  "tidebreaker": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 4
+    }
+  ],
+  "timekeeper": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "vipers_call": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.damage",
+      "value": 3
+    }
+  ]
+}
