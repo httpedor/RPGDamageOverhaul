@@ -16,6 +16,8 @@ public class OptionalMixinCanceler implements MixinCanceller {
             return true;
         if (!instance.isModLoaded("simplyswords") && mixinClassName.contains("simplyswords"))
             return true;
+        if (!instance.isModLoaded("simplymore") && mixinClassName.contains("simplymore"))
+            return true;
         return false;
     }
 }
