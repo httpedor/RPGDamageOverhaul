@@ -14,7 +14,7 @@ public class OptionalMixinCanceler implements MixinCanceller {
             return false;
 
         var instance = LoadingModList.get();
-        var deps = List.of("soulsweapons", "bettercombat", "simplyswords");
+        var deps = List.of("soulsweapons", "bettercombat", "simplyswords", "simplymore");
         for (var dep : deps)
         {
             if (instance.getModFileById(dep) == null && mixinClassName.contains(dep))
