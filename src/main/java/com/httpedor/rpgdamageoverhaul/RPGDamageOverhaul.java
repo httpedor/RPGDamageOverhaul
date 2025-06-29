@@ -35,7 +35,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.commons.lang3.tuple.Pair;
 import org.slf4j.Logger;
-import s_com.udojava.evalex.Expression;
+import s_com.udojava.evalexrpgdo.Expression;
 
 import java.math.BigDecimal;
 import java.util.*;
