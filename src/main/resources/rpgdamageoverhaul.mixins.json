@@ -2,49 +2,15 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.httpedor.rpgdamageoverhaul.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "refmap": "rpgdamageoverhaul.refmap.json",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "DamageSourceMixin",
-    "DamageSourcesMixin",
-    "DefaultAttributeContainerMixin",
-    "HandshakeHandlerMixin",
-    "HolderMixin",
-    "LivingEntityMixin",
-    "MobEntityMixin",
-    "NamespacedWrapperMixin",
-    "PlayerMixin",
-    "PoisonEffectMixin",
-    "SimpleRegistryMixin",
-    "bettercombat.DamageSourcesMixin",
-    "bettercombat.WeaponRegistryMixin",
-    "bettermobcombat.DamageSourcesMixin",
-    "simplymore.BleedMixin",
-    "simplymore.PoisonBoltMixin",
-    "simplymore.VenomMixin",
-    "simplymore.VipersCallMixin",
-    "simplyswords.AbilityMethodsMixin",
-    "simplyswords.EmberIreMixin",
-    "simplyswords.EmberlashMixin",
-    "simplyswords.FireSwordMixin",
-    "simplyswords.FireVortexMixin",
-    "simplyswords.FlamewindMixin",
-    "simplyswords.FrostfallMixin",
-    "simplyswords.FrostVortexMixin",
-    "simplyswords.IcewhisperMixin",
-    "simplyswords.LichbladeMixin",
-    "simplyswords.LivyatanSwordMixin",
-    "simplyswords.MagibladeMixin",
-    "simplyswords.MagislamMixin",
-    "simplyswords.RendSwordMixin",
-    "simplyswords.ShadowstingMixin",
-    "simplyswords.StealSwordMixin",
-    "simplyswords.StormbringerMixin",
-    "simplyswords.VolcanicFurySwordMixin"
   ],
   "client": [
   ],
   "injectors": {
     "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
   }
 }

@@ -7,11 +7,14 @@ import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.DamageHandler;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import com.httpedor.rpgdamageoverhaul.events.DamageClassRegisteredEvent;
+import com.httpedor.rpgdamageoverhaul.networking.DamageLoginSyncPacket;
+import com.httpedor.rpgdamageoverhaul.networking.DamageSyncConfigTask;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import com.mojang.logging.LogUtils;
+import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -24,18 +27,17 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.network.NetworkDirection;
-import net.minecraftforge.network.NetworkRegistry;
-import net.minecraftforge.network.simple.SimpleChannel;
-import net.minecraftforge.registries.ForgeRegistries;
-import org.apache.commons.lang3.tuple.Pair;
-import org.slf4j.Logger;
-import s_com.udojava.evalex.Expression;
+import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.network.event.RegisterConfigurationTasksEvent;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import s_com.udojava.evalexrpgdo.Expression;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -47,7 +49,7 @@ public class RPGDamageOverhaul {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "rpgdamageoverhaul";
     // Directly reference a slf4j logger
-    public static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger(RPGDamageOverhaul.MODID);
     public static DatapackLoader dl = new DatapackLoader();
 
 
@@ -62,13 +64,6 @@ public class RPGDamageOverhaul {
     public static final Map<ResourceLocation, List<ResourceLocation>> mappedDamageTypes = new HashMap<>();
     public static final Map<ResourceLocation, List<ResourceLocation>> mappedTags = new HashMap<>();
 
-    public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation(MODID, "main"),
-            () -> "1.0",
-            s -> true,
-            s -> true
-    );
-
     private void spawnHitParticles(ServerLevel world, ParticleOptions parameters, double x, double y, double z, int amount)
     {
         double maxSpeed  = 0.1;
@@ -81,27 +76,27 @@ public class RPGDamageOverhaul {
 
     public RPGDamageOverhaul() {
         // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
-
-        CHANNEL.messageBuilder(HashMap.class, 0, NetworkDirection.LOGIN_TO_CLIENT)
-                .decoder((buf) -> {
-                    HashMap<String, JsonObject> entries = new HashMap<>();
-                    buf.readMap(i -> entries, FriendlyByteBuf::readUtf, (res) -> JsonParser.parseString(res.readUtf()).getAsJsonObject());
-                    return entries;
-                })
-                .encoder((map, buf) -> {
-                    HashMap<String, JsonObject> entries = (HashMap<String, JsonObject>) map;
-                    buf.writeMap(entries, FriendlyByteBuf::writeUtf, (buf1, el) -> buf1.writeUtf(el.toString()));
-                }).consumerMainThread((map, ctx) -> {
-                    for (Object o: map.entrySet())
-                    {
-                        Map.Entry<String, JsonObject> entry = (Map.Entry<String, JsonObject>) o;
-                        dl.registerDamageClass(entry.getKey(), entry.getValue(), null);
-                    }
-                }).noResponse().buildLoginPacketList((isLocal) -> List.of(Pair.of("rpgdologinpacket", dl.dcEntries))).add();
+        NeoForge.EVENT_BUS.register(this);
 
         registerOnHitEffects();
 
+    }
+
+    @SubscribeEvent
+    public void registerConfigTask(RegisterConfigurationTasksEvent event)
+    {
+        event.register(new DamageSyncConfigTask(event.getListener()));
+    }
+
+    @SubscribeEvent
+    public void registerPayload(RegisterPayloadHandlersEvent e)
+    {
+        final PayloadRegistrar registrar = e.registrar("1");
+        registrar.configurationToClient(
+                DamageLoginSyncPacket.TYPE,
+                DamageLoginSyncPacket.DECODER,
+                DamageLoginSyncPacket.HANDLER
+        );
     }
 
     @SubscribeEvent
@@ -130,14 +125,14 @@ public class RPGDamageOverhaul {
                 JsonObject potionAttrs = attribute.getValue().getAsJsonObject();
                 for (Map.Entry<String, JsonElement> potion: potionAttrs.entrySet())
                 {
-                    MobEffect effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(potion.getKey()));
+                    MobEffect effect = BuiltInRegistries.MOB_EFFECT.get(ResourceLocation.parse(potion.getKey()));
                     if (effect == null)
                     {
                         RPGDamageOverhaul.LOGGER.warn("Unknown potion effect: {} for damage class potions: {}", potion.getKey(), dc.name);
                         continue;
                     }
                     double value = potion.getValue().getAsDouble();
-                    effect.addAttributeModifier(attr, UUID.randomUUID().toString(), value, AttributeModifier.Operation.ADDITION);
+                    effect.addAttributeModifier(Holder.direct(attr), ResourceLocation.fromNamespaceAndPath(RPGDamageOverhaul.MODID, "potion_" + dc.name + "_" + attribute.getKey()), value, AttributeModifier.Operation.ADD_VALUE);
                 }
             }
         }
@@ -151,7 +146,7 @@ public class RPGDamageOverhaul {
                 JsonObject dmgEnchants = enchantments.getAsJsonObject("damage");
                 for (Map.Entry<String, JsonElement> enchant: dmgEnchants.entrySet())
                 {
-                    var enchantment = ForgeRegistries.ENCHANTMENTS.getValue(new ResourceLocation(enchant.getKey()));
+                    var enchantment = BuiltInRegistries.ENCHANTMENT.getValue(ResourceLocation.parse(enchant.getKey()));
                     if (enchantment == null)
                     {
                         RPGDamageOverhaul.LOGGER.warn("Unknown enchantment: {} for damage class : {}", enchant.getKey(), dc.name);
@@ -171,7 +166,7 @@ public class RPGDamageOverhaul {
                 mappedDamageTypes.put(dc.damageTypeKey.location(), new ArrayList<>());
             for (var damageTypeEl : dts)
             {
-                mappedDamageTypes.get(dc.damageTypeKey.location()).add(new ResourceLocation(damageTypeEl.getAsString()));
+                mappedDamageTypes.get(dc.damageTypeKey.location()).add(ResourceLocation.parse(damageTypeEl.getAsString()));
             }
         }
 
@@ -183,7 +178,7 @@ public class RPGDamageOverhaul {
                 mappedTags.put(dc.damageTypeKey.location(), new ArrayList<>());
             for (var tag : tags)
             {
-                mappedTags.get(dc.damageTypeKey.location()).add(new ResourceLocation(tag.getAsString()));
+                mappedTags.get(dc.damageTypeKey.location()).add(ResourceLocation.parse(tag.getAsString()));
             }
         }
     }
@@ -197,7 +192,7 @@ public class RPGDamageOverhaul {
 
     private void registerOnHitEffects()
     {
-        RPGDamageOverhaulAPI.registerOnHitEffect(new ResourceLocation("rpgdamageoverhaul", "particles"), (target, source, dmg) -> {
+        RPGDamageOverhaulAPI.registerOnHitEffect(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "particles"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
             var particleEl = dc.properties.getOrDefault("particle", null);
             if (particleEl == null)
@@ -206,7 +201,7 @@ public class RPGDamageOverhaul {
             String particleId = particleEl.getAsString();
             if (!target.level().isClientSide)
             {
-                SimpleParticleType pt = (SimpleParticleType) ForgeRegistries.PARTICLE_TYPES.getValue(new ResourceLocation(particleId));
+                SimpleParticleType pt = (SimpleParticleType) BuiltInRegistries.PARTICLE_TYPE.get(ResourceLocation.parse(particleId));
                 if (pt == null)
                 {
                     System.out.println("Particle not found: " + particleId);
@@ -267,13 +262,13 @@ public class RPGDamageOverhaul {
                 if (current == null)
                     break;
                 current.hurt(dc.createDamageSource(source.getEntity(), source.getDirectEntity(), false), (float) currentDmg);
-                if (dc.onHitEffects.contains(new ResourceLocation("rpgdamageoverhaul", "particles")))
-                    DamageHandler.executeOnHitEffect(new ResourceLocation("rpgdamageoverhaul", "particles"), current, source, (float) currentDmg);
+                if (dc.onHitEffects.contains(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "particles")))
+                    DamageHandler.executeOnHitEffect(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "particles"), current, source, (float) currentDmg);
                 currentDmg *= damagePercentage;
                 targets++;
             }
         });
-        RPGDamageOverhaulAPI.registerOnHitEffect(new ResourceLocation("rpgdamageoverhaul", "heal"), (target, source, dmg) -> {
+        RPGDamageOverhaulAPI.registerOnHitEffect(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "heal"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
 
             if (source.getEntity() instanceof LivingEntity le)
@@ -292,7 +287,7 @@ public class RPGDamageOverhaul {
                 le.heal((float) (dmg * multiplier));
             }
         });
-        RPGDamageOverhaulAPI.registerOnHitEffect(new ResourceLocation("rpgdamageoverhaul", "stacking"), (target, source, dmg) -> {
+        RPGDamageOverhaulAPI.registerOnHitEffect(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "stacking"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
             var obj = dc.properties.get("stacking").getAsJsonObject();
             String stackName;
@@ -326,7 +321,7 @@ public class RPGDamageOverhaul {
             else
                 stacks.add(new Tuple<>(dmg.floatValue()/3, System.currentTimeMillis()));
         });
-        RPGDamageOverhaulAPI.registerOnHitEffect(new ResourceLocation("rpgdamageoverhaul", "increase_damage"), (target, source, dmg) -> {
+        RPGDamageOverhaulAPI.registerOnHitEffect(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "increase_damage"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
             var obj = dc.properties.get("increaseDamage").getAsJsonObject();
             float duration;
@@ -369,13 +364,13 @@ public class RPGDamageOverhaul {
                 dmgIncrease = (float) (1 + 0.03f * dmg);
             increasedDamage.put(target, new Tuple<>(dmgIncrease, System.currentTimeMillis() + (long) (duration * 1000)));
         });
-        RPGDamageOverhaulAPI.registerOnHitEffect(new ResourceLocation("rpgdamageoverhaul", "apply_potion"), (target, source, dmg) -> {
+        RPGDamageOverhaulAPI.registerOnHitEffect(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "apply_potion"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
 
             var obj = dc.properties.get("applyPotion").getAsJsonObject();
             for (Map.Entry<String, JsonElement> entry : obj.entrySet())
             {
-                var effect = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(entry.getKey()));
+                var effect = BuiltInRegistries.MOB_EFFECT.get(ResourceLocation.parse(entry.getKey()));
                 if (effect == null)
                 {
                     LOGGER.warn("Unknown potion effect: {} for damage class applyPotion: {}", entry.getKey(), dc.name);
@@ -385,19 +380,20 @@ public class RPGDamageOverhaul {
                 target.addEffect(new MobEffectInstance(effect, (int) (duration * 20), 0));
             }
         });
-        RPGDamageOverhaulAPI.registerOnHitEffect(new ResourceLocation("rpgdamageoverhaul", "attribute_modifier"), (target, source, dmg) -> {
+        RPGDamageOverhaulAPI.registerOnHitEffect(ResourceLocation.fromNamespaceAndPath("rpgdamageoverhaul", "attribute_modifier"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
             var obj = dc.properties.get("attributeModifier").getAsJsonObject();
             for (Map.Entry<String, JsonElement> entry : obj.entrySet())
             {
                 var name = entry.getKey();
                 var modifier = entry.getValue().getAsJsonObject();
-                var attribute = ForgeRegistries.ATTRIBUTES.getValue(new ResourceLocation(modifier.get("attribute").getAsString()));
-                if (attribute == null)
+                var attributeOpt = BuiltInRegistries.ATTRIBUTE.getHolder(ResourceLocation.parse(modifier.get("attribute").getAsString()));
+                if (attributeOpt.isEmpty())
                 {
                     LOGGER.warn("Unknown attribute: {} for damage class attributeModifier: {}", modifier.get("attribute").getAsString(), dc.name);
                     continue;
                 }
+                var attribute = attributeOpt.get();
                 if (target.getAttribute(attribute) == null)
                 {
                     continue;
@@ -411,11 +407,6 @@ public class RPGDamageOverhaul {
                     Expression exp = new Expression(modifier.get("amount").getAsString()).with("dmg", BigDecimal.valueOf(dmg));
                     amount = exp.eval().doubleValue();
                 }
-                UUID id;
-                if (modifier.has("id"))
-                    id = UUID.fromString(modifier.get("id").getAsString());
-                else
-                    id = UUID.randomUUID();
                 double duration;
                 if (modifier.get("duration").getAsJsonPrimitive().isNumber())
                     duration = modifier.get("duration").getAsDouble();
@@ -429,7 +420,7 @@ public class RPGDamageOverhaul {
                 if (modifier.has("replaceType"))
                     replaceType = modifier.get("replaceType").getAsString();
 
-                var mod = new AttributeModifier(id, name, amount, AttributeModifier.Operation.valueOf(operation));
+                var mod = new AttributeModifier(ResourceLocation.fromNamespaceAndPath(MODID, dc.name + "_" + name), amount, AttributeModifier.Operation.valueOf(operation));
                 transientModifiersDuration.computeIfAbsent(target, (t) -> new HashMap<>()).put(id, System.currentTimeMillis() + Math.round(duration * 1000L));
                 if (target.getAttribute(attribute).getModifier(mod.getId()) != null)
                 {

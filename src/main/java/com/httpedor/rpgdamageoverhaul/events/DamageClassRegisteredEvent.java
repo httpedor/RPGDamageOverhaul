@@ -1,7 +1,7 @@
 package com.httpedor.rpgdamageoverhaul.events;
 
 import com.httpedor.rpgdamageoverhaul.api.DamageClass;
-import net.minecraftforge.eventbus.api.Event;
+import net.neoforged.bus.api.Event;
 
 public class DamageClassRegisteredEvent extends Event {
     DamageClass dc;

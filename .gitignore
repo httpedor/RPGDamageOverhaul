@@ -2,3 +2,5 @@
 /.gradle
 /.idea
 /run
+/bin
+/.github

@@ -12,17 +12,19 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraftforge.common.MinecraftForge;
+import net.neoforged.neoforge.common.NeoForge;
 
 import java.util.*;
 
 public class DatapackLoader extends SimpleJsonResourceReloadListener {
+    public static DatapackLoader INSTANCE;
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().registerTypeAdapter(ResourceLocation.class, new ResourceLocation.Serializer()).create();
     public HashMap<String, JsonObject> dcEntries = new HashMap<>();
     public RegistryAccess ra;
 
     public DatapackLoader() {
         super(GSON, "rpgdamageoverhaul");
+        INSTANCE = this;
     }
 
     @Override
@@ -67,7 +69,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
                 dt = new DamageType(dc.name, 1.0f);
                 Registry.register(reg, "rpgdamageoverhaul:" + dc.name, dt);
             }
-            dc.damageType = reg.getHolderOrThrow(dc.damageTypeKey).get();
+            dc.damageType = reg.getHolderOrThrow(dc.damageTypeKey).value();
             RPGDamageOverhaulAPI.reloadDamageType(dc);
         }
     }
@@ -76,7 +78,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
     {
         List<ResourceLocation> onHitEffects = new ArrayList<>();
         if (obj.has("onHit"))
-            onHitEffects = obj.getAsJsonArray("onHit").asList().stream().map(JsonElement::getAsString).map(ResourceLocation::new).toList();
+            onHitEffects = obj.getAsJsonArray("onHit").asList().stream().map(JsonElement::getAsString).map(ResourceLocation::parse).toList();
 
         String dmgAttribute = obj.has("damage") ? obj.get("damage").getAsString() : "rpgdamageoverhaul:" + name + "." + "damage";
         String armorAttribute = obj.has("armor") ? obj.get("armor").getAsString() : "rpgdamageoverhaul:" + name + "." + "armor";
@@ -97,7 +99,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
             }
         }
         dcEntries.put(name, obj);
-        MinecraftForge.EVENT_BUS.post(new DamageClassRegisteredEvent(dc));
+        NeoForge.EVENT_BUS.post(new DamageClassRegisteredEvent(dc));
     }
 
 
@@ -121,7 +123,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
                 if (dcs[i] == null)
                     RPGDamageOverhaul.LOGGER.warn("Damage class not found: {}", arr.get(i).getAsString());
             }
-            RPGDamageOverhaulAPI.registerBetterCombatAttackOverrides(new ResourceLocation(attacksEntry.getKey()), dcs);
+            RPGDamageOverhaulAPI.registerBetterCombatAttackOverrides(ResourceLocation.parse(attacksEntry.getKey()), dcs);
 
             Map<DamageClass, Integer> counts = new HashMap<>();
             for (DamageClass dc : dcs) {
@@ -133,7 +135,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
             {
                 fallbackItemOverrides.put(count.getKey(), 1.0 / dcs.length * count.getValue());
             }
-            RPGDamageOverhaulAPI.registerItemOverrides(new ResourceLocation(attacksEntry.getKey()), fallbackItemOverrides);
+            RPGDamageOverhaulAPI.registerItemOverrides(ResourceLocation.parse(attacksEntry.getKey()), fallbackItemOverrides);
         }
 
     }
@@ -141,7 +143,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
     {
         for (Map.Entry<String, JsonElement> entry : obj.entrySet())
         {
-            ResourceLocation mcDamageType = new ResourceLocation(entry.getKey());
+            ResourceLocation mcDamageType = ResourceLocation.parse(entry.getKey());
             Map<DamageClass, Double> overrides = new HashMap<>();
             JsonObject overridesObj = entry.getValue().getAsJsonObject();
             for (Map.Entry<String, JsonElement> override : overridesObj.entrySet())
@@ -165,12 +167,12 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
             if (itemOverride.getKey().startsWith("#"))
             {
                 isTag = true;
-                id = new ResourceLocation(itemOverride.getKey().substring(1));
+                id = ResourceLocation.parse(itemOverride.getKey().substring(1));
             }
             else
             {
                 isTag = false;
-                id = new ResourceLocation(itemOverride.getKey());
+                id = ResourceLocation.parse(itemOverride.getKey());
             }
             Map<DamageClass, Double> overrides = new HashMap<>();
             for (Map.Entry<String, JsonElement> overrideEntry : itemOverride.getValue().getAsJsonObject().entrySet()) {
@@ -194,11 +196,11 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
             if (entityOverride.getKey().startsWith("#"))
             {
                 isTag = true;
-                id = new ResourceLocation(entityOverride.getKey().substring(1));
+                id = ResourceLocation.parse(entityOverride.getKey().substring(1));
             }
             else
             {
-                id = new ResourceLocation(entityOverride.getKey());
+                id = ResourceLocation.parse(entityOverride.getKey());
             }
             Map<DamageClass, Double> overrides = new HashMap<>();
             for (Map.Entry<String, JsonElement> overrideEntry : entityOverride.getValue().getAsJsonObject().entrySet()) {
