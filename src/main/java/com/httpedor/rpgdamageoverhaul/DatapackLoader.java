@@ -4,14 +4,11 @@ import com.google.gson.*;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import com.httpedor.rpgdamageoverhaul.events.DamageClassRegisteredEvent;
-import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.world.damagesource.DamageType;
 import net.minecraftforge.common.MinecraftForge;
 
 import java.util.*;
@@ -57,19 +54,6 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
                 RPGDamageOverhaul.LOGGER.error("Error loading datapack file: {}", location, e);
             }
         }
-
-        var reg = ra.registry(Registries.DAMAGE_TYPE).get();
-        for (DamageClass dc : RPGDamageOverhaulAPI.getAllDamageClasses())
-        {
-            DamageType dt;
-            if (!reg.containsKey(dc.damageTypeKey))
-            {
-                dt = new DamageType(dc.name, 1.0f);
-                Registry.register(reg, "rpgdamageoverhaul:" + dc.name, dt);
-            }
-            dc.damageType = reg.getHolderOrThrow(dc.damageTypeKey).get();
-            RPGDamageOverhaulAPI.reloadDamageType(dc);
-        }
     }
 
     public void registerDamageClass(String name, JsonObject obj, DamageClass parent)
@@ -83,7 +67,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
         String absorptionAttribute = obj.has("absorption") ? obj.get("absorption").getAsString() : "rpgdamageoverhaul:" + name + "." + "absorption";
         String resistanceAttribute = obj.has("resistance") ? obj.get("resistance").getAsString() : "rpgdamageoverhaul:" + name + "." + "resistance";
 
-        DamageClass dc = RPGDamageOverhaulAPI.registerDamage(name, parent == null ? null : parent.name, new RPGDamageOverhaulAPI.DamageClassAttributes(dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute));
+        DamageClass dc = RPGDamageOverhaulAPI.registerDamage(name, parent == null ? null : parent.name, new RPGDamageOverhaulAPI.DamageClassAttributes(dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute), ra);
         dc.properties = obj.asMap();
 
         for (ResourceLocation effect : onHitEffects)

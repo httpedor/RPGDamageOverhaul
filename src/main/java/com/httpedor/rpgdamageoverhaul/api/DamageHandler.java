@@ -2,7 +2,6 @@ package com.httpedor.rpgdamageoverhaul.api;
 
 
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageType;
@@ -30,7 +29,7 @@ public class DamageHandler {
             if (dmgClass == null)
                 continue;
 
-            Holder<DamageType> typeEntry = entity.level().registryAccess().registry(Registries.DAMAGE_TYPE).get().getHolder(dmgClass.damageTypeKey).get();
+            Holder<DamageType> typeEntry = dmgClass.damageType;
             DamageSource newSource = new DamageSource(typeEntry, source.getDirectEntity(), source.getEntity(), source.getSourcePosition());
 
             newDmgs.put(newSource, amount * dmg);

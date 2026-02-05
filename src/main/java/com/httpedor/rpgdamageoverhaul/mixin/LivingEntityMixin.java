@@ -148,6 +148,7 @@ public abstract class LivingEntityMixin extends Entity {
     }
 
 
+    @SuppressWarnings("unlikely-arg-type")
     @WrapOperation(method = "actuallyHurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;getDamageAfterMagicAbsorb(Lnet/minecraft/world/damagesource/DamageSource;F)F"))
     private float applyResistances(LivingEntity instance, DamageSource source, float amount, Operation<Float> original)
     {
@@ -195,6 +196,7 @@ public abstract class LivingEntityMixin extends Entity {
         return original.call(instance, source, amount);
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     @ModifyVariable(method = "setHealth", at = @At("HEAD"), ordinal = 0, argsOnly = true)
     private float applyHealBlock(float health)
     {
@@ -210,6 +212,7 @@ public abstract class LivingEntityMixin extends Entity {
         return health;
     }
 
+    @SuppressWarnings("unlikely-arg-type")
     @Inject(method = "tick", at = @At(value = "HEAD"))
     private void removeModifiers(CallbackInfo ci)
     {
@@ -217,10 +220,11 @@ public abstract class LivingEntityMixin extends Entity {
             return;
 
         var modifiers = RPGDamageOverhaul.transientModifiersDuration.get(this);
-        for (var entry : modifiers.entrySet())
+        var keys = modifiers.keySet().toArray(new java.util.UUID[0]);
+        for (var key : keys)
         {
-            var attrId = entry.getKey();
-            var duration = entry.getValue();
+            var attrId = key;
+            var duration = modifiers.get(key);
             if (System.currentTimeMillis() > duration)
             {
                 var attr = RPGDamageOverhaul.transientModifiers.get(attrId);

@@ -1,6 +1,5 @@
 package com.httpedor.rpgdamageoverhaul.mixin.simplyswords;
 
-import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;

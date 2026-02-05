@@ -10,6 +10,7 @@ import com.httpedor.rpgdamageoverhaul.events.DamageClassRegisteredEvent;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.logging.LogUtils;
+
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.network.FriendlyByteBuf;
@@ -93,11 +94,13 @@ public class RPGDamageOverhaul {
                     HashMap<String, JsonObject> entries = (HashMap<String, JsonObject>) map;
                     buf.writeMap(entries, FriendlyByteBuf::writeUtf, (buf1, el) -> buf1.writeUtf(el.toString()));
                 }).consumerMainThread((map, ctx) -> {
+                    RPGDamageOverhaulAPI.unloadEverything();
                     for (Object o: map.entrySet())
                     {
                         Map.Entry<String, JsonObject> entry = (Map.Entry<String, JsonObject>) o;
                         dl.registerDamageClass(entry.getKey(), entry.getValue(), null);
                     }
+                    RPGDamageOverhaul.LOGGER.info("Received and registered {} damage class entries from server", map.size());
                 }).noResponse().buildLoginPacketList((isLocal) -> List.of(Pair.of("rpgdologinpacket", dl.dcEntries))).add();
 
         registerOnHitEffects();
@@ -163,15 +166,16 @@ public class RPGDamageOverhaul {
             }
         }
 
+        var dtKey = dc.damageType.unwrapKey().get().location();
         //Register DT aliases
         if (dc.properties.containsKey("damageTypes"))
         {
             var dts = dc.properties.get("damageTypes").getAsJsonArray().asList();
-            if (!mappedDamageTypes.containsKey(dc.damageTypeKey.location()))
-                mappedDamageTypes.put(dc.damageTypeKey.location(), new ArrayList<>());
+            if (!mappedDamageTypes.containsKey(dtKey))
+                mappedDamageTypes.put(dtKey, new ArrayList<>());
             for (var damageTypeEl : dts)
             {
-                mappedDamageTypes.get(dc.damageTypeKey.location()).add(new ResourceLocation(damageTypeEl.getAsString()));
+                mappedDamageTypes.get(dtKey).add(new ResourceLocation(damageTypeEl.getAsString()));
             }
         }
 
@@ -179,11 +183,11 @@ public class RPGDamageOverhaul {
         if (dc.properties.containsKey("tags"))
         {
             var tags = dc.properties.get("tags").getAsJsonArray().asList();
-            if (!mappedTags.containsKey(dc.damageTypeKey.location()))
-                mappedTags.put(dc.damageTypeKey.location(), new ArrayList<>());
+            if (!mappedTags.containsKey(dtKey))
+                mappedTags.put(dtKey, new ArrayList<>());
             for (var tag : tags)
             {
-                mappedTags.get(dc.damageTypeKey.location()).add(new ResourceLocation(tag.getAsString()));
+                mappedTags.get(dtKey).add(new ResourceLocation(tag.getAsString()));
             }
         }
     }

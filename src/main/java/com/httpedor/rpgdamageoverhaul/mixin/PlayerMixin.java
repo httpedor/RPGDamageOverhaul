@@ -8,6 +8,8 @@ import com.httpedor.rpgdamageoverhaul.compat.BetterCombatCompat;
 import com.httpedor.rpgdamageoverhaul.ducktypes.DCDamageSource;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
+
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -15,6 +17,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.spongepowered.asm.mixin.Mixin;
@@ -54,7 +57,7 @@ public abstract class PlayerMixin extends LivingEntity {
     }
 
     @WrapOperation(method = "attack", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;hurt(Lnet/minecraft/world/damagesource/DamageSource;F)Z"))
-    private boolean otherDamageAttacks(Entity target, DamageSource source, float amount, Operation<Boolean> original)
+    private boolean otherDamageAttacks(Entity target, DamageSource source, float amount, Operation<Boolean> original, @Local CriticalHitEvent che)
     {
         boolean ret = false;
         for (DamageClass dc : RPGDamageOverhaulAPI.getAllDamageClasses())
@@ -62,6 +65,8 @@ public abstract class PlayerMixin extends LivingEntity {
             double dmg = getAttributeValue(dc.dmgAttribute);
             if (dmg > 0)
             {
+                if (che != null)
+                    dmg *= che.getDamageModifier();
                 ret |= target.hurt(dc.createDamageSource(this), (float)dmg);
             }
         }

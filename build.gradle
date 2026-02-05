@@ -202,11 +202,15 @@ dependencies {
     runtimeOnly fg.deobf("maven.modrinth:attributefix:Y42wjyly")
     runtimeOnly fg.deobf("maven.modrinth:architectury-api:9.2.14+forge")
     runtimeOnly fg.deobf("maven.modrinth:cloth-config:11.1.136+forge")
-    runtimeOnly fg.deobf("maven.modrinth:attributesetter:1.10-forge")
+    runtimeOnly fg.deobf("maven.modrinth:attributesetter:2.0-forge")
     runtimeOnly fg.deobf("maven.modrinth:patchouli:1.20.1-84-forge")
     runtimeOnly fg.deobf("maven.modrinth:caelus:3.2.0+1.20.1")
     runtimeOnly fg.deobf("curse.maven:creatures-expanded-997942:5868020")
-    //runtimeOnly fg.deobf("maven.modrinth:mob-player-animator:1.3.2")
+    runtimeOnly fg.deobf("curse.maven:selene-499980:7541536")
+    runtimeOnly fg.deobf("curse.maven:mmmmmmmmmmmm-225738:6860192")
+    runtimeOnly fg.deobf("maven.modrinth:mob-player-animator:1.3.2")
+    runtimeOnly fg.deobf("curse.maven:placebo-283644:6274231")
+    runtimeOnly fg.deobf("curse.maven:mob-player-animator-1058791:6125584")
 
     implementation fg.deobf("maven.modrinth:curios:5.11.0+1.20.1")
     compileOnly fg.deobf('maven.modrinth:better-combat:1.8.6+1.20.1-forge')
@@ -216,9 +220,9 @@ dependencies {
     compileOnly fg.deobf("curse.maven:apothic-attributes-898963:5634071")
     compileOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:1.20.1-3.4.0.5")
 
-    implementation fg.deobf("io.github.edwinmindcraft:calio-forge:1.20.1-1.11.0.5")
+    /*implementation fg.deobf("io.github.edwinmindcraft:calio-forge:1.20.1-1.11.0.5")
     implementation fg.deobf("io.github.edwinmindcraft:apoli-forge:1.20.1-2.9.0.8")
-    implementation fg.deobf("io.github.edwinmindcraft:origins-forge:1.20.1-1.10.0.9")
+    implementation fg.deobf("io.github.edwinmindcraft:origins-forge:1.20.1-1.10.0.9")*/
     compileOnly fg.deobf("curse.maven:simply-more-1095252:6261985")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
@@ -279,4 +283,46 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+def vscodeExtraClasspathBaseDir = layout.buildDirectory.dir('vscodeExtraClasspath')
+
+def registerVscodeExtraClasspathTask = { String runName ->
+    tasks.register("syncVscode${runName.capitalize()}ExtraClasspath", Sync) {
+        def legacyClasspathFile = layout.buildDirectory.file("classpath/${runName}_minecraftClasspath.txt")
+        from({
+            File legacyFile = legacyClasspathFile.get().asFile
+            if (!legacyFile.exists()) {
+                return []
+            }
+
+            def legacySet = legacyFile.readLines()
+                .findAll { it != null && !it.isBlank() }
+                .collect { new File(it).canonicalFile }
+                .toSet()
+
+            return configurations.runtimeClasspath.files
+                .collect { it.canonicalFile }
+                .findAll { !legacySet.contains(it) }
+        })
+        into(vscodeExtraClasspathBaseDir.map { it.dir(runName) })
+    }
+}
+
+def clientExtra = registerVscodeExtraClasspathTask('runClient')
+def serverExtra = registerVscodeExtraClasspathTask('runServer')
+def dataExtra = registerVscodeExtraClasspathTask('runData')
+def gameTestExtra = registerVscodeExtraClasspathTask('runGameTestServer')
+
+tasks.matching { it.name == 'prepareRunClientCompile' }.configureEach {
+    finalizedBy(clientExtra)
+}
+tasks.matching { it.name == 'prepareRunServerCompile' }.configureEach {
+    finalizedBy(serverExtra)
+}
+tasks.matching { it.name == 'prepareRunDataCompile' }.configureEach {
+    finalizedBy(dataExtra)
+}
+tasks.matching { it.name == 'prepareRunGameTestServerCompile' }.configureEach {
+    finalizedBy(gameTestExtra)
 }

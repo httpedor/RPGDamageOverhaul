@@ -1,6 +1,5 @@
 package com.httpedor.rpgdamageoverhaul.mixin;
 
-import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
 import net.minecraft.network.Connection;
 import net.minecraftforge.network.HandshakeHandler;
 import net.minecraftforge.network.NetworkDirection;

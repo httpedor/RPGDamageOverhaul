@@ -38,7 +38,7 @@ public abstract class DamageSourcesMixin {
 
                 int combo = attackHand.combo().current()-1;
                 if (combo < attackOverrides.length)
-                    cir.setReturnValue(source(attackOverrides[combo].damageTypeKey, attacker));
+                    cir.setReturnValue(source(attackOverrides[combo].damageType.unwrapKey().get(), attacker));
             }
         }
     }
