@@ -1,7 +1,11 @@
 {
   "physical": {
     "color": "GRAY",
-
+    "potions": {
+      "resistance": {
+        "minecraft:resistance": 0.05
+      }
+    },
     "subClasses": {
       "sharp": {
         "color": "GRAY",
@@ -30,8 +34,8 @@
         "particle": "minecraft:flame",
         "color": "RED",
         "potions": {
-          "resistance": { "minecraft:fire_resistance": 0.75 },
-          "armor": { "cataclysm:blazing_brand": -2}
+          "resistance": { "minecraft:fire_resistance": 0.5 },
+          "armor": { "cataclysm:blazing_brand": -2, "dungeons_and_combat:flame_grant_me_strength": 2 }
         },
         "stacking": {
           "duration": 2,
@@ -55,8 +59,10 @@
         "particle": "minecraft:snowflake",
         "enchantments": {
           "resistance": {
-            "enigmaticaddons:frost_protection": 0.04,
-            "origins:water_protection": 0.04
+            "enigmaticaddons:frost_protection": 0.1,
+            "origins:water_protection": 0.1,
+            "dungeons_and_combat:ice_resistance": 0.5,
+            "dungeons_and_combat:frostbite": -0.25
           },
           "damage": {
             "enigmaticaddons:frost_aspect": 2
@@ -92,6 +98,14 @@
           "range": 5,
           "maxTargets": 3,
           "damagePercentage": 0.75
+        },
+        "potions": {
+          "resistance": {
+            "dungeons_and_combat:conductive": -0.25,
+            "cofh_core:shocked": -0.1,
+            "ars_nouveau:shocked": -0.2,
+            "fdbosses:shocked": -0.1
+          }
         },
         "color": "AQUA",
         "damageTypes": ["minecraft:lightning_bolt"],
@@ -138,7 +152,12 @@
         "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:heal"],
         "particle": "minecraft:crimson_spore",
         "color": "DARK_RED",
-        "heal": 0.45
+        "heal": 0.45,
+        "potions": {
+          "resistance": {
+            "dungeons_and_combat:bleeding": -0.25
+          }
+        }
       },
       "wither": {
         "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:apply_potion", "rpgdamageoverhaul:anti_heal"],
@@ -167,8 +186,9 @@
             "potions": {
               "resistance": {
                 "netherexp:poison_immunity": 0.95,
-                "alexsmobs:poison_resistance": 0.75,
-                "mowziesmobs:poison_resist": 0.75
+                "alexsmobs:poison_resistance": 0.5,
+                "mowziesmobs:poison_resist": 0.5,
+                "dungeons_and_combat:toxin": -0.25
               }
             }
           }

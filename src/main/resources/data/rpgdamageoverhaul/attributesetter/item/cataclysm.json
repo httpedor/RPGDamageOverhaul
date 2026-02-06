@@ -248,7 +248,7 @@
     },
     {
       "attribute": "minecraft:generic.attack_damage",
-      "value": 3.4,
+      "value": 2,
       "operation": "BASE"
     }
   ],
@@ -275,12 +275,12 @@
   "gauntlet_of_maelstrom": [
     {
       "attribute": "minecraft:generic.attack_damage",
-      "value": 3.5,
+      "value": 2,
       "operation": "BASE"
     },
     {
       "attribute": "rpgdamageoverhaul:arcane.damage",
-      "value": 6
+      "value": 5
     },
     {
       "attribute": "rpgdamageoverhaul:holy.damage",
@@ -290,12 +290,12 @@
   "the_immolator": [
     {
       "attribute": "minecraft:generic.attack_damage",
-      "value": 2,
+      "value": 1,
       "operation": "BASE"
     },
     {
       "attribute": "rpgdamageoverhaul:soul.damage",
-      "value": 3.5
+      "value": 3
     },
     {
       "attribute": "rpgdamageoverhaul:fire.damage",
@@ -316,7 +316,7 @@
   "ceranus": [
     {
       "attribute": "minecraft:generic.attack_damage",
-      "value": 12,
+      "value": 11,
       "operation": "BASE"
     },
     {

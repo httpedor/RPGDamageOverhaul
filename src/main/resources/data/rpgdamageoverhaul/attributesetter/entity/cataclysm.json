@@ -80,6 +80,11 @@
       "operation": "BASE"
     },
     {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
       "attribute": "rpgdamageoverhaul:frost.resistance",
       "value": -0.5,
       "operation": "BASE"

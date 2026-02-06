@@ -193,5 +193,25 @@
   "soulsweapons:vertical_moonlight_projectile": {"arcane": 0.8, "soul": 0.2},
   "soulsweapons:vertical_sunlight_projectile": {"fire": 0.8, "soul": 0.2},
   "soulsweapons:warmth_entity": {"fire": 1.0},
-  "soulsweapons:withered_demon": {"wither": 0.25, "blunt": 0.5, "fire": 0.25}
+  "soulsweapons:withered_demon": {"wither": 0.25, "blunt": 0.5, "fire": 0.25},
+
+  "dungeons_and_combat:ammit": {"slashing": 0.75, "holy": 0.25},
+  "dungeons_and_combat:failure": {"blood": 1},
+  "dungeons_and_combat:flower_fairy": {"true": 1},
+  "dungeons_and_combat:ghoul": {"physical": 0.5, "soul": 0.5},
+  "dungeons_and_combat:fractured_vex": {"arcane": 0.4, "wither": 0.4, "soul": 0.2},
+  "dungeons_and_combat:horuso_feather_poryectile": {"piercing": 0.75, "holy": 0.25},
+  "dungeons_and_combat:infernus": {"fire": 0.25, "slashing": 0.75},
+  "dungeons_and_combat:kamath": {"slashing": 0.4, "soul": 0.6},
+  "dungeons_and_combat:pyro_knight": {"fire": 0.75, "piercing": 0.25},
+  "dungeons_and_combat:sandstone_golem": {"blunt": 1},
+  "dungeons_and_combat:the_aberrator": {"blood": 0.5, "blunt": 0.5},
+  "dungeons_and_combat:torture": {"blood": 0.75, "piercing": 0.25},
+  "dungeons_and_combat:weakness": {"blood": 0.75, "piercing": 0.25},
+
+  "dungeons_and_combat:blood_slash": {"blood": 1},
+  "dungeons_and_combat:bloody_arrow": {"blood": 1},
+  "dungeons_and_combat:bloodymancer_dark_magic": {"blood": 1},
+  "dungeons_and_combat:fire_ball": {"fire": 1},
+  "dungeons_and_combat:magic_arrow": {"arcane": 1}
 }
