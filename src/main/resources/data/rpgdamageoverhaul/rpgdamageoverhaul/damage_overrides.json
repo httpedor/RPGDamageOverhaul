@@ -213,5 +213,17 @@
   "dungeons_and_combat:bloody_arrow": {"blood": 1},
   "dungeons_and_combat:bloodymancer_dark_magic": {"blood": 1},
   "dungeons_and_combat:fire_ball": {"fire": 1},
-  "dungeons_and_combat:magic_arrow": {"arcane": 1}
+  "dungeons_and_combat:magic_arrow": {"arcane": 1},
+
+  "companions:illager_golem": {"lightning": 1},
+
+  "darkerdepths:void_soul_knight": {"soul": 0.25, "slashing": 0.75},
+
+  "deeperdarker:angler_fish": {"soul": 0.75, "piercing": 0.25},
+  "deeperdarker:sculk_centipede": {"soul": 0.75, "poison": 0.25},
+  "deeperdarker:sculk_leech": {"soul": 0.75, "blood": 0.25},
+  "deeperdarker:sculk_snapper": {"soul": 0.5, "piercing": 0.5},
+  "deeperdarker:shattered": {"soul": 0.75, "blunt": 0.25},
+  "deeperdarker:shriek_worm": {"soul": 0.75, "piercing": 0.25},
+  "deeperdarker:stalker": {"soul": 0.9, "slashing": 0.1}
 }

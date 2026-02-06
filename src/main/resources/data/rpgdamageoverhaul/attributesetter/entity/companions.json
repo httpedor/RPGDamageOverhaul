@@ -1,0 +1,115 @@
+{
+    "antlion": [
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        }
+    ],
+    "bubble_frog": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        }
+    ],
+    "cornelius": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        }
+    ],
+    "croissant_dragon": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.15,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.15,
+            "operation": "BASE"
+        }
+    ],
+    "ember_pole": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.75,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": -0.75,
+            "operation": "BASE"
+        }
+    ],
+    "ender_frog": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        }
+    ],
+    "golden_allay": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.75,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5,
+            "operation": "BASE"
+        }
+    ],
+    "hostile_imp": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+             "attribute": "rpgdamageoverhaul:frost.resistance",
+             "value": -0.25,
+             "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        }
+    ],
+    "illager_golem": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": 1,
+            "operation": "BASE"
+        }
+    ]
+}
