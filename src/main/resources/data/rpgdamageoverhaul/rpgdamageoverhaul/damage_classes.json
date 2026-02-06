@@ -26,11 +26,12 @@
   "elemental": {
     "subClasses": {
       "fire": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_fire", "rpgdamageoverhaul:stacking"],
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_fire", "rpgdamageoverhaul:stacking", "rpgdamageoverhaul:on_water"],
         "particle": "minecraft:flame",
         "color": "RED",
         "potions": {
-          "resistance": { "minecraft:fire_resistance": 0.75 }
+          "resistance": { "minecraft:fire_resistance": 0.75 },
+          "armor": { "cataclysm:blazing_brand": -2}
         },
         "stacking": {
           "duration": 2,
@@ -46,7 +47,8 @@
           }
         },
         "damageTypes": ["minecraft:on_fire"],
-        "tags": ["minecraft:is_fire"]
+        "tags": ["minecraft:is_fire"],
+        "on_water": 0.5
       },
       "frost": {
         "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen", "rpgdamageoverhaul:attribute_modifier"],
@@ -83,8 +85,9 @@
         "tags": ["minecraft:is_freezing"]
       },
       "lightning": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:chain_lightning"],
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:chain_lightning", "rpgdamageoverhaul:on_water"],
         "particle": "minecraft:wax_on",
+        "on_water": 1.5,
         "chainLightning": {
           "range": 5,
           "maxTargets": 3,

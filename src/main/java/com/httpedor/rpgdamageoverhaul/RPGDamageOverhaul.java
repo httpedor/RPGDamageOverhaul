@@ -27,6 +27,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -40,6 +41,7 @@ import s_com.udojava.evalexrpgdo.Expression;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.function.Function;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(RPGDamageOverhaul.MODID)
@@ -59,6 +61,7 @@ public class RPGDamageOverhaul {
     public static final Set<DamageClass> increasedDamageExceptions = new HashSet<>();
     public static final Map<UUID, Attribute> transientModifiers = new HashMap<>();
     public static final Map<LivingEntity, Map<UUID, Long>> transientModifiersDuration = new HashMap<>();
+    public static final Map<DamageClass, Function<Float, Float>> onWaterDamageModifiers = new HashMap<>();
 
     public static final Map<ResourceLocation, List<ResourceLocation>> mappedDamageTypes = new HashMap<>();
     public static final Map<ResourceLocation, List<ResourceLocation>> mappedTags = new HashMap<>();
@@ -188,6 +191,45 @@ public class RPGDamageOverhaul {
             for (var tag : tags)
             {
                 mappedTags.get(dtKey).add(new ResourceLocation(tag.getAsString()));
+            }
+        }
+
+        if (dc.properties.containsKey("on_water"))
+        {
+            var element = dc.properties.get("on_water");
+            Function<Float, Float> func;
+            if (element.isJsonPrimitive() && element.getAsJsonPrimitive().isNumber())
+            {
+                float multiplier = element.getAsFloat();
+                func = (dmg) -> dmg * multiplier;
+            }
+            else if (element.isJsonPrimitive() && element.getAsJsonPrimitive().isString())
+            {
+                Expression exp = new Expression(element.getAsString());
+                func = (dmg) -> {
+                    var newExp = exp.with("dmg", BigDecimal.valueOf(dmg));
+                    return newExp.eval().floatValue();
+                };
+            }
+            else
+            {
+                RPGDamageOverhaul.LOGGER.warn("Invalid on_water property for damage class {}: {}", dc.name, element);
+                func = (dmg) -> dmg;
+            }
+            onWaterDamageModifiers.put(dc, func);
+        }
+    }
+
+    @SubscribeEvent
+    public void onLivingDamage(LivingDamageEvent e)
+    {
+        var dc = RPGDamageOverhaulAPI.getDamageClass(e.getSource().type());
+        if (dc != null)
+        {
+            if (onWaterDamageModifiers.containsKey(dc) && e.getEntity().isInWaterRainOrBubble())
+            {
+                var func = onWaterDamageModifiers.get(dc);
+                e.setAmount(func.apply(e.getAmount()));
             }
         }
     }

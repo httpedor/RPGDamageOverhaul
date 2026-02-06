@@ -240,5 +240,92 @@
       "value": 4,
       "slot": "offhand"
     }
+  ],
+  "khopesh": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 2
+    },
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3.4,
+      "operation": "BASE"
+    }
+  ],
+  "blazing_grips": [
+    {
+      "attribute": "rpgdamageoverhaul.fire.resistance",
+      "value": 0.05,
+      "slot": "curio:hands"
+    },
+    {
+      "attribute": "rpgdamageoverhaul.fire.damage",
+      "value": 0.05,
+      "slot": "curio:hands",
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "azure_sea_shield": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 2,
+      "slot": "offhand"
+    }
+  ],
+  "gauntlet_of_maelstrom": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 6
+    },
+    {
+      "attribute": "rpgdamageoverhaul:holy.damage",
+      "value": 2
+    }
+  ],
+  "the_immolator": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 3.5
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 2
+    }
+  ],
+  "astrape": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 7,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 4
+    }
+  ],
+  "ceranus": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 12,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 2
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 2
+    }
   ]
 }
