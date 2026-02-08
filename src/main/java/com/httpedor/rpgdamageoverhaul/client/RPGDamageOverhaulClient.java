@@ -21,11 +21,10 @@ import java.util.*;
 
 @Mod.EventBusSubscriber(modid = RPGDamageOverhaul.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class RPGDamageOverhaulClient {
-    // Só remover as linhas adicionadas(marcadas pelo git) pra parar de debugar;
-
     private static boolean shouldDebugTooltip(ItemTooltipEvent e)
     {
-        return e.getItemStack().getItem() == Items.DIAMOND_CHESTPLATE || e.getItemStack().getItem() == Items.TRIDENT;
+        return false;
+        //return e.getItemStack().getItem() == Items.DIAMOND_CHESTPLATE || e.getItemStack().getItem() == Items.TRIDENT;
     }
 
     private static String safeComponentString(Component c)
@@ -172,8 +171,6 @@ public class RPGDamageOverhaulClient {
                             if (dbg)
                                 RPGDamageOverhaul.LOGGER.info("[TooltipDbg]   normalized plus->equals (non-armor, non-resistance)");
                         }
-                        //Why the fuck is there a "minus" instead of "take"?
-                        //Because I'm stupid and made AttributeSetter, that's why.
                         if (key.startsWith("attribute.modifier.minus"))
                             key = key.replace("minus", "take");
                         Object[] args = ttc.getArgs();
@@ -206,7 +203,7 @@ public class RPGDamageOverhaulClient {
 
                         MutableComponent outLine = (!isArmor ? Component.literal(" ") : Component.literal(""))
                                 .append(Component.translatable(key, sanitizedArgs));
-                        outLine.withStyle(Style.EMPTY.withColor(color));
+                        outLine = outLine.withStyle(Style.EMPTY.withColor(color));
                         dcLines.add(outLine);
                         it.remove();
                         i--;

@@ -55,8 +55,9 @@
         "on_water": 0.75
       },
       "frost": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen", "rpgdamageoverhaul:attribute_modifier"],
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen", "rpgdamageoverhaul:attribute_modifier", "rpgdamageoverhaul:on_water"],
         "particle": "minecraft:snowflake",
+        "on_water": 1.2,
         "enchantments": {
           "resistance": {
             "enigmaticaddons:frost_protection": 0.1,
@@ -155,7 +156,11 @@
         "heal": 0.45,
         "potions": {
           "resistance": {
-            "dungeons_and_combat:bleeding": -0.25
+            "dungeons_and_combat:bleeding": -0.25,
+              "majruszsdifficulty:bleeding": -0.25,
+              "nexuslayer:bleeding": -0.25,
+              "relics:bleeding": -0.25,
+              "warriorsofpastepoch:bleeding_wound": -0.25
           }
         }
       },
@@ -188,7 +193,12 @@
                 "netherexp:poison_immunity": 0.95,
                 "alexsmobs:poison_resistance": 0.5,
                 "mowziesmobs:poison_resist": 0.5,
-                "dungeons_and_combat:toxin": -0.25
+                "dungeons_and_combat:toxin": -0.25,
+                "dungeons_and_combat:bleeding": -0.15,
+                "majruszsdifficulty:bleeding": -0.15,
+                "nexuslayer:bleeding": -0.15,
+                "relics:bleeding": -0.15,
+                "warriorsofpastepoch:bleeding_wound": -0.15
               }
             }
           }

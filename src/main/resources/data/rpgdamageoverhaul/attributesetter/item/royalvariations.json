@@ -1,0 +1,10 @@
+{
+    "spectral_gauntlet": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.damage",
+            "operation": "MULTIPLY_BASE",
+            "value": 0.1,
+            "slot": "curio:hands"
+        }
+    ]
+}
