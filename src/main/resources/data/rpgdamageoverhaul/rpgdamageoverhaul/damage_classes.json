@@ -52,7 +52,7 @@
         },
         "damageTypes": ["minecraft:on_fire"],
         "tags": ["minecraft:is_fire"],
-        "on_water": 0.5
+        "on_water": 0.75
       },
       "frost": {
         "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen", "rpgdamageoverhaul:attribute_modifier"],

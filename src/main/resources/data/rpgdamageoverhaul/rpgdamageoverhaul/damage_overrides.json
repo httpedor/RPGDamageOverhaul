@@ -214,6 +214,7 @@
   "dungeons_and_combat:bloodymancer_dark_magic": {"blood": 1},
   "dungeons_and_combat:fire_ball": {"fire": 1},
   "dungeons_and_combat:magic_arrow": {"arcane": 1},
+  "dungeons_and_combat:fairy_proyectile": {"true": 0.25, "arcane": 0.75},
 
   "companions:illager_golem": {"lightning": 1},
 

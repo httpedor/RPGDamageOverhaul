@@ -1,16 +1,5 @@
 {
-    "sandstone_twin_blade": [
-        {
-            "attribute": "minecraft:generic.attack_damage",
-            "value": 9,
-            "operation": "BASE"
-        },
-        {
-            "attribute": "rpgdamageoverhaul:holy.damage",
-            "value": 2
-        }
-    ],
-    "sandstone_fist": [
+    "sandstone_axe_war": [
         {
             "attribute": "minecraft:generic.attack_damage",
             "value": 4,
@@ -18,7 +7,29 @@
         },
         {
             "attribute": "rpgdamageoverhaul:holy.damage",
-            "value": 2
+            "value": 3
+        }
+    ],
+    "sandstone_twin_blade": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 8,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 3
+        }
+    ],
+    "sandstone_fist": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 3
         }
     ],
     "molten_dark_steel_dagger": [
@@ -42,56 +53,56 @@
     "molten_blazing_fists": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 4,
+            "value": 3,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         }
     ],
     "molten_blazing_sword": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 5.5,
+            "value": 4.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         }
     ],
     "molten_blazing_greathammer": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 8.5,
+            "value": 7.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         }
     ],
     "molten_blazing_lance": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 6,
+            "value": 5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         }
     ],
     "cursed_molten_blazing_fist": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 2,
+            "value": 1,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         },
         {
             "attribute": "rpgdamageoverhaul:soul.damage",
@@ -101,12 +112,12 @@
     "cursed_molten_blazing_sword": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 3.5,
+            "value": 2.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         },
         {
             "attribute": "rpgdamageoverhaul:soul.damage",
@@ -116,12 +127,12 @@
     "cursed_molten_blazing_greathammer": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 6.5,
+            "value": 5.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         },
         {
             "attribute": "rpgdamageoverhaul:soul.damage",
@@ -131,12 +142,12 @@
     "cursed_molten_blazing_lance": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 4,
+            "value": 3,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         },
         {
             "attribute": "rpgdamageoverhaul:soul.damage",
@@ -146,12 +157,12 @@
     "acid_molten_blazing_fists": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 2,
+            "value": 1,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         },
         {
             "attribute": "rpgdamageoverhaul:poison.damage",
@@ -161,12 +172,12 @@
     "acid_molten_blazing_sword": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 3.5,
+            "value": 2.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         },
         {
             "attribute": "rpgdamageoverhaul:poison.damage",
@@ -176,12 +187,12 @@
     "acid_molten_blazing_greathammer": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 6.5,
+            "value": 5.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:fire.damage",
-            "value": 2
+            "value": 3
         },
         {
             "attribute": "rpgdamageoverhaul:poison.damage",
@@ -191,45 +202,45 @@
     "blessed_gold_fist": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 2,
+            "value": 1,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:holy.damage",
-            "value": 4
+            "value": 5
         }
     ],
     "blessed_gold_axe_war": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 3.5,
+            "value": 2.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:holy.damage",
-            "value": 4
+            "value": 5
         }
     ],
     "blessed_gold_sickle": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 6.5,
+            "value": 5.5,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:holy.damage",
-            "value": 4
+            "value": 5
         }
     ],
     "blessed_gold_twinblade": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 5,
+            "value": 4,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:holy.damage",
-            "value": 4
+            "value": 5
         }
     ],
     "ebony_dagger": [
@@ -381,12 +392,16 @@
     "dawn_breaker_sword": [
         {
             "attribute": "minecraft:generic.attack_damage",
-            "value": 1,
+            "value": 0,
             "operation": "BASE"
         },
         {
             "attribute": "rpgdamageoverhaul:holy.damage",
-            "value": 5
+            "value": 4
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 2
         }
     ],
     "sunrise": [
@@ -1231,6 +1246,29 @@
             "attribute": "rpgdamageoverhaul:elemental.resistance",
             "value": 0.1,
             "slot": "curio:amulet"
+        }
+    ],
+    "sunrise_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 6
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        }
+    ],
+    "sunleia_hand": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 0.2,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
         }
     ]
 }
