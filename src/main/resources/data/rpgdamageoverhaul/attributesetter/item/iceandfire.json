@@ -258,11 +258,38 @@
             "dependency": "minecraft:generic.armor",
             "operation": "DEPENDENCY",
             "multiplier": 0.5
-        },
+        }
+    ],
+    "regex:^iceandfire:tide_.*_helmet": [
         {
             "attribute": "rpgdamageoverhaul:frost.damage",
-            "value": 0.08,
-            "operation": "MULTIPLY_BASE"
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE",
+            "slot": "head"
+        }
+    ],
+    "regex:^iceandfire:tide_.*_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.10,
+            "operation": "MULTIPLY_BASE",
+            "slot": "chest"
+        }
+    ],
+    "regex:^iceandfire:tide_.*_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.10,
+            "operation": "MULTIPLY_BASE",
+            "slot": "legs"
+        }
+    ],
+    "regex:^iceandfire:tide_.*_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE",
+            "slot": "feet"
         }
     ],
     "regex:^iceandfire:troll_weapon_.*$": [

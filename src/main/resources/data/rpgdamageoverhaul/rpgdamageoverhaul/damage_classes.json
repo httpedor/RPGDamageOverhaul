@@ -63,7 +63,10 @@
             "enigmaticaddons:frost_protection": 0.1,
             "origins:water_protection": 0.1,
             "dungeons_and_combat:ice_resistance": 0.5,
-            "dungeons_and_combat:frostbite": -0.25
+            "dungeons_and_combat:frostbite": -0.25,
+            "cofh_core:chilled": -0.15,
+            "irons_spellbooks:chilled": -0.15,
+            "nexuslayer:chilled": -0.15
           },
           "damage": {
             "enigmaticaddons:frost_aspect": 2
@@ -75,7 +78,7 @@
             "operation": "MULTIPLY_TOTAL",
             "amount": "MAX(-0.05 * dmg, -0.6)",
             "id": "f4a681ca-9f90-462c-9390-5db4355f90e1",
-            "duration": "dmg/2",
+            "duration": "dmg/1.5",
             "replaceType": "LOWER"
           },
           "FrostSlowMov": {
@@ -83,7 +86,7 @@
             "operation": "MULTIPLY_TOTAL",
             "amount": "MAX(-0.035 * dmg, -0.5)",
             "id": "c6012dfe-ed47-4828-bc25-1dd5766f54af",
-            "duration": "dmg/2",
+            "duration": "dmg/1.5",
             "replaceType": "LOWER"
           }
         },
@@ -122,7 +125,7 @@
             "operation": "MULTIPLY_TOTAL",
             "amount": "MAX(-0.05 * dmg, -0.6)",
             "id": "ca274e67-f0d2-4a4d-ab3d-36b64bdd735f",
-            "duration": "dmg/2",
+            "duration": "dmg",
             "replaceType": "LOWER"
           }
         }

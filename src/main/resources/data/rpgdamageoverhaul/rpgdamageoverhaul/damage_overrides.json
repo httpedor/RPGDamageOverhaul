@@ -167,5 +167,12 @@
 
   "fdbosses:electric_sphere": {"lightning": 1},
   "fdbosses:chesed_roll_attack": {"lightning": 0.75, "true": 0.25},
-  "fdbosses:chesed_vertical_ray": {"lightning": 0.5, "true": 0.5}
+  "fdbosses:chesed_vertical_ray": {"lightning": 0.5, "true": 0.5},
+
+  "fathomless:hellflame": {"fire": 1},
+  "fathomless:soul_suck": {"soul": 1},
+  "fathomless:crushed": {"blunt": 1},
+
+  "nexuslayer:bleed": {"blood": 1},
+  "nexuslayer:holyfire": {"holy": 0.75, "fire": 0.25}
 }

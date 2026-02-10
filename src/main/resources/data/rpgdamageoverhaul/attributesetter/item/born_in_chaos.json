@@ -54,7 +54,7 @@
       "operation": "BASE"
     },
     {
-      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "attribute": "rpgdamageoverhaul:soul.damage",
       "value": 3
     }
   ],
@@ -111,12 +111,12 @@
   "born_in_chaos_v1:soulbane": [
     {
       "attribute": "minecraft:generic.attack_damage",
-      "value": 5,
+      "value": 6,
       "operation": "BASE"
     },
     {
-      "attribute": "rpgdamageoverhaul:arcane.damage",
-      "value": 6
+      "attribute": "rpgdamageoverhaul:soul.damage",
+      "value": 5
     }
   ],
   "born_in_chaos_v1:great_reaper_axe": [
@@ -157,6 +157,35 @@
     {
       "attribute": "rpgdamageoverhaul:frost.damage",
       "value": 3
+    }
+  ],
+
+  "regex:born_in_chaos_v1:nightmare_mantleofthe_night_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "regex:born_in_chaos_v1:nightmare_mantleofthe_night_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "regex:born_in_chaos_v1:nightmare_mantleofthe_night_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
+    }
+  ],
+  "regex:born_in_chaos_v1:nightmare_mantleofthe_night_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.08,
+      "operation": "MULTIPLY_BASE"
     }
   ]
 }
