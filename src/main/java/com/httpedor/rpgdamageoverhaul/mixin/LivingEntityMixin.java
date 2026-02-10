@@ -121,7 +121,7 @@ public abstract class LivingEntityMixin extends Entity {
         DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
         if (dc != null)
         {
-            double armor = this.getAttributeValue(dc.armorAttribute) + this.getAttributeValue(Attributes.ARMOR);
+            double armor = this.getAttributeValue(dc.armorAttribute) + (this.getAttributeValue(Attributes.ARMOR) * 0.8);
             DamageClass parent = RPGDamageOverhaulAPI.getDamageClass(dc.parentName);
             while (parent != null)
             {

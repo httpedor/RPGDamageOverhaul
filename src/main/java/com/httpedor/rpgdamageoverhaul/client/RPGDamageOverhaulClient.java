@@ -8,7 +8,6 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.contents.TranslatableContents;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ClientPlayerNetworkEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -123,7 +122,7 @@ public class RPGDamageOverhaulClient {
                     if (dbg)
                         RPGDamageOverhaul.LOGGER.info("[TooltipDbg]   found mainhand header -> atkLineIndex={}", atkLineIndex);
                 }
-                else if (ttc.getKey().startsWith("item.modifiers.") && !ttc.getKey().endsWith("offhand"))
+                else if ((ttc.getKey().startsWith("item.modifiers.") && !ttc.getKey().contains("mainhand")) || ttc.getKey().startsWith("curios.modifiers"))
                 {
                     isArmor = true;
                     if (dbg)
@@ -174,8 +173,13 @@ public class RPGDamageOverhaulClient {
                         if (key.startsWith("attribute.modifier.minus"))
                             key = key.replace("minus", "take");
                         Object[] args = ttc.getArgs();
-                        if (attrType != null && attrType.contains("resistance") && args[0] instanceof String str)
+                        if (attrType != null && attrType.contains("resistance") && (args[0] instanceof String || args[0] instanceof Component))
                         {
+                            String str;
+                            if (args[0] instanceof String s)
+                                str = s;
+                            else
+                                str = safeComponentString((Component)args[0]);
                             try {
                                 var old = str;
                                 args = Arrays.copyOf(args, args.length);

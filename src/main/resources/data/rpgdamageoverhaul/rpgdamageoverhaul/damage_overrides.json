@@ -46,6 +46,7 @@
   "iceandfire:dragon_fire": {"fire": 1},
   "iceandfire:dragon_ice": {"frost": 1},
   "iceandfire:dragon_lightning": {"lightning": 1},
+  "iceandfire:gorgon": {"arcane": 0.2, "true": 0.8},
 
   "soulsweapons:beam": {"arcane": 1},
   "soulsweapons:bleed": {"true": 1},
@@ -162,5 +163,9 @@
   "clanginghowl:fire_stream": {"fire": 1},
   "clanginghowl:icicle": {"frost": 1},
   "clanginghowl:lightning": {"lightning": 1},
-  "clanginghowl:neurotoxin": {"poison": 1}
+  "clanginghowl:neurotoxin": {"poison": 1},
+
+  "fdbosses:electric_sphere": {"lightning": 1},
+  "fdbosses:chesed_roll_attack": {"lightning": 0.75, "true": 0.25},
+  "fdbosses:chesed_vertical_ray": {"lightning": 0.5, "true": 0.5}
 }

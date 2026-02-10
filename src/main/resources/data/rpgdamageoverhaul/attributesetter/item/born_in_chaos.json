@@ -1,26 +1,17 @@
 {
-  "born_in_chaos_v1:dark_metal_armor_helmet": [
+  "regex:^.*dark_metal.*$": [
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "from": "minecraft:generic.attack_damage",
+      "operation": "CONVERSION",
+      "amount": 0.5,
+      "rate": 1
+    },
     {
       "attribute": "rpgdamageoverhaul:wither.armor",
-      "value": 4
-    }
-  ],
-  "born_in_chaos_v1:dark_metal_armor_chestplate": [
-    {
-      "attribute": "rpgdamageoverhaul:wither.armor",
-      "value": 8
-    }
-  ],
-  "born_in_chaos_v1:dark_metal_armor_leggings": [
-      {
-      "attribute": "rpgdamageoverhaul:wither.armor",
-      "value": 5
-      }
-  ],
-  "born_in_chaos_v1:dark_metal_armor_boots": [
-    {
-      "attribute": "rpgdamageoverhaul:wither.armor",
-      "value": 3
+      "dependency": "minecraft:generic.armor",
+      "operation": "DEPENDENCY",
+      "multiplier": 0.5
     }
   ],
   "born_in_chaos_v1:darkwarblade": [
@@ -103,17 +94,6 @@
     },
     {
       "attribute": "rpgdamageoverhaul:soul.damage",
-      "value": 3
-    }
-  ],
-  "born_in_chaos_v1:sharpened_dark_metal_sword": [
-    {
-      "attribute": "minecraft:generic.attack_damage",
-      "value": 3,
-      "operation": "BASE"
-    },
-    {
-      "attribute": "rpgdamageoverhaul:wither.damage",
       "value": 3
     }
   ],

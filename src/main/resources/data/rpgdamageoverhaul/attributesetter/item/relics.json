@@ -1,5 +1,5 @@
 {
-    "amphibian_boots": [
+    "amphibian_boot": [
         {
             "attribute": "rpgdamageoverhaul:frost.damage",
             "value": 0.15,

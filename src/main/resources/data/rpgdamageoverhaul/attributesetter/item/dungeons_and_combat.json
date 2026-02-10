@@ -1197,6 +1197,14 @@
             "slot": "curio:ring"
         }
     ],
+    "molten_ring": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:ring"
+        }
+    ],
     "hell_ring": [
         {
             "attribute": "rpgdamageoverhaul:fire.resistance",
@@ -1269,6 +1277,125 @@
             "value": 0.2,
             "operation": "MULTIPLY_BASE",
             "slot": "curio:hands"
+        }
+    ],
+
+    "regex:^dungeons_and_combat:(red|bronze|green|gray)_dragon_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^dungeons_and_combat:(blue|white|sapphire|silver)_dragon_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^dungeons_and_combat:(electric|amethyst|copper|black)_dragon_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^dungeons_and_combat:dragon_.*_fire$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:dragon_.*_ice$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:dragon_.*_lightning$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:(fire_dragonsteel_|dragonsteel_fire_).*$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:(ice_dragonsteel_|dragonsteel_ice_).*$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:(lightning_dragonsteel_|dragonsteel_lightning_).*$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+
+    "dragonsteel_fire_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.2,
+            "slot": "offhand"
+        }
+    ],
+    "dragonsteel_ice_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.2,
+            "slot": "offhand"
+        }
+    ],
+    "dragonsteel_lightning_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.2,
+            "slot": "offhand"
         }
     ]
 }
