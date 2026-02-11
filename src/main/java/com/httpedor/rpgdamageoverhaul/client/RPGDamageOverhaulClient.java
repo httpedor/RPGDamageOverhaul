@@ -3,6 +3,7 @@ package com.httpedor.rpgdamageoverhaul.client;
 import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
@@ -10,6 +11,7 @@ import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ClientPlayerNetworkEvent;
+import net.minecraftforge.client.event.ClientPlayerNetworkEvent.LoggingIn;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -240,4 +242,18 @@ public class RPGDamageOverhaulClient {
         }
     }
 
+    @SubscribeEvent
+    public static void loginEvent(LoggingIn e)
+    {
+        for (var dc : RPGDamageOverhaulAPI.missingDamageTypes)
+        {
+            var reg = e.getPlayer().level().registryAccess().registry(Registries.DAMAGE_TYPE);
+            if (reg.isEmpty())
+            {
+                RPGDamageOverhaul.LOGGER.warn("DamageType registry not found during login event, cannot register missing damage type: {}", dc.name);
+                continue;
+            }
+            RPGDamageOverhaulAPI.tryRegisterDamageType(dc, reg.get());
+        }
+    }
 }

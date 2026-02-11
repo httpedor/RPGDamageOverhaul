@@ -2,7 +2,6 @@ package com.httpedor.rpgdamageoverhaul.api;
 
 import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
 import net.minecraft.ChatFormatting;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
@@ -33,6 +32,8 @@ public class RPGDamageOverhaulAPI {
     static final Map<ResourceLocation, DamageClass[]> betterCombatAttacks = new HashMap<>();
     static final Map<ResourceLocation, Map<DamageClass, Double>> entityOverrides = new HashMap<>();
     static final Map<ResourceLocation, Map<DamageClass, Double>> tagEntityOverrides = new HashMap<>();
+
+    public static final LinkedList<DamageClass> missingDamageTypes = new LinkedList<>();
 
     private static volatile Map<EntityType<? extends LivingEntity>, AttributeSupplier> FORGE_ATTRIBUTES_MAP;
     private static volatile boolean FORGE_ATTRIBUTES_LOOKUP_FAILED;
@@ -103,18 +104,15 @@ public class RPGDamageOverhaulAPI {
                 ForgeRegistries.ATTRIBUTES.register(new ResourceLocation(attr.resistance), resistanceAttribute);
             }
 
-            ResourceKey<DamageType> dmgTypeKey = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("rpgdamageoverhaul", dmgName));
-            Holder<DamageType> damageType;
-            var reg = ra.registryOrThrow(Registries.DAMAGE_TYPE);
-            if (!reg.containsKey(dmgTypeKey))
-            {
-                var dt = new DamageType(dmgName, 1.0f);
-                damageType = Registry.registerForHolder(reg, dmgTypeKey.location(), dt);
-            }
-            else
-                damageType = reg.getHolderOrThrow(dmgTypeKey);
-            dmgClass = new DamageClass(dmgName, dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute, damageType, parent);
+            Optional<Registry<DamageType>> reg = Optional.empty();
+            if (ra != null)
+                reg = ra.registry(Registries.DAMAGE_TYPE);
+            dmgClass = new DamageClass(dmgName, dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute, null, parent);
             rpgDamageTypes.add(dmgName);
+            if (reg.isPresent())
+                tryRegisterDamageType(dmgClass, reg.get());
+            else
+                missingDamageTypes.add(dmgClass);
             RPGDamageOverhaul.LOGGER.info("Registered damage class: {}", dmgName);
         }
         else
@@ -380,5 +378,18 @@ public class RPGDamageOverhaulAPI {
             color = def;
 
         return color;
+    }
+    
+    public static void tryRegisterDamageType(DamageClass dc, Registry<DamageType> reg)
+    {
+        ResourceKey<DamageType> dmgTypeKey = ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("rpgdamageoverhaul", dc.name));
+        var holder = reg.getHolder(dmgTypeKey);
+        if (holder.isEmpty())
+        {
+            var dt = new DamageType(dc.name, 1.0f);
+            dc.damageType = Registry.registerForHolder(reg, dmgTypeKey.location(), dt);
+        }
+        else
+            dc.damageType = holder.get();
     }
 }

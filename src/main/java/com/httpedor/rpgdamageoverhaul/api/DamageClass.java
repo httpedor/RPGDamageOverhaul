@@ -23,7 +23,7 @@ public class DamageClass {
     public final Attribute armorAttribute;
     public final Attribute absorptionAttribute;
     public final Attribute resistanceAttribute;
-    public final Holder<DamageType> damageType;
+    public Holder<DamageType> damageType;
     public final Set<ResourceLocation> onHitEffects;
     public Map<String, JsonElement> properties;
     public final String parentName;

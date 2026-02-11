@@ -169,7 +169,7 @@ public class RPGDamageOverhaul {
             }
         }
 
-        var dtKey = dc.damageType.unwrapKey().get().location();
+        var dtKey = new ResourceLocation("rpgdamageoverhaul", dc.name);
         //Register DT aliases
         if (dc.properties.containsKey("damageTypes"))
         {
