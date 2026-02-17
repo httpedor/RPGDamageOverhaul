@@ -14,7 +14,7 @@ public class DamageHandler {
 
     public static Map<DamageSource, Double> applyDamageOverrides(LivingEntity entity, DamageSource source, float amount)
     {
-        if (RPGDamageOverhaulAPI.isRPGDamageType(source.type()))
+        if (RPGDamageOverhaulAPI.isRPGDamageType(source.typeHolder()))
             return null;
 
         Map<DamageClass, Double> overrides = RPGDamageOverhaulAPI.getDamageOverrides(source);

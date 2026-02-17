@@ -65,6 +65,7 @@ public class RPGDamageOverhaul {
 
     public static final Map<ResourceLocation, List<ResourceLocation>> mappedDamageTypes = new HashMap<>();
     public static final Map<ResourceLocation, List<ResourceLocation>> mappedTags = new HashMap<>();
+    public static final Map<ResourceLocation, List<ResourceLocation>> mappedAttributes = new HashMap<>();
 
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(MODID, "main"),

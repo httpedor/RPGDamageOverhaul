@@ -2,6 +2,7 @@ package com.httpedor.rpgdamageoverhaul.api;
 
 import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
@@ -108,7 +109,7 @@ public class RPGDamageOverhaulAPI {
             if (ra != null)
                 reg = ra.registry(Registries.DAMAGE_TYPE);
             dmgClass = new DamageClass(dmgName, dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute, null, parent);
-            rpgDamageTypes.add(dmgName);
+            rpgDamageTypes.add("rpgdamageoverhaul:" + dmgName);
             if (reg.isPresent())
                 tryRegisterDamageType(dmgClass, reg.get());
             else
@@ -159,14 +160,14 @@ public class RPGDamageOverhaulAPI {
         return registerDamage(dmgName, null, null, ra);
     }
 
-    public static boolean isRPGDamageType(DamageType type)
+    public static boolean isRPGDamageType(Holder<DamageType> type)
     {
-        return rpgDamageTypes.contains(type.msgId());
+        return rpgDamageTypes.contains(type.unwrapKey().get().location());
     }
 
-    public static boolean isRPGDamageType(String name)
+    public static boolean isRPGDamageType(ResourceLocation id)
     {
-        return rpgDamageTypes.contains(name);
+        return rpgDamageTypes.contains(id.toString());
     }
 
     public static Set<String> getRPGDamageTypes()

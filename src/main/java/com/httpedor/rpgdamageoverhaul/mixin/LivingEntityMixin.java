@@ -59,7 +59,7 @@ public abstract class LivingEntityMixin extends Entity {
     @WrapOperation(method = "hurt", at = @At(value="INVOKE", target = "Lnet/minecraft/world/damagesource/DamageSource;is(Lnet/minecraft/tags/TagKey;)Z", ordinal = 3))
     private boolean noCooldown(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
     {
-        if (RPGDamageOverhaulAPI.isRPGDamageType(instance.type()))
+        if (RPGDamageOverhaulAPI.isRPGDamageType(instance.typeHolder()))
             return true;
         return original.call(instance, tag);
     }
@@ -68,7 +68,7 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "actuallyHurt", at = @At("HEAD"), cancellable = true)
     private void damageOverrides(DamageSource source, float amount, CallbackInfo ci)
     {
-        if (RPGDamageOverhaulAPI.isRPGDamageType(source.type()))
+        if (RPGDamageOverhaulAPI.isRPGDamageType(source.typeHolder()))
             return;
 
         Map<DamageClass, Double> newDcs = null;
@@ -110,7 +110,7 @@ public abstract class LivingEntityMixin extends Entity {
     @WrapOperation(method = "getDamageAfterArmorAbsorb", at = @At(value="INVOKE", target = "Lnet/minecraft/world/damagesource/DamageSource;is(Lnet/minecraft/tags/TagKey;)Z"))
     private boolean noDefaultArmor(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
     {
-        if (RPGDamageOverhaulAPI.isRPGDamageType(instance.type()))
+        if (RPGDamageOverhaulAPI.isRPGDamageType(instance.typeHolder()))
             return true;
         return original.call(instance, tag);
     }
