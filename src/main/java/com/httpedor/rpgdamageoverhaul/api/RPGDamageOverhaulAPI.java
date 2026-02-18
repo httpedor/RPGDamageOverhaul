@@ -162,7 +162,7 @@ public class RPGDamageOverhaulAPI {
 
     public static boolean isRPGDamageType(Holder<DamageType> type)
     {
-        return rpgDamageTypes.contains(type.unwrapKey().get().location());
+        return rpgDamageTypes.contains(type.unwrapKey().get().location().toString());
     }
 
     public static boolean isRPGDamageType(ResourceLocation id)
