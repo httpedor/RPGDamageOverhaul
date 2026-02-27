@@ -2,7 +2,6 @@ package com.httpedor.rpgdamageoverhaul;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.DamageHandler;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
@@ -13,7 +12,6 @@ import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Tuple;
@@ -28,6 +26,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -87,25 +86,15 @@ public class RPGDamageOverhaul {
     public RPGDamageOverhaul() {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
-        CHANNEL.messageBuilder(HashMap.class, 0, NetworkDirection.LOGIN_TO_CLIENT)
+        CHANNEL.messageBuilder(SyncPacket.class, 0, NetworkDirection.LOGIN_TO_CLIENT)
                 .decoder((buf) -> {
-                    HashMap<String, JsonObject> entries = new HashMap<>();
-                    buf.readMap(i -> entries, FriendlyByteBuf::readUtf, (res) -> JsonParser.parseString(res.readUtf()).getAsJsonObject());
-                    return entries;
+                    return SyncPacket.decode(buf);
                 })
-                .encoder((map, buf) -> {
-                    HashMap<String, JsonObject> entries = (HashMap<String, JsonObject>) map;
-                    buf.writeMap(entries, FriendlyByteBuf::writeUtf, (buf1, el) -> buf1.writeUtf(el.toString()));
-                }).consumerMainThread((map, ctx) -> {
-                    RPGDamageOverhaulAPI.unloadEverything();
-                    for (Object o: map.entrySet())
-                    {
-                        Map.Entry<String, JsonObject> entry = (Map.Entry<String, JsonObject>) o;
-                        dl.registerDamageClass(entry.getKey(), entry.getValue(), null);
-                    }
-                    RPGDamageOverhaul.LOGGER.info("Received and registered {} damage class entries from server", map.size());
-                }).noResponse().buildLoginPacketList((isLocal) -> List.of(Pair.of("rpgdologinpacket", dl.dcEntries))).add();
+                .encoder((packet, buf) -> {
+                    packet.encode(buf);
+                }).consumerMainThread((packet, ctx) -> {
+                    packet.handle();
+                }).noResponse().buildLoginPacketList((isLocal) -> List.of(Pair.of("rpgdologinpacket", SyncPacket.fromData(dl)))).add();
 
         registerOnHitEffects();
 

@@ -281,6 +281,8 @@ public class RPGDamageOverhaulAPI {
         if (ent != null)
             ret.putAll(ent);
 
+        System.out.println("APPLYING ENTITY OVERRIDES FOR " + entity.getType() + ": " + ret.entrySet().stream().map(e -> e.getKey().name + "=" + e.getValue()).reduce((a, b) -> a + ", " + b).orElse("NO OVERRIDES"));
+
         return ret;
     }
 

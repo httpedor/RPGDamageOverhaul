@@ -228,6 +228,10 @@ dependencies {
     implementation fg.deobf("io.github.edwinmindcraft:origins-forge:1.20.1-1.10.0.9")*/
     compileOnly fg.deobf("curse.maven:simply-more-1095252:6261985")
     implementation fg.deobf("curse.maven:dungeons-and-combat-1128235:7193486")
+    runtimeOnly fg.deobf("curse.maven:corpse-316582:7018272")
+    runtimeOnly fg.deobf("curse.maven:born-in-chaos-686437:7366478")
+    runtimeOnly fg.deobf("curse.maven:playerrevive-266890:6048921")
+    runtimeOnly fg.deobf("curse.maven:creativecore-257814:7649757")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

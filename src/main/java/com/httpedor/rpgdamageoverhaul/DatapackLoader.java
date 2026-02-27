@@ -16,6 +16,11 @@ import java.util.*;
 public class DatapackLoader extends SimpleJsonResourceReloadListener {
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().registerTypeAdapter(ResourceLocation.class, new ResourceLocation.Serializer()).create();
     public HashMap<String, JsonObject> dcEntries = new HashMap<>();
+    public JsonObject damageOverrides = new JsonObject();
+    public JsonObject entityOverrides = new JsonObject();
+    public JsonObject itemOverrides = new JsonObject();
+    public JsonObject betterCombatOverrides = new JsonObject();
+
     public RegistryAccess ra;
 
     public DatapackLoader() {
@@ -97,6 +102,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
     {
         for (Map.Entry<String, JsonElement> attacksEntry : obj.entrySet())
         {
+            betterCombatOverrides.add(attacksEntry.getKey(), attacksEntry.getValue());
             JsonArray arr = attacksEntry.getValue().getAsJsonArray();
             DamageClass[] dcs = new DamageClass[arr.size()];
             for (int i = 0; i < arr.size(); i++)
@@ -125,6 +131,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
     {
         for (Map.Entry<String, JsonElement> entry : obj.entrySet())
         {
+            damageOverrides.add(entry.getKey(), entry.getValue());
             ResourceLocation mcDamageType = new ResourceLocation(entry.getKey());
             Map<DamageClass, Double> overrides = new HashMap<>();
             JsonObject overridesObj = entry.getValue().getAsJsonObject();
@@ -144,6 +151,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
     void processItemOverrides(JsonObject obj)
     {
         for (Map.Entry<String, JsonElement> itemOverride : obj.entrySet()) {
+            itemOverrides.add(itemOverride.getKey(), itemOverride.getValue());
             boolean isTag;
             ResourceLocation id;
             if (itemOverride.getKey().startsWith("#"))
@@ -173,6 +181,7 @@ public class DatapackLoader extends SimpleJsonResourceReloadListener {
     void processEntityOverrides(JsonObject obj)
     {
         for (Map.Entry<String, JsonElement> entityOverride : obj.entrySet()) {
+            entityOverrides.add(entityOverride.getKey(), entityOverride.getValue());
             boolean isTag = false;
             ResourceLocation id;
             if (entityOverride.getKey().startsWith("#"))
