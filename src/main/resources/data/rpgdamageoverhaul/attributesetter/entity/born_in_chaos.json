@@ -188,14 +188,14 @@
       "operation": "BASE"
     }
   ],
-  "born_in_chaos:spider_mother": [
+  "born_in_chaos_v1:spider_mother": [
     {
       "attribute": "rpgdamageoverhaul:wither.resistance",
       "value": 1,
       "operation": "BASE"
     }
   ],
-  "born_in_chaos:nightmare_stalker": [
+  "born_in_chaos_v1:nightmare_stalker": [
     {
       "attribute": "rpgdamageoverhaul:wither.resistance",
       "value": 1,

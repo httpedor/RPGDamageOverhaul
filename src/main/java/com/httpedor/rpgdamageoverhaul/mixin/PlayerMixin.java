@@ -14,6 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -33,7 +34,6 @@ import java.util.Map;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity {
-
 
     protected PlayerMixin(EntityType<? extends LivingEntity> entityType, Level world) {
         super(entityType, world);
@@ -80,7 +80,11 @@ public abstract class PlayerMixin extends LivingEntity {
 
         var is = getMainHandItem();
         Map<DamageClass, Double> newDamages = new HashMap<>();
-        RPGDamageOverhaulAPI.applyItemOverrides(is, newDamages);
+        float originalItemDamage = 0;
+        for (var mod : is.getAttributeModifiers(EquipmentSlot.MAINHAND).get(Attributes.ATTACK_DAMAGE))
+            originalItemDamage += mod.getAmount();
+        float dmgFromOtherSources = amount - originalItemDamage; // If the original damage is different from the amount, it means that some other mod (enchantment, potion, etc) is applying damage in the attack method. We need to take that into account when applying item overrides, to avoid overwriting those mods.
+        RPGDamageOverhaulAPI.applyItemOverrides(is, newDamages, dmgFromOtherSources);
         if (newDamages.isEmpty())
         {
             DamageClass blunt = RPGDamageOverhaulAPI.getDamageClass("blunt");
@@ -94,8 +98,10 @@ public abstract class PlayerMixin extends LivingEntity {
             for (var entry : newDamages.entrySet())
             {
                 var dc = entry.getKey();
-                var dmg = entry.getValue();
-                ret |= target.hurt(dc.createDamageSource(this), dmg.floatValue());
+                var dmg = entry.getValue().floatValue();
+                if (che != null)
+                    dmg *= che.getDamageModifier();
+                ret |= target.hurt(dc.createDamageSource(this), dmg);
             }
             return ret;
         }

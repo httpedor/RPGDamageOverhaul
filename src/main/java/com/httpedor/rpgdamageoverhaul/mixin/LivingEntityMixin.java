@@ -33,10 +33,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import javax.annotation.Nullable;
+
+import java.util.HashMap;
 import java.util.Map;
+import java.util.WeakHashMap;
 
 @Mixin(value = LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
+
+    private Map<DamageClass, Long> rpgdamageoverhaul$env_iframes = new HashMap<>();
+    private WeakHashMap<Entity, Long> rpgdamageoverhaul$ent_iframes = new WeakHashMap<>();
 
     public LivingEntityMixin(EntityType<?> type, Level world) {
         super(type, world);
@@ -56,6 +62,35 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Shadow public abstract void setHealth(float p_21154_);
 
+    @Override
+    public boolean isInvulnerableTo(DamageSource source) {
+        var sup = super.isInvulnerableTo(source);
+        if (sup || !RPGDamageOverhaulAPI.isRPGDamageType(source.typeHolder()))
+            return sup;
+        var ent = source.getDirectEntity();
+        if (ent != null)
+        {
+            var until = rpgdamageoverhaul$ent_iframes.get(ent);
+            if (until != null && until >= level().getGameTime() && until - 10 != level().getGameTime()) // -10 because same-tick damage should not be ignored.
+            {
+                return true;
+            }
+            rpgdamageoverhaul$ent_iframes.put(ent, level().getGameTime()+10);
+        }
+        else
+        {
+            var dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
+            var until = rpgdamageoverhaul$env_iframes.get(dc);
+            if (until != null && until >= level().getGameTime() && until - 10 != level().getGameTime())
+            {
+                return true;
+            }
+            rpgdamageoverhaul$env_iframes.put(dc, level().getGameTime()+10);
+        }
+
+        return sup;
+    }
+
     @WrapOperation(method = "hurt", at = @At(value="INVOKE", target = "Lnet/minecraft/world/damagesource/DamageSource;is(Lnet/minecraft/tags/TagKey;)Z", ordinal = 3))
     private boolean noCooldown(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
     {
@@ -64,13 +99,14 @@ public abstract class LivingEntityMixin extends Entity {
         return original.call(instance, tag);
     }
 
-
     @Inject(method = "actuallyHurt", at = @At("HEAD"), cancellable = true)
     private void damageOverrides(DamageSource source, float amount, CallbackInfo ci)
     {
         if (RPGDamageOverhaulAPI.isRPGDamageType(source.typeHolder()))
             return;
 
+        // Entity overrides
+        // Only for projectiles, as melee attacks will already deal RPGDO damage through the doHurtTarget injection at MobEntityMixin
         Map<DamageClass, Double> newDcs = null;
         if (source.getDirectEntity() != null)
         {
@@ -84,6 +120,7 @@ public abstract class LivingEntityMixin extends Entity {
             }
         }
 
+        // DamageType overrides
         if (newDcs == null || newDcs.isEmpty())
         {
             var newDamages = DamageHandler.applyDamageOverrides((LivingEntity)(Object)this, source, amount);
