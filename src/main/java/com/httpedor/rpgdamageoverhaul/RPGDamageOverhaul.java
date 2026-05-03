@@ -11,6 +11,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.logging.LogUtils;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -30,6 +32,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.resource.ResourceType;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
@@ -40,6 +43,7 @@ import s_com.udojava.evalexrpgdo.Expression;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.function.Function;
 
 public class RPGDamageOverhaul implements ModInitializer {
     public static final Map<Enchantment, Pair<DamageClass, Float>> damageEnchantments = new HashMap<>();
@@ -49,9 +53,13 @@ public class RPGDamageOverhaul implements ModInitializer {
     public static final Set<DamageClass> increasedDamageExceptions = new HashSet<>();
     public static final Map<UUID, EntityAttribute> transientModifiers = new HashMap<>();
     public static final Map<LivingEntity, Map<UUID, Long>> transientModifiersDuration = new HashMap<>();
+    public static final Map<DamageClass, Function<Float, Float>> onWaterDamageModifiers = new HashMap<>();
 
     public static final Map<Identifier, List<Identifier>> mappedDamageTypes = new HashMap<>();
     public static final Map<Identifier, List<Identifier>> mappedTags = new HashMap<>();
+    public static final Map<Identifier, List<Identifier>> mappedAttributes = new HashMap<>();
+
+    public static ReloadListener dl;
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
@@ -67,20 +75,11 @@ public class RPGDamageOverhaul implements ModInitializer {
     @Override
     public void onInitialize() {
 
-        ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
-            if (entity instanceof ServerPlayerEntity spe)
-            {
-                Registry<DamageType> reg = world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE);
-                PacketByteBuf buf = PacketByteBufs.create();
-                var dtTypes = RPGDamageOverhaulAPI.getRPGDamageTypes();
-                buf.writeInt(dtTypes.size());
-                for (String dt : dtTypes)
-                {
-                    buf.writeString(dt);
-                    buf.writeInt(reg.getRawId(reg.get(RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier("rpgdamageoverhaul", dt)))));
-                }
-                ServerPlayNetworking.send(spe, Identifier.of("rpgdamageoverhaul", "damage_type"), buf);
-            }
+        ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, joined) -> {
+            SyncPacket packet = SyncPacket.fromData(dl);
+            PacketByteBuf buf = PacketByteBufs.create();
+            packet.encode(buf);
+            ServerPlayNetworking.send(player, Identifier.of("rpgdamageoverhaul", "sync"), buf);
         });
 
         DamageClassRegisteredCallback.EVENT.register((dc) -> {
@@ -99,7 +98,7 @@ public class RPGDamageOverhaul implements ModInitializer {
                     };
                     if (attr == null)
                     {
-                        LOGGER.warn("Unknown attribute: {} for damage class potions: {}", attribute.getKey(), dc.name);
+                        RPGDamageOverhaul.LOGGER.warn("Unknown attribute: {} for damage class potions: {}", attribute.getKey(), dc.name);
                         continue;
                     }
                     JsonObject potionAttrs = attribute.getValue().getAsJsonObject();
@@ -108,7 +107,7 @@ public class RPGDamageOverhaul implements ModInitializer {
                         StatusEffect effect = Registries.STATUS_EFFECT.get(new Identifier(potion.getKey()));
                         if (effect == null)
                         {
-                            LOGGER.warn("Unknown potion effect: {} for damage class potions: {}", potion.getKey(), dc.name);
+                            RPGDamageOverhaul.LOGGER.warn("Unknown potion effect: {} for damage class potions: {}", potion.getKey(), dc.name);
                             continue;
                         }
                         double value = potion.getValue().getAsDouble();
@@ -138,15 +137,16 @@ public class RPGDamageOverhaul implements ModInitializer {
                 }
             }
 
+            var dtKey = new Identifier("rpgdamageoverhaul", dc.name);
             //Register DT aliases
             if (dc.properties.containsKey("damageTypes"))
             {
                 var dts = dc.properties.get("damageTypes").getAsJsonArray().asList();
-                if (!mappedDamageTypes.containsKey(dc.damageType.getValue()))
-                    mappedDamageTypes.put(dc.damageType.getValue(), new ArrayList<>());
+                if (!mappedDamageTypes.containsKey(dtKey))
+                    mappedDamageTypes.put(dtKey, new ArrayList<>());
                 for (var damageTypeEl : dts)
                 {
-                    mappedDamageTypes.get(dc.damageType.getValue()).add(new Identifier(damageTypeEl.getAsString()));
+                    mappedDamageTypes.get(dtKey).add(new Identifier(damageTypeEl.getAsString()));
                 }
             }
 
@@ -154,12 +154,37 @@ public class RPGDamageOverhaul implements ModInitializer {
             if (dc.properties.containsKey("tags"))
             {
                 var tags = dc.properties.get("tags").getAsJsonArray().asList();
-                if (!mappedTags.containsKey(dc.damageType.getValue()))
-                    mappedTags.put(dc.damageType.getValue(), new ArrayList<>());
+                if (!mappedTags.containsKey(dtKey))
+                    mappedTags.put(dtKey, new ArrayList<>());
                 for (var tag : tags)
                 {
-                    mappedTags.get(dc.damageType.getValue()).add(new Identifier(tag.getAsString()));
+                    mappedTags.get(dtKey).add(new Identifier(tag.getAsString()));
                 }
+            }
+
+            if (dc.properties.containsKey("on_water"))
+            {
+                var element = dc.properties.get("on_water");
+                Function<Float, Float> func;
+                if (element.isJsonPrimitive() && element.getAsJsonPrimitive().isNumber())
+                {
+                    float multiplier = element.getAsFloat();
+                    func = (dmg) -> dmg * multiplier;
+                }
+                else if (element.isJsonPrimitive() && element.getAsJsonPrimitive().isString())
+                {
+                    Expression exp = new Expression(element.getAsString());
+                    func = (dmg) -> {
+                        var newExp = exp.with("dmg", BigDecimal.valueOf(dmg));
+                        return newExp.eval().floatValue();
+                    };
+                }
+                else
+                {
+                    RPGDamageOverhaul.LOGGER.warn("Invalid on_water property for damage class {}: {}", dc.name, element);
+                    func = (dmg) -> dmg;
+                }
+                onWaterDamageModifiers.put(dc, func);
             }
         });
 
@@ -175,7 +200,10 @@ public class RPGDamageOverhaul implements ModInitializer {
             {
                 DefaultParticleType pt = (DefaultParticleType) Registries.PARTICLE_TYPE.get(new Identifier(particleId));
                 if (pt == null)
+                {
                     System.out.println("Particle not found: " + particleId);
+                    return;
+                }
 
                 try {
                     spawnHitParticles((ServerWorld) target.getWorld(), pt.getParametersFactory().read(pt, new StringReader("")), target.getX(), target.getEyeY(), target.getZ(), (int) (dmg/2)+1);
@@ -185,7 +213,8 @@ public class RPGDamageOverhaul implements ModInitializer {
             }
         });
         RPGDamageOverhaulAPI.registerOnHitEffect(new Identifier("rpgdamageoverhaul", "set_fire"), (target, source, dmg) -> {
-            target.setOnFireFor((int) Math.round(dmg/2));
+            if (source.getAttacker() != null)
+                target.setFireTicks((int) Math.round(dmg/2));
             target.setFrozenTicks(0);
         });
         RPGDamageOverhaulAPI.registerOnHitEffect(new Identifier("rpgdamageoverhaul", "set_frozen"), (target, source, dmg) -> {
@@ -208,6 +237,8 @@ public class RPGDamageOverhaul implements ModInitializer {
                 time = 500 * (long) (dmg/2);
             }
             percent = Math.min(percent, 1);
+            if (noHealingUntil.containsKey(target) && noHealingUntil.get(target).getLeft() > percent)
+                return;
             noHealingUntil.put(target, new Pair<>(percent, System.currentTimeMillis() + time));
         });
         RPGDamageOverhaulAPI.registerOnHitEffect(new Identifier("rpgdamageoverhaul", "chain_lightning"), (target, source, dmg) -> {
@@ -239,8 +270,17 @@ public class RPGDamageOverhaul implements ModInitializer {
 
             if (source.getAttacker() instanceof LivingEntity le)
             {
-                var multiplierEl = dc.properties.getOrDefault("healMultiplier", null);
-                double multiplier = multiplierEl == null ? 1 : multiplierEl.getAsDouble();
+                var multiplierEl = dc.properties.getOrDefault("heal", null);
+                double multiplier;
+                if (multiplierEl == null)
+                    multiplier = 1;
+                else if (multiplierEl.getAsJsonPrimitive().isNumber())
+                    multiplier = multiplierEl.getAsDouble();
+                else
+                {
+                    Expression exp = new Expression(multiplierEl.getAsString()).with("dmg", BigDecimal.valueOf(dmg));
+                    multiplier = exp.eval().doubleValue();
+                }
                 le.heal((float) (dmg * multiplier));
             }
         });
@@ -270,25 +310,56 @@ public class RPGDamageOverhaul implements ModInitializer {
             var currentDmg = stacks.stream().mapToDouble(Pair::getLeft).sum();
             target.damage(dc.createDamageSource(source.getAttacker(), source.getSource(), false), ((float) currentDmg));
 
-            if (obj.has("stackDmgMultiplier"))
-                stacks.add(new Pair<>(dmg.floatValue() * obj.get("stackDmgMultiplier").getAsFloat(), System.currentTimeMillis()));
+            if (obj.has("formula"))
+            {
+                Expression exp = new Expression(obj.get("formula").getAsString()).with("dmg", BigDecimal.valueOf(dmg));
+                stacks.add(new Pair<>(exp.eval().floatValue(), System.currentTimeMillis()));
+            }
             else
-                stacks.add(new Pair<>(dmg.floatValue()/4, System.currentTimeMillis()));
+                stacks.add(new Pair<>(dmg.floatValue()/3, System.currentTimeMillis()));
         });
         RPGDamageOverhaulAPI.registerOnHitEffect(new Identifier("rpgdamageoverhaul", "increase_damage"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.getType());
             var obj = dc.properties.get("increaseDamage").getAsJsonObject();
             float duration;
-            float multiplierPerHP;
+            float dmgIncrease;
+            if (obj.has("except"))
+            {
+                var except = obj.get("except").getAsJsonArray();
+                for (var el : except)
+                {
+                    var tdc = RPGDamageOverhaulAPI.getDamageClass(el.getAsString());
+                    if (tdc != null)
+                        increasedDamageExceptions.add(tdc);
+                }
+            }
             if (obj.has("duration"))
-                duration = obj.get("duration").getAsFloat();
+            {
+                var el = obj.get("duration");
+                if (el.getAsJsonPrimitive().isNumber())
+                    duration = obj.get("duration").getAsFloat();
+                else
+                {
+                    Expression exp = new Expression(el.getAsString()).with("dmg", BigDecimal.valueOf(dmg));
+                    duration = exp.eval().floatValue();
+                }
+            }
             else
                 duration = 5;
-            if (obj.has("multiplierPerHP"))
-                multiplierPerHP = obj.get("multiplierPerHP").getAsFloat();
+            if (obj.has("multiplier"))
+            {
+                var el = obj.get("multiplier");
+                if (el.getAsJsonPrimitive().isNumber())
+                    dmgIncrease = obj.get("multiplier").getAsFloat();
+                else
+                {
+                    Expression exp = new Expression(el.getAsString()).with("dmg", BigDecimal.valueOf(dmg));
+                    dmgIncrease = exp.eval().floatValue();
+                }
+            }
             else
-                multiplierPerHP = 0.03f;
-            increasedDamage.put(target, new Pair<>((float)(multiplierPerHP * dmg), System.currentTimeMillis() + (long) (duration * 1000)));
+                dmgIncrease = (float) (1 + 0.03f * dmg);
+            increasedDamage.put(target, new Pair<>(dmgIncrease, System.currentTimeMillis() + (long) (duration * 1000)));
         });
         RPGDamageOverhaulAPI.registerOnHitEffect(new Identifier("rpgdamageoverhaul", "apply_potion"), (target, source, dmg) -> {
             DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.getType());
@@ -356,8 +427,8 @@ public class RPGDamageOverhaul implements ModInitializer {
                 {
                     double currentAmount = target.getAttributeInstance(attribute).getModifier(mod.getId()).getValue();
                     if (replaceType.equalsIgnoreCase("always")
-                            || (replaceType.equalsIgnoreCase("lower") && amount < currentAmount)
-                            || (replaceType.equalsIgnoreCase("higher") && amount > currentAmount))
+                    || (replaceType.equalsIgnoreCase("lower") && amount < currentAmount)
+                    || (replaceType.equalsIgnoreCase("higher") && amount > currentAmount))
                     {
                         target.getAttributeInstance(attribute).removeModifier(mod.getId());
                     }
@@ -376,6 +447,7 @@ public class RPGDamageOverhaul implements ModInitializer {
             }
         });
 
-        ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ReloadListener());
+        dl = new ReloadListener();
+        ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(dl);
     }
 }

@@ -2,12 +2,12 @@
   "alexscaves:extinction_spear": [
     {
       "attribute": "minecraft:generic.attack_damage",
-      "value": 4,
+      "value": 2,
       "operation": "BASE"
     },
     {
       "attribute": "rpgdamageoverhaul:fire.damage",
-      "value": 4
+      "value": 6
     }
   ],
   "alexscaves:hazmat_mask": [

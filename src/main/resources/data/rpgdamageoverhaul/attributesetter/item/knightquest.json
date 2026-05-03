@@ -884,14 +884,6 @@
       "attribute": "rpgdamageoverhaul:frost.damage",
       "value": 0.08,
       "operation": "MULTIPLY_BASE"
-    },{
-      "attribute": "minecraft:generic.armor",
-      "value": 2,
-      "operation": "BASE"
-    },{
-      "attribute": "minecraft:armor_toughness",
-      "value": 0.5,
-      "operation": "BASE"
     }
   ],
   "sea_chestplate": [
@@ -904,7 +896,7 @@
       "value": 5,
       "operation": "BASE"
     },{
-      "attribute": "minecraft:armor_toughness",
+      "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
       "operation": "BASE"
     }
@@ -919,7 +911,7 @@
       "value": 4,
       "operation": "BASE"
     },{
-      "attribute": "minecraft:armor_toughness",
+      "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
       "operation": "BASE"
     }
@@ -934,7 +926,7 @@
       "value": 2,
       "operation": "BASE"
     },{
-      "attribute": "minecraft:armor_toughness",
+      "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
       "operation": "BASE"
     }
@@ -1134,7 +1126,7 @@
       "value": 2,
       "operation": "BASE" 
       },{
-      "attribute": "minecraft:armor_toughness",
+      "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
       "operation": "BASE" 
       }
@@ -1149,7 +1141,7 @@
       "value": 4,
       "operation": "BASE" 
       },{
-      "attribute": "minecraft:armor_toughness",
+      "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
       "operation": "BASE" 
       }
@@ -1164,7 +1156,7 @@
       "value": 3,
       "operation": "BASE" 
       },{
-      "attribute": "minecraft:armor_toughness",
+      "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
       "operation": "BASE" 
       }
@@ -1179,7 +1171,7 @@
       "value": 1.5,
       "operation": "BASE" 
       },{
-      "attribute": "minecraft:armor_toughness",
+      "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
       "operation": "BASE" 
       }

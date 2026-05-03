@@ -1,0 +1,18 @@
+{
+    "chesed": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.75
+        }
+    ],
+    "chesed_crystal": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.75
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": -0.25
+        }
+    ]
+}

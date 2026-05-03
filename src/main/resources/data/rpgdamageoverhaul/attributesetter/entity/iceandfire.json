@@ -1,0 +1,206 @@
+{
+    "cyclops": [
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.5
+        }
+    ],
+    "deathworm": [
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.1
+        }
+    ],
+    "ice_dragon": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.75
+        }
+    ],
+    "fire_dragon": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.75
+        }
+    ],
+    "lightning_dragon": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.75
+        }
+    ],
+    "dread_beast": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        }
+    ],
+    "dread_ghoul": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        }
+    ],
+    "dread_horse": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        }
+    ],
+    "dread_knight": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        }
+    ],
+    "dread_lich": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.25
+        }
+    ],
+    "dread_scuttler": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        }
+    ],
+    "dread_thrall": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        }
+    ],
+    "ghost": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.9
+        }
+    ],
+    "gorgon": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": -0.25
+        }
+    ],
+    "hippocampus": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.5
+        }
+    ],
+    "hydra": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.2
+        }
+    ],
+    "regex:^iceandfire:myrmex_.*&": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.2
+        }
+    ],
+    "pixie": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.5
+        }
+    ],
+    "sea_serpent": [
+        {
+            "attribute": "rpgdamageoverhaul:sharp.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.7
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.1
+        }
+    ],
+    "siren": [
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.2
+        }
+    ]
+}

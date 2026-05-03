@@ -196,6 +196,15 @@
       "uuid": "9dc13d90-44e2-4d89-891c-584b4f33df54"
     }
   ],
+  "minecraft:golden_sword": [
+    {
+        "attribute": "rpgdamageoverhaul:holy.damage",
+        "from": "minecraft:generic.attack_damage",
+        "operation": "CONVERSION",
+        "amount": 0.75,
+        "rate": 1
+    }
+  ],
   "minecraft:diamond_helmet": [
     {
       "attribute": "rpgdamageoverhaul:arcane.armor",
@@ -283,7 +292,8 @@
   "minecraft:turtle_helmet": [
     {
       "attribute": "rpgdamageoverhaul:physical.armor",
-      "value": 2
+      "value": 2,
+      "slot": "head"
     }
   ],
   "minecraft:trident": [

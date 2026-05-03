@@ -1,7 +1,11 @@
 {
   "physical": {
     "color": "GRAY",
-
+    "potions": {
+      "resistance": {
+        "minecraft:resistance": 0.05
+      }
+    },
     "subClasses": {
       "sharp": {
         "color": "GRAY",
@@ -26,11 +30,12 @@
   "elemental": {
     "subClasses": {
       "fire": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_fire", "rpgdamageoverhaul:stacking"],
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_fire", "rpgdamageoverhaul:stacking", "rpgdamageoverhaul:on_water"],
         "particle": "minecraft:flame",
         "color": "RED",
         "potions": {
-          "resistance": { "minecraft:fire_resistance": 0.75 }
+          "resistance": { "minecraft:fire_resistance": 0.5 },
+          "armor": { "cataclysm:blazing_brand": -2, "dungeons_and_combat:flame_grant_me_strength": 2 }
         },
         "stacking": {
           "duration": 2,
@@ -46,15 +51,22 @@
           }
         },
         "damageTypes": ["minecraft:on_fire"],
-        "tags": ["minecraft:is_fire"]
+        "tags": ["minecraft:is_fire"],
+        "on_water": 0.75
       },
       "frost": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen", "rpgdamageoverhaul:attribute_modifier"],
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:set_frozen", "rpgdamageoverhaul:attribute_modifier", "rpgdamageoverhaul:on_water"],
         "particle": "minecraft:snowflake",
+        "on_water": 1.2,
         "enchantments": {
           "resistance": {
-            "enigmaticaddons:frost_protection": 0.04,
-            "origins:water_protection": 0.04
+            "enigmaticaddons:frost_protection": 0.1,
+            "origins:water_protection": 0.1,
+            "dungeons_and_combat:ice_resistance": 0.5,
+            "dungeons_and_combat:frostbite": -0.25,
+            "cofh_core:chilled": -0.15,
+            "irons_spellbooks:chilled": -0.15,
+            "nexuslayer:chilled": -0.15
           },
           "damage": {
             "enigmaticaddons:frost_aspect": 2
@@ -66,7 +78,7 @@
             "operation": "MULTIPLY_TOTAL",
             "amount": "MAX(-0.05 * dmg, -0.6)",
             "id": "f4a681ca-9f90-462c-9390-5db4355f90e1",
-            "duration": "dmg/2",
+            "duration": "dmg/1.5",
             "replaceType": "LOWER"
           },
           "FrostSlowMov": {
@@ -74,7 +86,7 @@
             "operation": "MULTIPLY_TOTAL",
             "amount": "MAX(-0.035 * dmg, -0.5)",
             "id": "c6012dfe-ed47-4828-bc25-1dd5766f54af",
-            "duration": "dmg/2",
+            "duration": "dmg/1.5",
             "replaceType": "LOWER"
           }
         },
@@ -83,12 +95,21 @@
         "tags": ["minecraft:is_freezing"]
       },
       "lightning": {
-        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:chain_lightning"],
+        "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:chain_lightning", "rpgdamageoverhaul:on_water"],
         "particle": "minecraft:wax_on",
+        "on_water": 1.5,
         "chainLightning": {
           "range": 5,
           "maxTargets": 3,
           "damagePercentage": 0.75
+        },
+        "potions": {
+          "resistance": {
+            "dungeons_and_combat:conductive": -0.25,
+            "cofh_core:shocked": -0.1,
+            "ars_nouveau:shocked": -0.2,
+            "fdbosses:shocked": -0.1
+          }
         },
         "color": "AQUA",
         "damageTypes": ["minecraft:lightning_bolt"],
@@ -104,7 +125,7 @@
             "operation": "MULTIPLY_TOTAL",
             "amount": "MAX(-0.05 * dmg, -0.6)",
             "id": "ca274e67-f0d2-4a4d-ab3d-36b64bdd735f",
-            "duration": "dmg/2",
+            "duration": "dmg",
             "replaceType": "LOWER"
           }
         }
@@ -135,7 +156,16 @@
         "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:heal"],
         "particle": "minecraft:crimson_spore",
         "color": "DARK_RED",
-        "heal": 0.45
+        "heal": 0.45,
+        "potions": {
+          "resistance": {
+            "dungeons_and_combat:bleeding": -0.25,
+              "majruszsdifficulty:bleeding": -0.25,
+              "nexuslayer:bleeding": -0.25,
+              "relics:bleeding": -0.25,
+              "warriorsofpastepoch:bleeding_wound": -0.25
+          }
+        }
       },
       "wither": {
         "onHit": ["rpgdamageoverhaul:particles", "rpgdamageoverhaul:apply_potion", "rpgdamageoverhaul:anti_heal"],
@@ -164,8 +194,14 @@
             "potions": {
               "resistance": {
                 "netherexp:poison_immunity": 0.95,
-                "alexsmobs:poison_resistance": 0.75,
-                "mowziesmobs:poison_resist": 0.75
+                "alexsmobs:poison_resistance": 0.5,
+                "mowziesmobs:poison_resist": 0.5,
+                "dungeons_and_combat:toxin": -0.25,
+                "dungeons_and_combat:bleeding": -0.15,
+                "majruszsdifficulty:bleeding": -0.15,
+                "nexuslayer:bleeding": -0.15,
+                "relics:bleeding": -0.15,
+                "warriorsofpastepoch:bleeding_wound": -0.15
               }
             }
           }

@@ -80,6 +80,11 @@
       "operation": "BASE"
     },
     {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
       "attribute": "rpgdamageoverhaul:frost.resistance",
       "value": -0.5,
       "operation": "BASE"
@@ -235,6 +240,16 @@
       "attribute": "rpgdamageoverhaul:frost.resistance",
       "value": 0.5,
       "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": -0.5,
+      "operation": "BASE"
     }
   ],
   "cataclysm:the_prowler": [
@@ -270,6 +285,101 @@
     {
       "attribute": "rpgdamageoverhaul:holy.resistance",
       "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:cindaria": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:clawdian": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:drowned_host": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.resistance",
+      "value": 0.15,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:hippocamtus": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 10
+    }
+  ],
+  "cataclysm:lionfish": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:scylla": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.resistance",
+      "value": 0.75,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.25,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:symbiocto": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    }
+  ],
+  "cataclysm:urchinkin": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.resistance",
+      "value": 0.5,
       "operation": "BASE"
     }
   ]

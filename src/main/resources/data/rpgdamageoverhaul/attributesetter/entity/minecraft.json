@@ -253,20 +253,30 @@
       "operation": "BASE"
     },
     {
+      "attribute": "rpgdamageoverhaul:arcane.resistance",
+      "value": 0.5,
+      "operation": "BASE"
+    },
+    {
       "attribute": "rpgdamageoverhaul:physical.resistance",
-      "value": 0.7,
+      "value": 0.9,
       "operation": "BASE"
     }
   ],
   "minecraft:warden": [
     {
       "attribute": "rpgdamageoverhaul:soul.resistance",
-      "value": -0.25,
+      "value": -1.5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.75,
       "operation": "BASE"
     },
     {
       "attribute": "rpgdamageoverhaul:physical.resistance",
-      "value": 0.5,
+      "value": 0.75,
       "operation": "BASE"
     }
   ],

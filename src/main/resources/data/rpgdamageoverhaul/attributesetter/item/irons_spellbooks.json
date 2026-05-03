@@ -363,6 +363,11 @@
       "uuid": "4a55b0c6-a40d-4a60-8016-9061a1872a9d"
     },
     {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE"
+    },
+    {
       "attribute": "rpgdamageoverhaul:wither.armor",
       "value": 3,
       "uuid": "d06d9a87-5294-4ff3-8f30-3d5335f7345c"
@@ -374,6 +379,11 @@
       "value": 0.05,
       "operation": "MULTIPLY_BASE",
       "uuid": "735084f5-3b3c-45f2-92bd-ede77f726d04"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE"
     },
     {
       "attribute": "rpgdamageoverhaul:wither.armor",
@@ -389,6 +399,11 @@
       "uuid": "ae711092-eadb-4d34-9165-e05852da8fe9"
     },
     {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE"
+    },
+    {
       "attribute": "rpgdamageoverhaul:wither.armor",
       "value": 6,
       "uuid": "d46bbbff-118b-4ddc-955d-7576071b5959"
@@ -402,6 +417,11 @@
       "uuid": "f77abb73-34ab-45ae-8276-529a390cf3b1"
     },
     {
+      "attribute": "rpgdamageoverhaul:wither.damage",
+      "value": 0.05,
+      "operation": "MULTIPLY_BASE"
+    },
+    {
       "attribute": "rpgdamageoverhaul:wither.armor",
       "value": 3,
       "uuid": "cc8cf8b5-9888-443f-b2a1-2e406e3db6a5"
@@ -411,6 +431,17 @@
     {
       "attribute": "rpgdamageoverhaul:elemental.armor",
       "value": 6
+    }
+  ],
+  "magehunter": [
+    {
+      "attribute": "irons_spellbooks:spell_resist",
+      "value": 0,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:elemental.resistance",
+      "value": 0.25
     }
   ]
 }

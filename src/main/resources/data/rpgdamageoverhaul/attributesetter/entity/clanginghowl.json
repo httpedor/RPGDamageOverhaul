@@ -1,0 +1,56 @@
+{
+    "extraterrestrial_reaper": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": -0.15
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.25
+        }
+    ],
+    "flesh_maiden": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.25
+        }
+    ],
+    "heart_of_decay": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.25
+        }
+    ]
+}

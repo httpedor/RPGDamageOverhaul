@@ -2,3 +2,5 @@
 /.gradle
 /.idea
 /run
+/libs
+/bin

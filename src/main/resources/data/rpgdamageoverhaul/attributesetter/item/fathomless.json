@@ -1,0 +1,91 @@
+{
+    "ritualistic_dagger": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.6,
+            "rate": 1
+        }
+    ],
+    "sanguine_dagger": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.6,
+            "rate": 1
+        }
+    ],
+    "chrysalised_spear": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.6,
+            "rate": 1
+        }
+    ],
+    "chrysalised_greatblade": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "needlade": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.6,
+            "rate": 1
+        }
+    ],
+    "aspect_seeker": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.5,
+            "rate": 1
+        }
+    ],
+    "the_emissary{tag:{\"upgrade\":\"inferno\"}}": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.75,
+            "rate": 1
+        }
+    ],
+    "the_emissary{tag:{\"upgrade\":\"frost\"}}": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.75,
+            "rate": 1
+        }
+    ],
+    "the_emissary{tag:{\"upgrade\":\"soul_edge\"}}": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.75,
+            "rate": 1
+        }
+    ],
+    "regex:^fathomless:crimson_.*$ && conquerer_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "operation": "DEPENDENCY",
+            "dependency": "minecraft:generic.armor",
+            "multiplier": 0.8
+        }
+    ]
+}

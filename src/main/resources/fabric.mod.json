@@ -37,6 +37,5 @@
     "attributesetter": "*"
   },
   "suggests": {
-    "bettercombatextension": "*"
   }
 }

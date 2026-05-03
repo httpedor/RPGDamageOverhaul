@@ -6,7 +6,6 @@ import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import com.httpedor.rpgdamageoverhaul.compat.BetterCombatCompat;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import com.llamalad7.mixinextras.sugar.Local;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -15,7 +14,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.World;
@@ -57,6 +55,7 @@ public abstract class MobEntityMixin extends LivingEntity {
     private boolean otherDamageAttacks(Entity target, DamageSource source, float amount, Operation<Boolean> original)
     {
         boolean ret = false;
+
         for (DamageClass dc : RPGDamageOverhaulAPI.getAllDamageClasses())
         {
             double dmg = getAttributeValue(dc.dmgAttribute);
@@ -81,11 +80,14 @@ public abstract class MobEntityMixin extends LivingEntity {
             }
         }
 
-        if (FabricLoader.getInstance().isModLoaded("bettercombat"))
+        if (FabricLoader.getInstance().isModLoaded("bettermobcombat"))
         {
-            if (BetterCombatCompat.shouldBCHandleAttack((MobEntity)(Object)this))
-                return original.call(target, source, amount) || ret;
+            if (BetterCombatCompat.shouldBCHandleAttack(this))
+            {
+                return target.damage(source, (float)totalPhysicalDamage) || ret;
+            }
         }
+
         Map<DamageClass, Double> newDamages = new HashMap<>();
         for (ItemStack is : getHandItems())
         {
@@ -99,6 +101,7 @@ public abstract class MobEntityMixin extends LivingEntity {
 
         if (newDamages.isEmpty())
             return target.damage(source, (float)totalPhysicalDamage) || ret;
+
         for (var entry : newDamages.entrySet())
         {
             var dc = entry.getKey();

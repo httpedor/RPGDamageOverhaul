@@ -11,10 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DamageHandler {
-
+    
     public static Map<DamageSource, Double> applyDamageOverrides(LivingEntity entity, DamageSource source, float amount)
     {
-        if (RPGDamageOverhaulAPI.isRPGDamageType(source.getType()))
+        if (RPGDamageOverhaulAPI.isRPGDamageType(source.getTypeRegistryEntry()))
             return null;
 
         Map<DamageClass, Double> overrides = RPGDamageOverhaulAPI.getDamageOverrides(source);
@@ -29,16 +29,12 @@ public class DamageHandler {
             if (dmgClass == null)
                 continue;
 
-            RegistryEntry<DamageType> typeEntry = entity.getWorld().getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).entryOf(dmgClass.damageType);
+            RegistryEntry<DamageType> typeEntry = dmgClass.damageType;
             DamageSource newSource;
-            if (source.getPosition() != null)
-                newSource = new DamageSource(typeEntry, source.getPosition());
-            else if (source.getSource() != null)
+            if (source.getStoredPosition() == null)
                 newSource = new DamageSource(typeEntry, source.getSource(), source.getAttacker());
-            else if (source.getAttacker() != null)
-                newSource = new DamageSource(typeEntry, source.getAttacker());
             else
-                newSource = new DamageSource(typeEntry);
+                newSource = new DamageSource(typeEntry, source.getStoredPosition());
 
             newDmgs.put(newSource, amount * dmg);
         }

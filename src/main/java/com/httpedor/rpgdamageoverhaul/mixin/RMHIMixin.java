@@ -1,6 +1,5 @@
 package com.httpedor.rpgdamageoverhaul.mixin;
 
-import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.fabricmc.fabric.impl.resource.loader.ResourceManagerHelperImpl;
 import net.minecraft.resource.ResourceReloader;

@@ -1,0 +1,116 @@
+{
+    "dragonfang_glaive": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.5,
+            "rate": 1
+        }
+    ],
+    "glass_rapier": [
+        {
+            "attribute": "rpgdamageoverhaul:true.damage",
+            "value": 1
+        }
+    ],
+    "hammer_of_light": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.35,
+            "rate": 1
+        }
+    ],
+    "ice_hammer": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+        }
+    ],
+    "lunar_crescent_dagger": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+        }
+    ],
+    "magnet_hammer": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+        }
+    ],
+    "molten_obsidian_hammer": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+        }
+    ],
+    "ruined_zweihander": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+        }
+    ],
+    "sakura_ghostkatana": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+        }
+    ],
+    "shadowfang_blade": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+        }
+    ],
+    "solar_spear": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.35,
+            "rate": 1
+        }
+    ],
+    "tempest_scimitar": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.4,
+            "rate": 1
+         }
+    ],
+    "the_bloodthirster": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "operation": "CONVERSION",
+            "from": "minecraft:generic.attack_damage",
+            "amount": 0.5,
+            "rate": 1
+        }
+    ]
+}

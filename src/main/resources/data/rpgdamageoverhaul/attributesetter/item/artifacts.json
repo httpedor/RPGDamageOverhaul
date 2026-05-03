@@ -1,0 +1,140 @@
+{
+    "umbrella": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "snorkel": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 2,
+            "slot": "curio:head"
+        }
+    ],
+    "cross_necklace": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.resistance",
+            "value": 0.1,
+            "slot": "curio:necklace"
+        }
+    ],
+    "shock_pendant": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.05,
+            "slot": "curio:necklace"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:necklace"
+        }
+    ],
+    "flame_pendant": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:necklace"
+        }
+    ],
+    "thorn_pendant": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:necklace"
+        }
+    ],
+    "charm_of_sinking": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:necklace"
+        }
+    ],
+    "cloud_in_a_bottle": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:belt"
+        }
+    ],
+    "obsidian_skull": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:belt"
+        }
+    ],
+    "chorus_totem": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:belt"
+        }
+    ],
+    "power_glove": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.damage",
+            "value": 0.2,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+        }
+    ],
+    "fire_gauntlet": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 1,
+            "slot": "curio:hands"
+        }
+    ],
+    "vampiric_glove": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 1,
+            "slot": "curio:hands"
+        }
+    ],
+    "snowshoes": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 2,
+            "slot": "feet"
+        }
+    ],
+    "flippers": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 1,
+            "slot": "feet"
+        }
+    ],
+    "aqua_dashers": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "feet"
+        }
+    ]
+}

@@ -24,8 +24,7 @@ public class DamageClass {
     public final EntityAttribute armorAttribute;
     public final EntityAttribute absorptionAttribute;
     public final EntityAttribute resistanceAttribute;
-    public final RegistryKey<DamageType> damageType;
-    RegistryEntry<DamageType> damageTypeEntry;
+    public RegistryEntry<DamageType> damageType;
     public final Set<Identifier> onHitEffects;
     public Map<String, JsonElement> properties;
     public final String parentName;
@@ -35,7 +34,7 @@ public class DamageClass {
                 EntityAttribute armorAttribute,
                 EntityAttribute absorptionAttribute,
                 EntityAttribute resistanceAttribute,
-                RegistryKey<DamageType> damageType,
+                RegistryEntry<DamageType> damageType,
                 String parentName
     )
     {
@@ -59,25 +58,18 @@ public class DamageClass {
         onHitEffects.remove(effect);
     }
 
-    public RegistryEntry<DamageType> getDamageTypeEntry()
-    {
-        return damageTypeEntry;
-    }
-
     public boolean isChildOf(String parentName)
     {
-        boolean isChild = false;
-        DamageClass parent = RPGDamageOverhaulAPI.getDamageClass(parentName);
+        DamageClass parent = RPGDamageOverhaulAPI.getDamageClass(this.parentName);
         while (parent != null)
         {
             if (parent.name.equals(parentName))
             {
-                isChild = true;
-                break;
+                return true;
             }
             parent = RPGDamageOverhaulAPI.getDamageClass(parent.parentName);
         }
-        return isChild;
+        return false;
     }
     public boolean isChildOf(DamageClass parent)
     {
@@ -103,25 +95,25 @@ public class DamageClass {
 
     public DamageSource createDamageSource(Entity attacker, boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry, attacker);
+        DamageSource ret = new DamageSource(damageType, attacker);
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }
     public DamageSource createDamageSource(Entity attacker, Entity source, boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry, attacker, source);
+        DamageSource ret = new DamageSource(damageType, attacker, source);
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }
     public DamageSource createDamageSource(Vec3d position, boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry, position);
+        DamageSource ret = new DamageSource(damageType, position);
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }
     public DamageSource createDamageSource(boolean triggerOnHitEffects)
     {
-        DamageSource ret = new DamageSource(damageTypeEntry);
+        DamageSource ret = new DamageSource(damageType);
         ((DCDamageSource)ret).setTriggerOnHitEffects(triggerOnHitEffects);
         return ret;
     }

@@ -1,0 +1,37 @@
+{
+    "depth_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 2
+        }
+    ],
+    "depth_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 4
+        }
+    ],
+    "depth_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 3
+        }
+    ],
+    "depth_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 2
+        }
+    ],
+    "depth_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 4.8,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 2
+        }
+    ]
+}

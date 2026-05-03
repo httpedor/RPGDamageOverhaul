@@ -1,0 +1,36 @@
+{
+    "glowshroom_monster": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:sharp.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        }
+    ],
+    "void_soul_knight": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        }
+    ]
+}

@@ -3,6 +3,8 @@ package com.httpedor.rpgdamageoverhaul.api;
 import com.httpedor.rpgdamageoverhaul.RPGDamageOverhaul;
 import com.httpedor.rpgdamageoverhaul.ducktypes.CopyableDefaultAttrContainer;
 import com.httpedor.rpgdamageoverhaul.events.DamageClassRegisteredCallback;
+import com.httpedor.rpgdamageoverhaul.mixin.SimpleRegistryAccessor;
+
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.entity.Entity;
@@ -15,6 +17,7 @@ import net.minecraft.entity.damage.DamageType;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.*;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.TextColor;
 import net.minecraft.util.Formatting;
@@ -34,10 +37,15 @@ public class RPGDamageOverhaulAPI {
     static final Map<Identifier, Map<DamageClass, Double>> entityOverrides = new HashMap<>();
     static final Map<Identifier, Map<DamageClass, Double>> tagEntityOverrides = new HashMap<>();
 
+    public static final LinkedList<DamageClass> missingDamageTypes = new LinkedList<>();
+
     public record DamageClassAttributes(String dmg, String armor, String absorption, String resistance) {}
 
-    public static DamageClass registerDamage(String dmgName, String parent, DamageClassAttributes attr)
+    public static DamageClass registerDamage(String dmgName, String parent, DamageClassAttributes attr, DynamicRegistryManager ra)
     {
+        var attrReg = ((SimpleRegistry<EntityAttribute>)Registries.ATTRIBUTE);
+        var wasFrozen = ((SimpleRegistryAccessor)attrReg).getFrozen();
+        ((SimpleRegistryAccessor)attrReg).setFrozen(false);
         if (attr == null)
         {
             attr = new DamageClassAttributes("rpgdamageoverhaul:" + dmgName + ".damage",
@@ -48,81 +56,91 @@ public class RPGDamageOverhaulAPI {
         DamageClass dmgClass;
         if (getDamageClass(dmgName) == null)
         {
-            EntityAttribute dmgAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.dmg));
+            EntityAttribute dmgAttribute = attrReg.get(new Identifier(attr.dmg));
             if (dmgAttribute == null)
-                dmgAttribute = Registry.register(Registries.ATTRIBUTE, attr.dmg, new ClampedEntityAttribute(dmgName + ".damage", 0, 0, 1024));
-            EntityAttribute armorAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.armor));
-            if (armorAttribute == null)
-                armorAttribute = Registry.register(Registries.ATTRIBUTE, attr.armor, new ClampedEntityAttribute(dmgName + ".armor", 0, 0, 1024));
-            EntityAttribute absorptionAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.absorption));
-            if (absorptionAttribute == null)
-                absorptionAttribute = Registry.register(Registries.ATTRIBUTE, attr.absorption, new ClampedEntityAttribute(dmgName + ".absorption", 0, 0, 1024));
-            EntityAttribute resistanceAttribute = Registries.ATTRIBUTE.get(new Identifier(attr.resistance));
-            if (resistanceAttribute == null)
-                resistanceAttribute = Registry.register(Registries.ATTRIBUTE, attr.resistance, new ClampedEntityAttribute(dmgName + ".resistance", 0, -10, 10));
-
-            RegistryKey<DamageType> dmgTypeKey = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier("rpgdamageoverhaul", dmgName));
-            dmgClass = new DamageClass(dmgName, dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute, dmgTypeKey, parent);
-
-            ServerLifecycleEvents.SERVER_STARTED.register((server) -> {
-                var reg = server.getCombinedDynamicRegistries().getCombinedRegistryManager().get(RegistryKeys.DAMAGE_TYPE);
-
-                DamageType dt = new DamageType(dmgClass.name, 1.0f);
-                if (!reg.contains(dmgClass.damageType))
-                    Registry.register(reg, "rpgdamageoverhaul:" + dmgClass.name, dt);
-                //Register damage type
-                RPGDamageOverhaulAPI.rpgDamageTypes.add(dt.msgId());
-
-                dmgClass.damageTypeEntry = reg.getEntry(dt);
-            });
-
-            //Add attribute to all entities
-            for (var etEntry : Registries.ENTITY_TYPE.getEntrySet())
             {
-                try
-                {
-                    var entityType = (EntityType<? extends LivingEntity>)etEntry.getValue();
-                    var attrContainer = DefaultAttributeRegistry.get(entityType);
-                    if (attrContainer == null)
-                        continue;
-
-                    var builder = DefaultAttributeContainer.builder();
-                    ((CopyableDefaultAttrContainer)attrContainer).copyTo(builder);
-                    builder.add(dmgAttribute);
-                    builder.add(armorAttribute);
-                    builder.add(absorptionAttribute);
-                    builder.add(resistanceAttribute);
-
-                    FabricDefaultAttributeRegistry.register(entityType, builder);
-                } catch (ClassCastException ignored) {
-
-                }
+                dmgAttribute = new ClampedEntityAttribute(dmgName + ".damage", 0, 0, 1024);
+                Registry.register(attrReg, new Identifier(attr.dmg), dmgAttribute);
             }
+            EntityAttribute armorAttribute = attrReg.get(new Identifier(attr.armor));
+            if (armorAttribute == null)
+            {
+                armorAttribute = new ClampedEntityAttribute(dmgName + ".armor", 0, 0, 1024);
+                Registry.register(attrReg, new Identifier(attr.armor), armorAttribute);
+            }
+            EntityAttribute absorptionAttribute = attrReg.get(new Identifier(attr.absorption));
+            if (absorptionAttribute == null)
+            {
+                absorptionAttribute = new ClampedEntityAttribute(dmgName + ".absorption", 0, 0, 1024);
+                Registry.register(attrReg, new Identifier(attr.absorption), absorptionAttribute);
+            }
+            EntityAttribute resistanceAttribute = attrReg.get(new Identifier(attr.resistance));
+            if (resistanceAttribute == null)
+            {
+                resistanceAttribute = new ClampedEntityAttribute(dmgName + ".resistance", 0, -10, 10);
+                Registry.register(attrReg, new Identifier(attr.resistance), resistanceAttribute);
+            }
+
+            Optional<Registry<DamageType>> reg = Optional.empty();
+            if (ra != null)
+                reg = ra.getOptional(RegistryKeys.DAMAGE_TYPE);
+            dmgClass = new DamageClass(dmgName, dmgAttribute, armorAttribute, absorptionAttribute, resistanceAttribute, null, parent);
+            rpgDamageTypes.add("rpgdamageoverhaul:" + dmgName);
+            if (reg.isPresent())
+                tryRegisterDamageType(dmgClass, reg.get());
+            else
+                missingDamageTypes.add(dmgClass);
+            RPGDamageOverhaul.LOGGER.info("Registered damage class: {}", dmgName);
         }
         else
+        {
+            RPGDamageOverhaul.LOGGER.warn("Overwriting damage class: {}", dmgName);
             dmgClass = getDamageClass(dmgName);
+        }
 
         dmgClasses.put(dmgName, dmgClass);
-        DamageClassRegisteredCallback.EVENT.invoker().interact(dmgClass);
 
-        RPGDamageOverhaul.LOGGER.info("Registered damage class: {}", dmgName);
+        for (var etEntry : Registries.ENTITY_TYPE.getEntrySet())
+        {
+            try
+            {
+                var entityType = (EntityType<? extends LivingEntity>)etEntry.getValue();
+                var attrContainer = DefaultAttributeRegistry.get(entityType);
+                if (attrContainer == null)
+                    continue;
 
+                var builder = DefaultAttributeContainer.builder();
+                ((CopyableDefaultAttrContainer)attrContainer).copyTo(builder);
+                builder.add(dmgClass.dmgAttribute);
+                builder.add(dmgClass.armorAttribute);
+                builder.add(dmgClass.absorptionAttribute);
+                builder.add(dmgClass.resistanceAttribute);
+
+                FabricDefaultAttributeRegistry.register(entityType, builder);
+            } catch (ClassCastException ignored) {
+
+            }
+        }
+
+        ((SimpleRegistryAccessor)attrReg).setFrozen(wasFrozen);
         return dmgClass;
     }
 
-    public static DamageClass registerDamage(String dmgName, String parent)
+    public static DamageClass registerDamage(String dmgName, String parent, DynamicRegistryManager ra)
     {
-        return registerDamage(dmgName, parent, null);
+        return registerDamage(dmgName, parent, null, ra);
     }
 
-    public static DamageClass registerDamage(String dmgName)
+    public static DamageClass registerDamage(String dmgName, DynamicRegistryManager ra)
     {
-        return registerDamage(dmgName, null, null);
+        return registerDamage(dmgName, null, null, ra);
     }
 
-    public static boolean isRPGDamageType(DamageType type)
+    public static boolean isRPGDamageType(RegistryEntry<DamageType> type)
     {
-        return rpgDamageTypes.contains(type.msgId());
+        if (type == null)
+            return false;
+        return rpgDamageTypes.contains(type.getKey().get().getValue().toString());
     }
 
     public static boolean isRPGDamageType(String name)
@@ -338,5 +356,18 @@ public class RPGDamageOverhaulAPI {
             color = def;
 
         return color;
+    }
+
+    public static void tryRegisterDamageType(DamageClass dc, Registry<DamageType> reg)
+    {
+        RegistryKey<DamageType> dmgTypeKey = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier("rpgdamageoverhaul", dc.name));
+        var holder = reg.getEntry(dmgTypeKey);
+        if (holder.isEmpty())
+        {
+            var dt = new DamageType(dc.name, 1.0f);
+            dc.damageType = Registry.registerReference(reg, dmgTypeKey.getValue(), dt);
+        }
+        else
+            dc.damageType = holder.get();
     }
 }

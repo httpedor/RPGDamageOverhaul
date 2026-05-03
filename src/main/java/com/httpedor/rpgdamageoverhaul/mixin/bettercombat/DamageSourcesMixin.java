@@ -4,6 +4,7 @@ import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import net.bettercombat.api.AttackHand;
 import net.bettercombat.api.EntityPlayer_BetterCombat;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageSources;
@@ -25,6 +26,9 @@ public abstract class DamageSourcesMixin {
 
     @Inject(method = "playerAttack", at = @At("RETURN"), cancellable = true)
     public void onPlayerAttack(PlayerEntity attacker, CallbackInfoReturnable<DamageSource> cir) {
+        if (!FabricLoader.getInstance().isModLoaded("bettercombat"))
+            return;
+
         AttackHand attackHand = ((EntityPlayer_BetterCombat) attacker).getCurrentAttack();
         if (attackHand != null)
         {
@@ -34,7 +38,7 @@ public abstract class DamageSourcesMixin {
 
                 int combo = attackHand.combo().current()-1;
                 if (combo < attackOverrides.length)
-                    cir.setReturnValue(create(attackOverrides[combo].damageType, attacker));
+                    cir.setReturnValue(create(attackOverrides[combo].damageType.getKey().get(), attacker));
             }
         }
     }
