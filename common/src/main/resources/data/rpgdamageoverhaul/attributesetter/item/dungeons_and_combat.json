@@ -1,0 +1,1401 @@
+{
+    "sandstone_axe_war": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 4,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 3
+        }
+    ],
+    "sandstone_twin_blade": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 8,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 3
+        }
+    ],
+    "sandstone_fist": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 3
+        }
+    ],
+    "molten_dark_steel_dagger": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.02
+        }
+    ],
+    "molten_dark_steel_sword": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.04
+        }
+    ],
+    "molten_dark_steel_greataxe": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.06
+        }
+    ],
+    "molten_blazing_fists": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        }
+    ],
+    "molten_blazing_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 4.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        }
+    ],
+    "molten_blazing_greathammer": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 7.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        }
+    ],
+    "molten_blazing_lance": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        }
+    ],
+    "cursed_molten_blazing_fist": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 1,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 2
+        }
+    ],
+    "cursed_molten_blazing_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 2.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 2
+        }
+    ],
+    "cursed_molten_blazing_greathammer": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 5.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 2
+        }
+    ],
+    "cursed_molten_blazing_lance": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 2
+        }
+    ],
+    "acid_molten_blazing_fists": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 1,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 2
+        }
+    ],
+    "acid_molten_blazing_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 2.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 2
+        }
+    ],
+    "acid_molten_blazing_greathammer": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 5.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 2
+        }
+    ],
+    "blessed_gold_fist": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 1,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 5
+        }
+    ],
+    "blessed_gold_axe_war": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 2.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 5
+        }
+    ],
+    "blessed_gold_sickle": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 5.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 5
+        }
+    ],
+    "blessed_gold_twinblade": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 4,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 5
+        }
+    ],
+    "ebony_dagger": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 4.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 3
+        }
+    ],
+    "ebony_long_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 6.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 3
+        }
+    ],
+    "ebony_scythe": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 9,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 3
+        }
+    ],
+    "crimson_sickle": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 6.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 2
+        }
+    ],
+    "crimson_long_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 8,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 2
+        }
+    ],
+    "crimson_scythe": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 11,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 3
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 2
+        }
+    ],
+    "cursed_steel_dagger": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 2
+        }
+    ],
+    "horde_torch_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 0,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        }
+    ],
+    "oath_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 6,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 3
+        }
+    ],
+    "the_gravedigger_greataxe": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 3
+        }
+    ],
+    "cursed_lamp": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "offhand"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": 0.15,
+            "slot": "offhand"
+        }
+    ],
+    "sandstorm_greatsword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 4
+        }
+    ],
+    "dawn_breaker_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 0,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 4
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 2
+        }
+    ],
+    "sunrise": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 6
+        }
+    ],
+    "cerimonial_dagger": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 2
+        }
+    ],
+    "slimy_knife": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 2
+        }
+    ],
+    "diamond_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "golden_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:elemental.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "titanium_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "sandstone_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "blessed_gold_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 4,
+            "slot": "offhand"
+        }
+    ],
+    "molten_dark_steel_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.05,
+            "slot": "offhand"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "netherite_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 3,
+            "slot": "offhand"
+        }
+    ],
+    "blazing_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 4,
+            "slot": "offhand"
+        }
+    ],
+    "cursed_blazing_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 4,
+            "slot": "offhand"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "acid_blazing_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 4,
+            "slot": "offhand"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "ebony_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 3,
+            "slot": "offhand"
+        }
+    ],
+    "crimson_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 3,
+            "slot": "offhand"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 2,
+            "slot": "offhand"
+        }
+    ],
+    "igneous_molten_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 3,
+            "slot": "offhand"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.1,
+            "slot": "offhand"
+        }
+    ],
+    "tombwarden_hat": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 2
+        }
+    ],
+    "tombwarden_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 4
+        }
+    ],
+    "bloodywarden_hat": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 2
+        }
+    ],
+    "bloodywarden_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 4
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 4
+        }
+    ],
+    "bloody_cult_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.04,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "bloody_cult_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.08,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "bloodymancer_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.08,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "bloodymancer_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 4
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.16,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "golden_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:elemental.armor",
+            "value": 2.5
+        }
+    ],
+    "golden_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:elemental.armor",
+            "value": 4
+        }
+    ],
+    "golden_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:elemental.armor",
+            "value": 3
+        }
+    ],
+    "golden_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:elemental.armor",
+            "value": 2.5
+        }
+    ],
+    "diamond_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.armor",
+            "value": 1
+        }
+    ],
+    "diamond_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.armor",
+            "value": 2.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.armor",
+            "value": -1
+        }
+    ],
+    "diamond_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.armor",
+            "value": 2.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.armor",
+            "value": -1
+        }
+    ],
+    "diamond_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.armor",
+            "value": 1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.armor",
+            "value": -1
+        }
+    ],
+    "netherite_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 3
+        }
+    ],
+    "netherite_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 4
+        }
+    ],
+    "netherite_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 4
+        }
+    ],
+    "netherite_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 3
+        }
+    ],
+    "titanium_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.armor",
+            "value": 1
+        }
+    ],
+    "titanium_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.armor",
+            "value": 2
+        }
+    ],
+    "titanium_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.armor",
+            "value": 2
+        }
+    ],
+    "titanium_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.armor",
+            "value": 1
+        }
+    ],
+    "sandstone_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 1
+        }
+    ],
+    "sandstone_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 2
+        }
+    ],
+    "sandstone_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 1.5
+        }
+    ],
+    "sandstone_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 1
+        }
+    ],
+    "blessed_gold_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 2
+        }
+    ],
+    "blessed_gold_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 4
+        }
+    ],
+    "blessed_gold_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 3
+        }
+    ],
+    "blessed_gold_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.armor",
+            "value": 2
+        }
+    ],
+    "ammit_armor_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "ammit_armor_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "ammit_armor_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 0.075,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "molten_blazing_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "molten_blazing_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "molten_blazing_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "molten_blazing_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "cursed_blazing_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 2
+        }
+    ],
+    "cursed_blazing_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 3
+        }
+    ],
+    "cursed_blazing_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 2.5
+        }
+    ],
+    "cursed_blazing_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.armor",
+            "value": 2
+        }
+    ],
+    "acid_blazing_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2
+        }
+    ],
+    "acid_blazing_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 3
+        }
+    ],
+    "acid_blazing_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2.5
+        }
+    ],
+    "acid_blazing_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.05,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.02,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2
+        }
+    ],
+    "molten_dark_steel_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.02
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 1
+        }
+    ],
+    "molten_dark_steel_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.04
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 2
+        }
+    ],
+    "molten_dark_steel_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.06
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 2
+        }
+    ],
+    "molten_dark_steel_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.02
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 1
+        }
+    ],
+    "molten_knight_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.02
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 1
+        }
+    ],
+    "molten_knight_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.04
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 2
+        }
+    ],
+    "molten_knight_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.06
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 2
+        }
+    ],
+    "molten_knight_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.02
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "value": 1
+        }
+    ],
+    "ebony_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.03,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "ebony_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "ebony_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "ebony_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.03,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "crimson_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.03,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.04,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "crimson_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 4
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.08,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "crimson_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 4
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.08,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "crimson_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:wither.armor",
+            "value": 1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.damage",
+            "value": 0.03,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.armor",
+            "value": 2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.04,
+            "operation": "MULTIPLY_BASE"
+        }
+    ],
+    "blessed_bandages": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": -0.2,
+            "operation": "MULTIPLY_TOTAL",
+            "slot": "curio:hands"
+        }
+    ],
+    "steel_shoulder": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.05,
+            "slot": "curio:hands"
+        }
+    ],
+    "ring_of_the_eternal_resting": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:ring"
+        }
+    ],
+    "molten_ring": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:ring"
+        }
+    ],
+    "hell_ring": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.1,
+            "slot": "curio:ring"
+        }
+    ],
+    "flaming_gloves": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.15,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+        }
+    ],
+    "scorpion_claw": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.15,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+        }
+    ],
+    "thirsty_necklace": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.damage",
+            "value": 0.15,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:necklace"
+        }
+    ],
+    "champion_belt": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.damage",
+            "value": 0.25,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:belt"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.1,
+            "slot": "curio:belt"
+        }
+    ],
+    "blessed_amulet": [
+        {
+            "attribute": "rpgdamageoverhaul:elemental.resistance",
+            "value": 0.1,
+            "slot": "curio:amulet"
+        }
+    ],
+    "sunrise_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 6
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 3
+        }
+    ],
+    "sunleia_hand": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 0.2,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+        }
+    ],
+
+    "regex:^dungeons_and_combat:(red|bronze|green|gray)_dragon_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^dungeons_and_combat:(blue|white|sapphire|silver)_dragon_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^dungeons_and_combat:(electric|amethyst|copper|black)_dragon_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^dungeons_and_combat:dragon_.*_fire$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:dragon_.*_ice$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:dragon_.*_lightning$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:(fire_dragonsteel_|dragonsteel_fire_).*$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:(ice_dragonsteel_|dragonsteel_ice_).*$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "regex:^dungeons_and_combat:(lightning_dragonsteel_|dragonsteel_lightning_).*$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+
+    "dragonsteel_fire_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.2,
+            "slot": "offhand"
+        }
+    ],
+    "dragonsteel_ice_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.2,
+            "slot": "offhand"
+        }
+    ],
+    "dragonsteel_lightning_shield": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.2,
+            "slot": "offhand"
+        }
+    ]
+}

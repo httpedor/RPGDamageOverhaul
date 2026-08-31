@@ -1,0 +1,304 @@
+{
+    "silver_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.damage",
+            "value": 1
+        }
+    ],
+    "myrmex_desert_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 1
+        }
+    ],
+    "myrmex_jungle_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 3,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 1
+        }
+    ],
+    "myrmex_desert_sword_venom": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 2
+        }
+    ],
+    "myrmex_jungle_sword_venom": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 2
+        }
+    ],
+    "tide_trident": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 7,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 5
+        }
+    ],
+    "regex:^iceandfire:dragonsteel_fire_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "regex:^iceandfire:dragonsteel_ice_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "regex:^iceandfire:dragonsteel_lightning_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.45,
+            "rate": 1
+        }
+    ],
+    "dragonbone_sword_fire": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "dragonbone_sword_ice": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "dragonbone_sword_lightning": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 0.375,
+            "rate": 1
+        }
+    ],
+    "myrmex_desert_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2
+        }
+    ],
+    "myrmex_desert_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 4
+        }
+    ],
+    "myrmex_desert_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 4
+        }
+    ],
+    "myrmex_desert_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2
+        }
+    ],
+    "myrmex_jungle_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2
+        }
+    ],
+    "myrmex_jungle_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 4
+        }
+    ],
+    "myrmex_jungle_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 4
+        }
+    ],
+    "myrmex_jungle_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.armor",
+            "value": 2
+        }
+    ],
+    "sheep_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 1
+        }
+    ],
+    "sheep_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 2
+        }
+    ],
+    "sheep_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 2
+        }
+    ],
+    "sheep_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "value": 1
+        }
+    ],
+    "hydra_heart": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.2,
+            "operation": "MULTIPLY_BASE",
+            "slot": "offhand"
+        }
+    ],
+    "ghost_sword": [
+        {
+            "attribute": "minecraft:generic.attack_damage",
+            "value": 7,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 3
+        }
+    ],
+    "regex:^iceandfire:armor_(red|bronze|green|gray)_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^iceandfire:armor_(blue|white|sapphire|silver)_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^iceandfire:armor_(electric|amethyst|copper|black)_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^iceandfire:tide_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.armor",
+            "dependency": "minecraft:generic.armor",
+            "operation": "DEPENDENCY",
+            "multiplier": 0.5
+        }
+    ],
+    "regex:^iceandfire:tide_.*_helmet": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE",
+            "slot": "head"
+        }
+    ],
+    "regex:^iceandfire:tide_.*_chestplate": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.10,
+            "operation": "MULTIPLY_BASE",
+            "slot": "chest"
+        }
+    ],
+    "regex:^iceandfire:tide_.*_leggings": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.10,
+            "operation": "MULTIPLY_BASE",
+            "slot": "legs"
+        }
+    ],
+    "regex:^iceandfire:tide_.*_boots": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.06,
+            "operation": "MULTIPLY_BASE",
+            "slot": "feet"
+        }
+    ],
+    "regex:^iceandfire:troll_weapon_.*$": [
+        {
+            "attribute": "rpgdamageoverhaul:blunt.damage",
+            "from": "minecraft:generic.attack_damage",
+            "operation": "CONVERSION",
+            "amount": 1,
+            "rate": 1
+        }
+    ]
+}

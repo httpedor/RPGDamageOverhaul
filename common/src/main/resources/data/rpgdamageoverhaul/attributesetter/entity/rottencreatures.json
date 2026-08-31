@@ -1,0 +1,18 @@
+{
+  "burned": "attribute rpgdamageoverhaul:lava.resistance 0.6 BASE",
+  "frostbitten": "attribute rpgdamageoverhaul:frost.resistance 0.75 BASE",
+  "swampy": "attribute rpgdamageoverhaul:poison.resistance 0.75 BASE",
+  "mummy": [
+    "attribute rpgdamageoverhaul:holy.resistance 0.75 BASE",
+    "attribute rpgdamageoverhaul:fire.resistance 0.75 BASE"
+  ],
+  "glacial_hunter": "attribute rpgdamageoverhaul:frost.resistance 0.75 BASE",
+  "scarab": "attribute rpgdamageoverhaul:holy.resistance 0.75 BASE",
+  "dead_beard": "attribute rpgdamageoverhaul:water.resistance 0.75 BASE",
+  "zombie_lackey": "attribute rpgdamageoverhaul:water.resistance 0.75 BASE",
+  "skeleton_lackey": "attribute rpgdamageoverhaul:water.resistance 0.75 BASE",
+  "immortal": [
+    "attribute rpgdamageoverhaul:holy.resistance -0.75 BASE",
+    "attribute rpgdamageoverhaul:water.resistance 0.75 BASE"
+  ]
+}

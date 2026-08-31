@@ -1,0 +1,8 @@
+{
+  "color": "GRAY",
+  "potions": {
+    "resistance": {
+      "minecraft:resistance": 0.2
+    }
+  }
+}

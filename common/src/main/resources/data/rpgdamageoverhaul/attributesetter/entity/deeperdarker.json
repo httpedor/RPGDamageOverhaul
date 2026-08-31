@@ -1,0 +1,55 @@
+{
+    "angler_fish": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.15
+        }
+    ],
+    "sculk_centipede": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.15
+        }
+    ],
+    "sculk_leech": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.15
+        }
+    ],
+    "sculk_snapper": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.15
+        }
+    ],
+    "shattered": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.15
+        }
+    ],
+    "shriek_worm": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.15
+        }
+    ],
+    "stalker": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.15
+        }
+    ],
+    "sludge": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.7,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.25
+        }
+    ]
+}

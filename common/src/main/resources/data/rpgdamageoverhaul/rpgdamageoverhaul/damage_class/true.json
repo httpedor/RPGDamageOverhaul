@@ -1,0 +1,6 @@
+{
+  "particle": "minecraft:end_rod",
+  "color": "WHITE",
+  "armor_effectiveness": 0,
+  "tags": ["minecraft:bypasses_resistance", "minecraft:bypasses_enchantments", "minecraft:bypasses_effects", "minecraft:bypasses_armor"]
+}

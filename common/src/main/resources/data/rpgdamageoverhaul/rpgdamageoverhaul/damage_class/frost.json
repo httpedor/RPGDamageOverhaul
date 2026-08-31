@@ -1,0 +1,75 @@
+{
+  "parent": "elemental",
+  "particle": "minecraft:snowflake",
+  "on_water": 1.2,
+  "freeze": 0.5,
+  "enchantments": {
+    "resistance": {
+      "enigmaticaddons:frost_protection": 0.1,
+      "dungeons_and_combat:ice_resistance": 0.5,
+      "dungeons_and_combat:frostbite": -0.25,
+      "cofh_core:chilled": -0.15,
+      "irons_spellbooks:chilled": -0.15,
+      "nexuslayer:chilled": -0.15
+    },
+    "damage": {
+      "enigmaticaddons:frost_aspect": 2
+    }
+  },
+  "attribute_modifier": [
+    {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "ADD_MULTIPLIED_TOTAL",
+      "amount": "MAX(-0.08 * dmg, -0.6)",
+      "duration": "dmg/1.5",
+      "replace_type": "LOWER"
+    },
+    {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "ADD_MULTIPLIED_TOTAL",
+      "amount": "MAX(-0.045 * dmg, -0.6)",
+      "duration": "dmg/1.5",
+      "replace_type": "LOWER"
+    }
+  ],
+  "color": "#D0F9FF",
+  "damage_types": ["minecraft:freeze"],
+  "tags": ["minecraft:is_freezing"],
+  "rename_attributes": {
+    "irons_spellbooks:ice_magic_resist": "resistance",
+    "irons_spellbooks:ice_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:ice_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:frost",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "rpgdamageoverhaul:water.damage",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:ice_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:frost",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

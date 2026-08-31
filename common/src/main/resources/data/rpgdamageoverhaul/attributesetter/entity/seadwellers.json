@@ -1,0 +1,12 @@
+{
+    "#seadwellers:mermorphs": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.7
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.35
+        }
+    ]
+}

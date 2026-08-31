@@ -1,0 +1,228 @@
+{
+  "irons_spellbooks:blood_staff": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 3,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blood.damage",
+      "value": 2
+    }
+  ],
+  "irons_spellbooks:amethyst_rapier": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:arcane.damage",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:ice_staff": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 2
+    }
+  ],
+  "irons_spellbooks:lightning_rod": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 2,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.damage",
+      "value": 2
+    }
+  ],
+  "boreal_blade": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "operation": "CONVERSION",
+      "from": "minecraft:generic.attack_damage",
+      "amount": 0.75
+    }
+  ],
+  "irons_spellbooks:pyromancer_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:pyromancer_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 4
+    }
+  ],
+  "irons_spellbooks:pyromancer_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:pyromancer_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:electromancer_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:electromancer_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 4
+    }
+  ],
+  "irons_spellbooks:electromancer_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:electromancer_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:cultist_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:cultist_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 4
+    }
+  ],
+  "irons_spellbooks:cultist_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:cultist_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:blood.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:cryomancer_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:cryomancer_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 4
+    }
+  ],
+  "irons_spellbooks:cryomancer_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:cryomancer_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:frost.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:shadowwalker_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:shadowwalker_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 4
+    }
+  ],
+  "irons_spellbooks:shadowwalker_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:shadowwalker_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:priest_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:priest_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 4
+    }
+  ],
+  "irons_spellbooks:priest_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:priest_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:holy.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:plagued_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:plagued_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 4
+    }
+  ],
+  "irons_spellbooks:plagued_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 3
+    }
+  ],
+  "irons_spellbooks:plagued_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 1.5
+    }
+  ],
+  "irons_spellbooks:tarnished_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 3
+    }
+  ]
+}

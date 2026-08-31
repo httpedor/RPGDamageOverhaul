@@ -1,0 +1,277 @@
+{
+  "minecraft:leather_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": 1,
+      "slot": "head"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": -1,
+      "slot": "head"
+    }
+  ],
+  "minecraft:leather_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": 2,
+      "slot": "chest"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": -2,
+      "slot": "chest"
+    }
+  ],
+  "minecraft:leather_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": 2,
+      "slot": "legs"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": -2,
+      "slot": "legs"
+    }
+  ],
+  "minecraft:leather_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": 1,
+      "slot": "feet"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": -1,
+      "slot": "feet"
+    }
+  ],
+  "minecraft:chainmail_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 1,
+      "slot": "head"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -1,
+      "slot": "head"
+    }
+  ],
+  "minecraft:chainmail_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 2,
+      "slot": "chest"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -2,
+      "slot": "chest"
+    }
+  ],
+  "minecraft:chainmail_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 2,
+      "slot": "legs"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -2,
+      "slot": "legs"
+    }
+  ],
+  "minecraft:chainmail_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 1,
+      "slot": "feet"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -1,
+      "slot": "feet"
+    }
+  ],
+  "minecraft:iron_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 1,
+      "slot": "head"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -1,
+      "slot": "head"
+    }
+  ],
+  "minecraft:iron_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 2,
+      "slot": "chest"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -2,
+      "slot": "chest"
+    }
+  ],
+  "minecraft:iron_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 2,
+      "slot": "legs"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -2,
+      "slot": "legs"
+    }
+  ],
+  "minecraft:iron_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:sharp.armor",
+      "value": 1,
+      "slot": "feet"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": -1,
+      "slot": "feet"
+    }
+  ],
+  "minecraft:golden_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 2,
+      "slot": "head"
+    }
+  ],
+  "minecraft:golden_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 3,
+      "slot": "chest"
+    }
+  ],
+  "minecraft:golden_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 3,
+      "slot": "legs"
+    }
+  ],
+  "minecraft:golden_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:elemental.armor",
+      "value": 2,
+      "slot": "feet"
+    }
+  ],
+  "minecraft:golden_sword": [
+    {
+        "attribute": "rpgdamageoverhaul:holy.damage",
+        "from": "minecraft:generic.attack_damage",
+        "operation": "CONVERSION",
+        "amount": 0.75,
+        "rate": 1
+    }
+  ],
+  "minecraft:diamond_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1,
+      "slot": "head"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": -1,
+      "slot": "head"
+    }
+  ],
+  "minecraft:diamond_chestplate": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2,
+      "slot": "chest"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": -2,
+      "slot": "chest"
+    }
+  ],
+  "minecraft:diamond_leggings": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 2,
+      "slot": "legs"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": -2,
+      "slot": "legs"
+    }
+  ],
+  "minecraft:diamond_boots": [
+    {
+      "attribute": "rpgdamageoverhaul:arcane.armor",
+      "value": 1,
+      "slot": "feet"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:blunt.armor",
+      "value": -1,
+      "slot": "feet"
+    }
+  ],
+  "minecraft:netherite_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 2,
+      "slot": "head"
+    }
+  ],
+  "minecraft:netherite_chestplate": [
+      {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "slot": "chest"
+      }
+  ],
+  "minecraft:netherite_leggings": [
+      {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 3,
+      "slot": "legs"
+      }
+  ],
+  "minecraft:netherite_boots": [
+      {
+      "attribute": "rpgdamageoverhaul:fire.armor",
+      "value": 2,
+      "slot": "feet"
+      }
+  ],
+  "minecraft:turtle_helmet": [
+    {
+      "attribute": "rpgdamageoverhaul:physical.armor",
+      "value": 2,
+      "slot": "head"
+    }
+  ],
+  "minecraft:trident": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 5,
+      "operation": "BASE"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:frost.damage",
+      "value": 3
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+    "accursed": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        }
+    ],
+    "archbishop": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5
+        }
+    ],
+    "bishop": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.2
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5
+        }
+    ],
+    "cultist": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5
+        }
+    ],
+    "executioner": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5
+        }
+    ],
+    "lichen_overgrowth": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.15
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.5
+        }
+    ],
+    "priest": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5
+        }
+    ],
+    "scarlet_golem": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:slashing.resistance",
+            "value": 0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.25
+        }
+    ],
+    "the_devoted": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.75
+        },
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.25
+        }
+    ],
+    "undaunted": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.15
+        }
+    ]
+}

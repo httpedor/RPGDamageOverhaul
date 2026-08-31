@@ -1,0 +1,93 @@
+{
+    "amphibian_boot": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.15,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:feet"
+        }
+    ],
+    "aqua_walker": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": 0.1,
+            "slot": "curio:feet"
+        }
+    ],
+    "blazing_flask": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.damage",
+            "value": 0.2,
+            "operation": "MULTIPLY_BASE",
+            "slot": "offhand"
+        }
+    ],
+    "chorus_inhibitor": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.1,
+            "slot": "curio:ring"
+        }
+    ],
+    "drowned_belt": [
+        {
+            "attribute": "rpgdamageoverhaul:water.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:belt"
+        }
+    ],
+    "ender_hand": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+        }
+    ],
+    "jellyfish_necklace": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:necklace"
+        }
+    ],
+    "magma_walker": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.15,
+            "slot": "curio:feet"
+        }
+    ],
+    "rage_glove": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:hands"
+         }
+    ],
+    "reflecting_necklace": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.15,
+            "slot": "curio:necklace"
+        }
+    ],
+    "spore_sack": [
+        {
+            "attribute": "rpgdamageoverhaul:poison.damage",
+            "value": 0.15,
+            "operation": "MULTIPLY_BASE",
+            "slot": "curio:charm"
+        }
+    ],
+    "wool_mitten": [
+        {
+            "attribute": "rpgdamageoverhaul:frost.damage",
+            "value": 0.15,
+            "slot": "curio:hands"
+        }
+    ]
+}

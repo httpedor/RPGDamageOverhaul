@@ -1,0 +1,24 @@
+{
+  "parent": "elemental",
+  "particle": "minecraft:falling_dripstone_lava",
+  "ignite": 1,
+  "potions": {
+    "armor": {"cataclysm:blazing_brand": -2}
+  },
+  "color": "#CF1020",
+  "stacking": {
+    "stack_duration": 3,
+    "max_stacks": 4,
+    "stack_damage": "dmg/2"
+  },
+  "on_water": 0.75,
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "rpgdamageoverhaul:fire.damage",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

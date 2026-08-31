@@ -1,0 +1,22 @@
+{
+  "magma_rotten_flesh": [
+    {
+      "operation": "FOOD_ATTRIBUTE",
+      "attribute": "rpgdamageoverhaul:fire.resistance",
+      "value": 0.15,
+      "duration": 900,
+      "modifier_operation": "MULTIPLY_BASE",
+      "modifier_id": "foodattributes:magma_rotten_flesh_bonus"
+    }
+  ],
+  "frozen_rotten_flesh": [
+    {
+      "operation": "FOOD_ATTRIBUTE",
+      "attribute": "rpgdamageoverhaul:frost.resistance",
+      "value": 0.15,
+      "duration": 900,
+      "modifier_operation": "MULTIPLY_BASE",
+      "modifier_id": "foodattributes:frozen_rotten_flesh_bonus"
+    }
+  ]
+}

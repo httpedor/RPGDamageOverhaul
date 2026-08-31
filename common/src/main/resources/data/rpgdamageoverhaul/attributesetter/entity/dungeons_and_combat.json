@@ -1,0 +1,344 @@
+{
+    "bloody_cultist": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        }
+    ],
+    "bloodymancer_cultist": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.1,
+            "operation": "BASE"
+        }
+    ],
+    "counselor_skull": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": 0.2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": -0.1,
+            "operation": "BASE"
+        }
+    ],
+    "ernos": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.1,
+            "operation": "BASE"
+        }
+    ],
+    "failure": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        }
+    ],
+    "flower_fairy": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 1,
+            "operation": "BASE"
+        }
+    ],
+    "fractured_vex": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -1,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.8,
+            "operation": "BASE"
+        }
+    ],
+    "ghoul": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.7,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -1,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        }
+    ],
+    "hermit_witch": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.3,
+            "operation": "BASE"
+        }
+    ],
+    "high_priest": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.75,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.5,
+            "operation": "BASE"
+        }
+    ],
+    "horuso": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        }
+    ],
+    "infernus": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        }
+    ],
+    "kamath": [
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:sharp.resistance",
+            "value": 0.2,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        }
+    ],
+    "lady_blaze": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.9,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": -1,
+            "operation": "BASE"
+        }
+    ],
+    "mummy": [
+        {
+            "attribute": "rpgdamageoverhaul:holy.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        }
+    ],
+    "skull_deserter": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.15,
+            "operation": "BASE"
+        }
+    ],
+    "royal_skull": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.15,
+            "operation": "BASE"
+        }
+    ],
+    "pyro_knight": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 1,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:sharp.resistance",
+            "value": 0.35,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:frost.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        }
+    ],
+    "sandstone_golem": [
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": -0.2,
+            "operation": "BASE"
+        }
+    ],
+    "sunleia": [
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:holy.resistance",
+            "value": 0.75,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:physical.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:lightning.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        }
+    ],
+    "the_aberrator": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": -0.2,
+            "operation": "BASE"
+        }
+    ],
+    "the_grave_watcher": [
+        {
+            "attribute": "rpgdamageoverhaul:sharp.resistance",
+            "value": 0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.damage",
+            "value": 0.1,
+            "operation": "MULTIPLY_BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": 0.15
+        }
+    ],
+    "torture": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        }
+    ],
+    "weakness": [
+        {
+            "attribute": "rpgdamageoverhaul:blood.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:poison.resistance",
+            "value": -0.25,
+            "operation": "BASE"
+        },
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.5,
+            "operation": "BASE"
+        }
+    ]
+}

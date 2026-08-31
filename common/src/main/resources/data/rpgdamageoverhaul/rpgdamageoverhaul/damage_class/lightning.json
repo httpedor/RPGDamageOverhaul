@@ -1,0 +1,43 @@
+{
+  "parent": "elemental",
+  "particle": "minecraft:wax_on",
+  "on_water": 1.5,
+  "chain_damage": {
+    "range": 5,
+    "max_targets": 3,
+    "damage_modifier": 0.75
+  },
+  "potions": {
+    "resistance": {
+      "dungeons_and_combat:conductive": -0.25,
+      "cofh_core:shocked": -0.1,
+      "ars_nouveau:shocked": -0.2,
+      "fdbosses:shocked": -0.1
+    }
+  },
+  "color": "AQUA",
+  "damage_types": ["minecraft:lightning_bolt"],
+  "tags": ["minecraft:is_lightning"],
+  "rename_attributes": {
+    "irons_spellbooks:lightning_magic_resist": "resistance",
+    "irons_spellbooks:lightning_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:lightning_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:lightning_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

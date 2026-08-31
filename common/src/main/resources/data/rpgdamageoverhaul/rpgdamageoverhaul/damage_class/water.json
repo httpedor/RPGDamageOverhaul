@@ -1,0 +1,52 @@
+{
+  "parent": "frost",
+  "parent_defense_effectiveness": 1.75,
+  "parent_damage_defense_effectiveness": 0.5,
+  "particle": "minecraft:falling_dripstone_water",
+  "color": "#3F76E4",
+  "on_water": 1.5,
+  "set_wet": 1,
+  "enchantments": {
+    "resistance": {
+      "origins:water_protection": 0.04
+    }
+  },
+  "modify_damage": {
+    "duration": 1,
+    "modifier": "dmg * (1 + MAX(dmg * 0.1))",
+    "whitelist": ["frost", "lightning"]
+  },
+  "rename_attributes": {
+    "aces_spell_utils:hydro_magic_resist": "resistance",
+    "aces_spell_utils:hydro_spell_power": "damage",
+    "spell_power:water": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "aces_spell_utils:hydro_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:water",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "aces_spell_utils:hydro_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:water",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "parent": "elemental",
+  "particle": "minecraft:falling_spore_blossom",
+  "color": "GREEN",
+  "modify_heal": {
+    "modifier": "heal * (1 - MIN(dmg * 0.15, 1))",
+    "duration": 1.5
+  },
+  "apply_potion": {
+    "minecraft:poison": {
+      "duration": 5,
+      "amplifier": "IF(dmg >= 4, 1, 0)"
+    }
+  },
+  "potions": {
+    "resistance": {
+      "netherexp:poison_immunity": 0.95,
+      "alexsmobs:poison_resistance": 0.5,
+      "mowziesmobs:poison_resist": 0.5,
+      "dungeons_and_combat:toxin": -0.25,
+      "dungeons_and_combat:bleeding": -0.15,
+      "majruszsdifficulty:bleeding": -0.15,
+      "nexuslayer:bleeding": -0.15,
+      "relics:bleeding": -0.15,
+      "warriorsofpastepoch:bleeding_wound": -0.15
+    }
+  },
+  "rename_attributes": {
+    "irons_spellbooks:nature_magic_resist": "resistance",
+    "irons_spellbooks:nature_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:nature_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:nature_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

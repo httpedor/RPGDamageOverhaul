@@ -1,0 +1,51 @@
+{
+  "parent": "elemental",
+  "particle": "minecraft:sculk_soul",
+  "color": "DARK_AQUA",
+  "attribute_modifier": [
+    {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "MULTIPLY_TOTAL",
+      "amount": "MAX(-0.05 * dmg, -0.6)",
+      "duration": "dmg",
+      "replaceType": "LOWER"
+    }
+  ],
+  "enchantments": {
+    "damage": {
+      "luminous_nether:soul_cleave": 2
+    }
+  },
+  "rename_attributes": {
+    "irons_spellbooks:eldritch_magic_resist": "resistance",
+    "irons_spellbooks:eldritch_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:eldritch_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:soul",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:eldritch_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:soul",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

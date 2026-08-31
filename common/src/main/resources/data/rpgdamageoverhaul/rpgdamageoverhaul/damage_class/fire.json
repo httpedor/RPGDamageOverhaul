@@ -1,0 +1,60 @@
+{
+  "parent": "lava",
+  "parent_defense_effectiveness": 1.75,
+  "parent_damage_defense_effectiveness": 0.5,
+  "particle": "minecraft:flame",
+  "ignite": 0.5,
+  "color": "RED",
+  "rename_attributes": {
+    "irons_spellbooks:fire_magic_resist": "resistance",
+    "irons_spellbooks:fire_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:fire_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:fire",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:fire_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:fire",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "potions": {
+    "resistance": { "minecraft:fire_resistance": 0.8 },
+    "armor": { "dungeons_and_combat:flame_grant_me_strength": 2 }
+  },
+  "stacking": {
+    "stack_duration": 2,
+    "max_stacks": 3,
+    "stack_damage": "dmg/3"
+  },
+  "enchantments": {
+    "damage": {
+      "minecraft:fire_aspect": 2
+    },
+    "resistance": {
+      "minecraft:fire_protection": 0.04
+    }
+  },
+  "damage_types": ["minecraft:lava"],
+  "tags": ["minecraft:is_fire"],
+  "on_water": 0.5
+}

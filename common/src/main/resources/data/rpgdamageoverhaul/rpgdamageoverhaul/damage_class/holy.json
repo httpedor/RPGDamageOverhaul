@@ -1,0 +1,60 @@
+{
+  "parent": "elemental",
+  "color": "GOLD",
+  "modify_damage": {
+    "duration": 2,
+    "modifier": "dmg * (1 + MAX(dmg * 0.05, 0.5))",
+    "exceptions": ["holy"]
+  },
+  "apply_potion": {
+    "minecraft:glowing": {
+      "duration": 2,
+      "amplifier": 0
+    }
+  },
+  "enchantments": {
+    "damage": {
+      "minecraft:smite": 2
+    }
+  },
+  "potions": {
+    "resistance": {
+      "mowziesmobs:suns_blessing": 0.75
+    },
+    "damage": {
+      "mowziesmobs:suns_blessing": 2
+    }
+  },
+  "rename_attributes": {
+    "irons_spellbooks:holy_magic_resist": "resistance",
+    "irons_spellbooks:holy_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:holy_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:holy",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:holy_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:holy",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

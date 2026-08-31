@@ -1,0 +1,37 @@
+{
+  "parent": "elemental",
+  "particle": "minecraft:crimson_spore",
+  "color": "DARK_RED",
+  "heal_on_hit": 0.5,
+  "potions": {
+    "resistance": {
+      "dungeons_and_combat:bleeding": -0.25,
+      "majruszsdifficulty:bleeding": -0.25,
+      "nexuslayer:bleeding": -0.25,
+      "relics:bleeding": -0.25,
+      "warriorsofpastepoch:bleeding_wound": -0.25
+    }
+  },
+  "rename_attributes": {
+    "irons_spellbooks:blood_magic_resist": "resistance",
+    "irons_spellbooks:blood_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:blood_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:blood_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

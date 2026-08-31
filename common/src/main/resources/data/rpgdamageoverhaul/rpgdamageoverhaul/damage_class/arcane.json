@@ -1,0 +1,38 @@
+{
+  "particle": "minecraft:portal",
+  "color": "DARK_PURPLE",
+  "armor_effectiveness": 0.5,
+  "damage_types": ["minecraft:magic", "minecraft:indirect_magic"],
+  "rename_attributes": {
+    "irons_spellbooks:ender_magic_resist": "resistance",
+    "irons_spellbooks:ender_spell_power": "damage"
+  },
+  "copy_attributes": {
+    "damage": [
+      {
+        "source": "irons_spellbooks:ender_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:arcane",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  },
+  "inject_attributes": {
+    "damage": [
+      {
+        "target": "irons_spellbooks:ender_spell_power",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      },
+      {
+        "source": "spell_power:arcane",
+        "ADD_MULTIPLIED_BASE": 1,
+        "ADD_MULTIPLIED_TOTAL": 1
+      }
+    ]
+  }
+}

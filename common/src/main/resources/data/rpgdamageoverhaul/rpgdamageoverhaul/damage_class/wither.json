@@ -1,0 +1,28 @@
+{
+  "parent": "elemental",
+  "color": "DARK_GRAY",
+  "apply_potion": {
+    "minecraft:wither": {
+      "duration": 2,
+      "amplifier": 1
+    }
+  },
+  "attribute_modifier": [
+    {
+      "attribute": "minecraft:generic.armor",
+      "operation": "MULTIPLY_TOTAL",
+      "amount": "MAX(-0.05 * dmg, -0.6)",
+      "duration": "dmg/1.5",
+      "replaceType": "LOWER"
+    },
+    {
+      "attribute": "minecraft:generic.armor_toughness",
+      "operation": "MULTIPLY_TOTAL",
+      "amount": "MAX(-0.05 * dmg, -0.6)",
+      "duration": "dmg",
+      "replaceType": "LOWER"
+    }
+  ],
+  "particle": "minecraft:smoke",
+  "damage_types": ["minecraft:wither"]
+}

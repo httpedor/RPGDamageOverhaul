@@ -1,0 +1,42 @@
+{
+    "dreadknight": [
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:sharp.resistance",
+            "value": 0.2
+        }
+    ],
+    "flamebreather": [
+        {
+            "attribute": "rpgdamageoverhaul:blunt.resistance",
+            "value": 0.1
+        },
+        {
+            "attribute": "rpgdamageoverhaul:fire.resistance",
+            "value": 0.9
+        }
+    ],
+    "haunter": [
+        {
+            "attribute": "rpgdamageoverhaul:arcane.resistance",
+            "value": 0.5
+        },
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.5
+        }
+    ],
+    "shadewraith": [
+        {
+            "attribute": "rpgdamageoverhaul:soul.resistance",
+            "value": -0.25
+        },
+        {
+            "attribute": "rpgdamageoverhaul:wither.resistance",
+            "value": 0.5
+        }
+    ]
+}
