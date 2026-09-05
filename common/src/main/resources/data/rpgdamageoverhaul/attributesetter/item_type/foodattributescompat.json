@@ -181,5 +181,16 @@
       "modifier_operation": "MULTIPLY_BASE",
       "modifier_id": "foodattributes:beetroot_bonus"
     }
+  ],
+  "farmersdelight:tomato": [
+    "remove_food_attribute",
+    {
+      "operation": "FOOD_ATTRIBUTE",
+      "attribute": "rpgdamageoverhaul:fire.damage",
+      "value": 0.2,
+      "duration": 900,
+      "modifier_operation": "MULTIPLY_BASE",
+      "modifier_id": "foodattributes:tomato_bonus"
+    }
   ]
 }

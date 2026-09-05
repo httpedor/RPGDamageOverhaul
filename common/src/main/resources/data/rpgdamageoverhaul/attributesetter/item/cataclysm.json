@@ -18,13 +18,11 @@
     },
     {
       "attribute": "rpgdamageoverhaul:arcane.damage",
-      "value": 2,
-      "uuid": "cebc79d0-785e-447a-84d4-8e24c81a78dd"
+      "value": 2
     },
     {
       "attribute": "rpgdamageoverhaul:fire.damage",
-      "value": 6,
-      "uuid": "5041967b-448b-411d-a1d3-65bf5bf8bd87"
+      "value": 6
     }
   ],
   "cataclysm:infernal_forge": [
@@ -52,50 +50,52 @@
   ],
   "cataclysm:ignitium_helmet": [
     {
-      "attribute": "rpgdamageoverhaul:fire.armor",
-      "value": 3
+      "attribute": "rpgdamageoverhaul:lava.armor",
+      "value": 2
     }
   ],
   "cataclysm:ignitium_chestplate": [
     {
-      "attribute": "rpgdamageoverhaul:fire.armor",
-      "value": 5.5
+      "attribute": "rpgdamageoverhaul:lava.armor",
+      "value": 4.5
     }
   ],
   "cataclysm:ignitium_elytra_chestplate": [
     {
-      "attribute": "rpgdamageoverhaul:fire.armor",
-      "value": 5
+      "attribute": "rpgdamageoverhaul:lava.armor",
+      "value": 4
     }
   ],
   "cataclysm:ignitium_leggings": [
     {
-      "attribute": "rpgdamageoverhaul:fire.armor",
-      "value": 4.5
+      "attribute": "rpgdamageoverhaul:lava.armor",
+      "value": 3.5
     }
   ],
   "cataclysm:ignitium_boots": [
     {
-      "attribute": "rpgdamageoverhaul:fire.armor",
-      "value": 3
+      "attribute": "rpgdamageoverhaul:lava.armor",
+      "value": 2
     }
   ],
   "cataclysm:monstrous_helm": [
     {
       "attribute": "rpgdamageoverhaul:fire.armor",
-      "value": 2,
-      "uuid": "673a2ee8-c358-44d7-a4e1-6d91d4328854"
+      "value": 3
     },
     {
       "attribute": "rpgdamageoverhaul:wither.armor",
-      "value": 2,
-      "uuid": "dc950fac-47c8-4dd1-a37a-517a1e4399bf"
+      "value": 2
     }
   ],
   "cataclysm:bloom_stone_pauldrons": [
     {
       "attribute": "rpgdamageoverhaul:arcane.armor",
-      "value": 4
+      "value": 3
+    },
+    {
+      "attribute": "rpgdamageoverhaul:poison.armor",
+      "value": 2
     }
   ],
   "cataclysm:gauntlet_of_guard": [
@@ -117,24 +117,22 @@
     },
     {
       "attribute": "rpgdamageoverhaul:arcane.damage",
-      "value": 6,
-      "uuid": "7fc7b372-d7bf-4156-befb-525f8aac5325"
+      "value": 6
     },
     {
       "attribute": "rpgdamageoverhaul:fire.damage",
-      "value": 2,
-      "uuid": "9f654a53-67e9-4354-b656-e3fbf232db84"
+      "value": 2
     }
   ],
   "cataclysm:tidal_claws": [
     {
       "attribute": "minecraft:generic.attack_damage",
-      "value": 4,
+      "value": 2,
       "operation": "BASE"
     },
     {
-      "attribute": "rpgdamageoverhaul:frost.damage",
-      "value": 3
+      "attribute": "rpgdamageoverhaul:water.damage",
+      "value": 5
     }
   ],
   "cataclysm:soul_render": [
@@ -268,6 +266,11 @@
   "azure_sea_shield": [
     {
       "attribute": "rpgdamageoverhaul:lightning.armor",
+      "value": 2,
+      "slot": "offhand"
+    },
+    {
+      "attribute": "rpgdamageoverhaul:water.armor",
       "value": 2,
       "slot": "offhand"
     }

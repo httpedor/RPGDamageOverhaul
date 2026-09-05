@@ -5,8 +5,10 @@ import java.util.Map;
 import com.httpedor.rpgdamageoverhaul.Constants;
 import com.httpedor.rpgdamageoverhaul.DamageClassRegisteredEvent;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass;
+import com.httpedor.rpgdamageoverhaul.network.payload.AbsorptionSyncPayload;
 import com.httpedor.rpgdamageoverhaul.platform.services.IPlatformHelper;
 
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -14,6 +16,7 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 public class NeoForgePlatformHelper implements IPlatformHelper {
 
@@ -70,6 +73,13 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     {
         var event = new DamageClassRegisteredEvent(dc);
         NeoForge.EVENT_BUS.post(event);
+    }
+
+    @Override
+    public void syncAbsorptionPools(ServerPlayer player, Map<String, Float> pools)
+    {
+        // Copy so the packet isn't reading the live, mutating map off the server thread while it encodes.
+        PacketDistributor.sendToPlayer(player, new AbsorptionSyncPayload(new java.util.HashMap<>(pools)));
     }
 
     @Override

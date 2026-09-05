@@ -75,6 +75,21 @@ public abstract class MobEntityMixin extends LivingEntity {
             }
         }
 
+        // The attacker's own damage_conversion attributes turn part of the physical swing into elemental damage,
+        // dealt per class so the target's armor/resistance applies to each piece, then removed from the pool.
+        Map<DamageClass, Float> attrConversions = new HashMap<>();
+        float attrConverted = SharedLogic.applyDamageConversions(this, (float)totalPhysicalDamage, attrConversions);
+        if (attrConverted > 0)
+        {
+            totalPhysicalDamage -= attrConverted;
+            for (var entry : attrConversions.entrySet())
+            {
+                float dmg = entry.getValue();
+                if (dmg > 0)
+                    ret |= target.hurt(entry.getKey().createDamageSource(this), dmg);
+            }
+        }
+
         if (Services.PLATFORM.isModLoaded("bettermobcombat"))
         {
             if (BetterCombatCompat.shouldBCHandleAttack(this))

@@ -3,15 +3,17 @@ package com.httpedor.rpgdamageoverhaul.mixin;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.WeakHashMap;
 
+import com.httpedor.rpgdamageoverhaul.HurtCooldowns;
 import com.httpedor.rpgdamageoverhaul.SharedLogic;
+import com.httpedor.rpgdamageoverhaul.platform.Services;
 import com.httpedor.rpgdamageoverhaul.ducktypes.CopyableDefaultAttrContainer;
+import net.minecraft.server.level.ServerPlayer;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
-import org.jetbrains.annotations.NotNull;
+import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -28,6 +30,7 @@ import com.httpedor.rpgdamageoverhaul.damageproperties.onhit.ModifyDamageOnHit;
 import com.httpedor.rpgdamageoverhaul.damageproperties.onhit.StackingOnHit;
 import com.httpedor.rpgdamageoverhaul.ducktypes.DamageClassEntityData;
 import com.httpedor.rpgdamageoverhaul.ducktypes.DCDamageSource;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 
@@ -47,10 +50,15 @@ import net.minecraft.world.level.Level;
 @Mixin(value = LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity implements DamageClassEntityData {
 
-    private Map<DamageClass, Long> rpgdamageoverhaul$env_iframes = new HashMap<>();
-    private WeakHashMap<Entity, Long> rpgdamageoverhaul$ent_iframes = new WeakHashMap<>();
+    private final Map<HurtCooldowns.Key, HurtCooldowns.Entry> rpgdamageoverhaul$hurtCooldowns = new HashMap<>();
     private final Map<String, List<StackingOnHit.StackInstance>> rpgdamageoverhaul$stacks = new HashMap<>();
+
     private final Map<ResourceLocation, AttributeModifierOnHit.ActiveModifier> rpgdamageoverhaul$activeModifiers = new HashMap<>();
+
+    @Override
+    public Map<HurtCooldowns.Key, HurtCooldowns.Entry> rpgdo$getHurtCooldowns() {
+        return rpgdamageoverhaul$hurtCooldowns;
+    }
 
     @Override
     public Map<String, List<StackingOnHit.StackInstance>> rpgdo$getDamageClassStacks() {
@@ -65,6 +73,20 @@ public abstract class LivingEntityMixin extends Entity implements DamageClassEnt
     private final Map<HealingModifierOnHit, HealingModifierOnHit.ActiveHealModifier> rpgdamageoverhaul$healModifiers = new HashMap<>();
     private final Map<ModifyDamageOnHit, ModifyDamageOnHit.DamageModificationInstance> rpgdamageoverhaul$damageModifications = new HashMap<>();
     private long rpgdamageoverhaul$wetUntil = 0;
+    private final Map<String, Float> rpgdamageoverhaul$absorptionPools = new HashMap<>();
+    private final Map<String, Float> rpgdamageoverhaul$lastAbsorptionGranted = new HashMap<>();
+    /** Last pools pushed to the client, rounded to half-hearts, so regen doesn't spam a packet every tick. Players only. */
+    private Map<String, Integer> rpgdamageoverhaul$lastSyncedAbsorption = null;
+
+    @Override
+    public Map<String, Float> rpgdo$getAbsorptionPools() {
+        return rpgdamageoverhaul$absorptionPools;
+    }
+
+    @Override
+    public Map<String, Float> rpgdo$getLastAbsorptionGranted() {
+        return rpgdamageoverhaul$lastAbsorptionGranted;
+    }
 
     @Override
     public Map<HealingModifierOnHit, HealingModifierOnHit.ActiveHealModifier> rpgdo$getActiveHealModifiers() {
@@ -96,6 +118,37 @@ public abstract class LivingEntityMixin extends Entity implements DamageClassEnt
         StackingOnHit.loadStacks(rpgdamageoverhaul$stacks, tag);
     }
 
+    @Inject(method = "addAdditionalSaveData", at = @At("RETURN"))
+    private void rpgdamageoverhaul$saveAbsorption(CompoundTag tag, CallbackInfo ci) {
+        if (rpgdamageoverhaul$absorptionPools.isEmpty() && rpgdamageoverhaul$lastAbsorptionGranted.isEmpty())
+            return;
+        CompoundTag pools = new CompoundTag();
+        for (var e : rpgdamageoverhaul$absorptionPools.entrySet())
+            pools.putFloat(e.getKey(), e.getValue());
+        CompoundTag granted = new CompoundTag();
+        for (var e : rpgdamageoverhaul$lastAbsorptionGranted.entrySet())
+            granted.putFloat(e.getKey(), e.getValue());
+        CompoundTag root = new CompoundTag();
+        root.put("pools", pools);
+        root.put("lastGranted", granted);
+        tag.put("rpgdo_absorption", root);
+    }
+
+    @Inject(method = "readAdditionalSaveData", at = @At("RETURN"))
+    private void rpgdamageoverhaul$loadAbsorption(CompoundTag tag, CallbackInfo ci) {
+        rpgdamageoverhaul$absorptionPools.clear();
+        rpgdamageoverhaul$lastAbsorptionGranted.clear();
+        if (!tag.contains("rpgdo_absorption"))
+            return;
+        CompoundTag root = tag.getCompound("rpgdo_absorption");
+        CompoundTag pools = root.getCompound("pools");
+        for (var key : pools.getAllKeys())
+            rpgdamageoverhaul$absorptionPools.put(key, pools.getFloat(key));
+        CompoundTag granted = root.getCompound("lastGranted");
+        for (var key : granted.getAllKeys())
+            rpgdamageoverhaul$lastAbsorptionGranted.put(key, granted.getFloat(key));
+    }
+
     public LivingEntityMixin(EntityType<?> type, Level world) {
         super(type, world);
     }
@@ -115,34 +168,39 @@ public abstract class LivingEntityMixin extends Entity implements DamageClassEnt
     @Shadow
     public abstract AttributeMap getAttributes();
 
-    //TODO: Remove vanilla IFrames?
-    @Override
-    public boolean isInvulnerableTo(@NotNull DamageSource source) {
-        var sup = super.isInvulnerableTo(source);
-        if (sup || !RPGDamageOverhaulAPI.isRPGDamageType(source.typeHolder()))
-            return sup;
-        var ent = source.getDirectEntity();
-        if (ent != null)
-        {
-            var until = rpgdamageoverhaul$ent_iframes.get(ent);
-            if (until != null && until >= level().getGameTime() && until - 10 != level().getGameTime()) // -10 because same-tick damage should not be ignored.
-            {
-                return true;
-            }
-            rpgdamageoverhaul$ent_iframes.put(ent, level().getGameTime()+10);
-        }
-        else
-        {
-            var dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
-            var until = rpgdamageoverhaul$env_iframes.get(dc);
-            if (until != null && until >= level().getGameTime() && until - 10 != level().getGameTime())
-            {
-                return true;
-            }
-            rpgdamageoverhaul$env_iframes.put(dc, level().getGameTime()+10);
-        }
+    // Vanilla keeps one i-frame timer (invulnerableTime) and one damage high-water mark (lastHurt) for the whole
+    // entity, so the first hit of a half second swallows every other hit -- which breaks this mod outright, since a
+    // single swing arrives as one hurt() call per damage class, and breaks two players hitting the same mob.
+    // The four hooks below leave hurt()'s logic alone and just point those two fields at a per-source window
+    // instead (see HurtCooldowns), so the vanilla "> 10 ticks" threshold and the "a bigger hit still deals the
+    // difference" rule keep working, per damage type, per attacker, per projectile.
+    // The real invulnerableTime field is still written, because the client reads it for the hurt flash and the
+    // health-bar blink; it just no longer gates anything.
 
-        return sup;
+    @ModifyExpressionValue(method = "hurt", at = @At(value = "FIELD", target = "Lnet/minecraft/world/entity/LivingEntity;invulnerableTime:I", opcode = Opcodes.GETFIELD))
+    private int rpgdamageoverhaul$iframesPerSource(int original, @Local(argsOnly = true) DamageSource source)
+    {
+        return HurtCooldowns.remainingTicks(rpgdamageoverhaul$hurtCooldowns, source, level().getGameTime());
+    }
+
+    @ModifyExpressionValue(method = "hurt", at = @At(value = "FIELD", target = "Lnet/minecraft/world/entity/LivingEntity;lastHurt:F", opcode = Opcodes.GETFIELD))
+    private float rpgdamageoverhaul$lastHurtPerSource(float original, @Local(argsOnly = true) DamageSource source)
+    {
+        return HurtCooldowns.lastAmount(rpgdamageoverhaul$hurtCooldowns, source);
+    }
+
+    @WrapOperation(method = "hurt", at = @At(value = "FIELD", target = "Lnet/minecraft/world/entity/LivingEntity;lastHurt:F", opcode = Opcodes.PUTFIELD))
+    private void rpgdamageoverhaul$recordLastHurt(LivingEntity self, float amount, Operation<Void> original, @Local(argsOnly = true) DamageSource source)
+    {
+        original.call(self, amount);
+        HurtCooldowns.recordAmount(rpgdamageoverhaul$hurtCooldowns, source, amount);
+    }
+
+    @WrapOperation(method = "hurt", at = @At(value = "FIELD", target = "Lnet/minecraft/world/entity/LivingEntity;invulnerableTime:I", opcode = Opcodes.PUTFIELD))
+    private void rpgdamageoverhaul$openIFrameWindow(LivingEntity self, int duration, Operation<Void> original, @Local(argsOnly = true) DamageSource source)
+    {
+        original.call(self, duration);
+        HurtCooldowns.openWindow(rpgdamageoverhaul$hurtCooldowns, source, level().getGameTime(), duration);
     }
 
     @WrapOperation(method = "hurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;hasEffect(Lnet/minecraft/core/Holder;)Z"))
@@ -151,14 +209,6 @@ public abstract class LivingEntityMixin extends Entity implements DamageClassEnt
         if (effect == MobEffects.FIRE_RESISTANCE)
             return false;
         return original.call(instance, effect);
-    }
-
-    @WrapOperation(method = "hurt", at = @At(value="INVOKE", target = "Lnet/minecraft/world/damagesource/DamageSource;is(Lnet/minecraft/tags/TagKey;)Z", ordinal = 3))
-    private boolean noCooldown(DamageSource instance, TagKey<DamageType> tag, Operation<Boolean> original)
-    {
-        if (RPGDamageOverhaulAPI.isRPGDamageType(instance.typeHolder()))
-            return true;
-        return original.call(instance, tag);
     }
 
     @ModifyVariable(method = "actuallyHurt", at = @At(value = "HEAD"), argsOnly = true)
@@ -272,5 +322,21 @@ public abstract class LivingEntityMixin extends Entity implements DamageClassEnt
             return;
 
         AttributeModifierOnHit.pruneExpired((LivingEntity)(Object)this);
+        HurtCooldowns.prune(rpgdamageoverhaul$hurtCooldowns, tickCount, level().getGameTime());
+
+        LivingEntity self = (LivingEntity)(Object)this;
+        SharedLogic.tickAbsorption(self);
+        if (self instanceof ServerPlayer sp)
+        {
+            // Only resync when a pool crosses a half-heart boundary, so passive regen doesn't send a packet a tick.
+            Map<String, Integer> rounded = new HashMap<>();
+            for (var e : rpgdamageoverhaul$absorptionPools.entrySet())
+                rounded.put(e.getKey(), Math.round(e.getValue()));
+            if (!rounded.equals(rpgdamageoverhaul$lastSyncedAbsorption))
+            {
+                Services.PLATFORM.syncAbsorptionPools(sp, rpgdamageoverhaul$absorptionPools);
+                rpgdamageoverhaul$lastSyncedAbsorption = rounded;
+            }
+        }
     }
 }

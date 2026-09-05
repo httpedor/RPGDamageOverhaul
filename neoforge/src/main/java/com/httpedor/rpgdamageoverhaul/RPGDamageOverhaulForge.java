@@ -18,6 +18,10 @@ import net.neoforged.neoforge.network.PacketDistributor;
 public class RPGDamageOverhaulForge {
     public RPGDamageOverhaulForge(IEventBus eventBus) {
         RPGDamageOverhaul.init();
+        // Optional GearSockets compat. Guarded so the compat classes (and thus GearSockets) are only
+        // ever resolved when the mod is actually present; RPGDO runs fine without it.
+        if (net.neoforged.fml.ModList.get().isLoaded("gearsockets"))
+            com.httpedor.rpgdamageoverhaul.compat.gearsockets.GearSocketsCompatInit.init();
         eventBus.addListener(EventPriority.HIGHEST, ForgeNetworkInit::register);
         NeoForge.EVENT_BUS.addListener(RPGDamageOverhaulForge::onDatapackRegister);
         // LOWEST so we run after mods that rebuild the attribute section wholesale (AttributeSetter's

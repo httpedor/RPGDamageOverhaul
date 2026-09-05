@@ -75,6 +75,7 @@
       "value": 1.5
     }
   ],
+
   "bamboo_green_helmet": [
     {
       "attribute": "rpgdamageoverhaul:poison.armor",
@@ -674,7 +675,7 @@
       "value": 0.5,
       "operation": "BASE"
     }
-    
+
   ],
   "creeper_boots": [
     {
@@ -1124,11 +1125,11 @@
       },{
       "attribute": "minecraft:generic.armor",
       "value": 2,
-      "operation": "BASE" 
+      "operation": "BASE"
       },{
       "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
-      "operation": "BASE" 
+      "operation": "BASE"
       }
   ],
   "evoker_chestplate": [
@@ -1139,11 +1140,11 @@
     },{
       "attribute": "minecraft:generic.armor",
       "value": 4,
-      "operation": "BASE" 
+      "operation": "BASE"
       },{
       "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
-      "operation": "BASE" 
+      "operation": "BASE"
       }
   ],
   "evoker_leggings": [
@@ -1154,11 +1155,11 @@
     },{
       "attribute": "minecraft:generic.armor",
       "value": 3,
-      "operation": "BASE" 
+      "operation": "BASE"
       },{
       "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
-      "operation": "BASE" 
+      "operation": "BASE"
       }
   ],
   "evoker_boots": [
@@ -1169,11 +1170,11 @@
     },{
       "attribute": "minecraft:generic.armor",
       "value": 1.5,
-      "operation": "BASE" 
+      "operation": "BASE"
       },{
       "attribute": "minecraft:generic.armor_toughness",
       "value": 0.5,
-      "operation": "BASE" 
+      "operation": "BASE"
       }
   ],
   "witch_helmet": [

@@ -26,7 +26,17 @@ public class DamageClass {
         DAMAGE,
         ARMOR,
         ABSORPTION,
-        RESISTANCE
+        /** Amount of {@link #ABSORPTION} restored per second, up to {@link #ABSORPTION_REGEN_MAX}. */
+        ABSORPTION_REGEN,
+        /** Ceiling that {@link #ABSORPTION_REGEN} regenerates absorption up to; regen never fills past it. */
+        ABSORPTION_REGEN_MAX,
+        RESISTANCE,
+        /** Flat amount of the target's {@link #ARMOR} the attacker ignores when hitting with this class. */
+        ARMOR_PENETRATION,
+        /** Fraction (0-1) of the target's {@link #ARMOR} the attacker ignores when hitting with this class. */
+        ARMOR_PENETRATION_PERCENT,
+        /** Fraction (0-1) of a vanilla physical swing the attacker converts into this class' damage. */
+        DAMAGE_CONVERSION
     }
     public final String name;
     private final Map<DCAttribute, Holder<Attribute>> attributes;

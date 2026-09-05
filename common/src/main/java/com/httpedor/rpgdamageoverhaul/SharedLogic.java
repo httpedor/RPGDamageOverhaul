@@ -8,12 +8,14 @@ import java.util.function.Function;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass.DCAttribute;
+import com.httpedor.rpgdamageoverhaul.compat.GearSocketsCompat;
 import com.httpedor.rpgdamageoverhaul.damageproperties.RenameAttributesProperty;
 import com.httpedor.rpgdamageoverhaul.damageproperties.EnchantmentAttributesProperty;
 
 import com.httpedor.rpgdamageoverhaul.damageproperties.ParentProperty;
 import com.httpedor.rpgdamageoverhaul.damageproperties.onhit.ModifyDamageOnHit;
 import com.httpedor.rpgdamageoverhaul.damageproperties.onhit.SetWetOnHit;
+import com.httpedor.rpgdamageoverhaul.ducktypes.DamageClassEntityData;
 import net.minecraft.ChatFormatting;
 
 import net.minecraft.core.registries.Registries;
@@ -122,11 +124,22 @@ public class SharedLogic {
     }
     public static float getDamagePostResistance(float damage, LivingEntity entity, DamageType dt)
     {
+        return getDamagePostResistance(damage, entity, dt, null);
+    }
+    public static float getDamagePostResistance(float damage, LivingEntity entity, DamageSource source)
+    {
+        return getDamagePostResistance(damage, entity, source.type(), source);
+    }
+    private static float getDamagePostResistance(float damage, LivingEntity entity, DamageType dt, DamageSource source)
+    {
         var dc = RPGDamageOverhaulAPI.getDamageClass(dt);
         if (dc == null)
             return damage;
 
-        damage = (float)(damage * (1d - getAttributeRespectingRelatives(dc, DCAttribute.RESISTANCE, entity)));
+        double resistance = getAttributeRespectingRelatives(dc, DCAttribute.RESISTANCE, entity);
+        // GearSockets compat (no-op when the mod is absent): the attacker's weapon may ignore some of it.
+        resistance = GearSocketsCompat.penetrateResistance(source, dc, resistance);
+        damage = (float)(damage * (1d - resistance));
         return damage;
     }
     public static float getDamagePostArmor(float damage, LivingEntity entity, DamageSource source)
@@ -135,6 +148,10 @@ public class SharedLogic {
         if (dc == null)
             return damage;
         double armor = getAttributeRespectingRelatives(dc, DCAttribute.ARMOR, entity);
+        // GearSockets compat (no-op when the mod is absent): the attacker's weapon may ignore some of it.
+        armor = GearSocketsCompat.penetrateArmor(source, dc, armor);
+        // The attacker's own armor_penetration attributes ignore part of the target's armor for this class.
+        armor = applyArmorPenetration(source, dc, armor);
         double toughness = entity.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
         BiFunction<Float, Float, Float> armorModifyProp = dc.getSimplePropertyById(DCProperties.ARMOR_MODIFIER_PROPERTY);
 
@@ -142,6 +159,207 @@ public class SharedLogic {
             armor = (double) armorModifyProp.apply(damage, (float)armor);
 
         return CombatRules.getDamageAfterAbsorb(entity, damage, source, (float)armor, (float)toughness);
+    }
+
+    /**
+     * Sums an attacker-side attribute for a hit of damage class {@code dc}: the attacker's value for {@code dc}
+     * plus its value for every parent of {@code dc}, so an attribute set on a parent class (e.g. "physical armor
+     * penetration") applies to hits of its children ("blunt", "slashing", ...). Returns 0 when the source has no
+     * living attacker.
+     */
+    private static double attackerAttributeForHit(DamageSource source, DamageClass dc, DCAttribute attribute)
+    {
+        if (source == null || !(source.getEntity() instanceof LivingEntity attacker))
+            return 0;
+        double value = getAttributeValue(dc, attribute, attacker);
+        var parent = dc.getParent();
+        while (parent != null)
+        {
+            value += getAttributeValue(parent, attribute, attacker);
+            parent = parent.getParent();
+        }
+        return value;
+    }
+
+    /**
+     * Reduces {@code armor} by the attacker's {@code armor_penetration_percent} (multiplicative) and
+     * {@code armor_penetration} (flat) for this damage class. Only positive armor is reduced, and the result is
+     * clamped to {@code [0, armor]} so penetration can never make a target tankier, mirroring the GearSockets path.
+     */
+    public static double applyArmorPenetration(DamageSource source, DamageClass dc, double armor)
+    {
+        if (armor <= 0)
+            return armor;
+        double percent = attackerAttributeForHit(source, dc, DCAttribute.ARMOR_PENETRATION_PERCENT);
+        double flat = attackerAttributeForHit(source, dc, DCAttribute.ARMOR_PENETRATION);
+        if (percent <= 0 && flat <= 0)
+            return armor;
+        return Math.max(0.0, Math.min(armor, armor * Math.max(0.0, 1.0 - percent) - flat));
+    }
+
+    /**
+     * Splits off the portion of a melee swing that the attacker's {@code damage_conversion} attributes turn into
+     * elemental damage. Fills {@code out} with the amount to deal per damage class and returns the total, which the
+     * caller subtracts from the physical pool. Each class' fraction is taken of {@code baseDamage}; the total is
+     * scaled down so it can never exceed {@code totalAmount} (the whole swing). Mirrors
+     * {@link GearSocketsCompat#convertDamage}.
+     */
+    public static float applyDamageConversions(LivingEntity attacker, float damage,
+                                               Map<DamageClass, Float> out)
+    {
+        if (attacker == null || damage <= 0)
+            return 0;
+
+        float converted = 0;
+        for (DamageClass dc : RPGDamageOverhaulAPI.getAllDamageClasses())
+        {
+            double fraction = getAttributeValue(dc, DCAttribute.DAMAGE_CONVERSION, attacker);
+            if (fraction <= 0)
+                continue;
+            float amount = (float)(damage * fraction);
+            if (amount <= 0)
+                continue;
+            converted += amount;
+            out.merge(dc, amount, Float::sum);
+        }
+
+        if (converted > damage)
+        {
+            float scale = damage / converted;
+            for (Map.Entry<DamageClass, Float> en : out.entrySet())
+                en.setValue(en.getValue() * scale);
+            converted = damage;
+        }
+        return converted;
+    }
+
+    /** Attribute values below this are treated as zero when comparing the absorption grant frame to frame. */
+    private static final float ABSORPTION_EPSILON = 1.0e-4f;
+
+    /**
+     * Advances an entity's per-class absorption pools by one server tick: applies any change in each class'
+     * {@code absorption} attribute as a delta to the pool (so gaining/losing the attribute grants/removes hearts
+     * exactly like the vanilla Absorption effect), then regenerates the pool toward {@code absorption_regen_max} at
+     * {@code absorption_regen} per second. Returns whether any pool changed (so the caller can decide to resync).
+     */
+    public static boolean tickAbsorption(LivingEntity entity)
+    {
+        var data = DamageClassEntityData.of(entity);
+        var pools = data.rpgdo$getAbsorptionPools();
+        var lastGranted = data.rpgdo$getLastAbsorptionGranted();
+        boolean changed = false;
+
+        for (DamageClass dc : RPGDamageOverhaulAPI.getAllDamageClasses())
+        {
+            String name = dc.name;
+            float current = pools.getOrDefault(name, 0f);
+
+            // Delta-grant: mirror the Absorption effect. A change in the granted amount is added to (or removed
+            // from) the live pool, rather than overwriting it, so a partially drained pool isn't topped back up
+            // just because the granting attribute is still present.
+            float granted = (float) getAttributeValue(dc, DCAttribute.ABSORPTION, entity);
+            float last = lastGranted.getOrDefault(name, 0f);
+            if (Math.abs(granted - last) > ABSORPTION_EPSILON)
+            {
+                current = Math.max(0f, current + (granted - last));
+                lastGranted.put(name, granted);
+                changed = true;
+            }
+
+            // Passive regeneration up to the regen ceiling. Never pulls a pool down (a big grant can sit above
+            // the ceiling until it is spent), it only fills back up to it.
+            float regen = (float) (getAttributeValue(dc, DCAttribute.ABSORPTION_REGEN, entity) + 1);
+            if (regen > 0f)
+            {
+                float regenMax = (float) getAttributeValue(dc, DCAttribute.ABSORPTION_REGEN_MAX, entity);
+                if (current < regenMax)
+                {
+                    current = Math.min(regenMax, current + regen / 20f);
+                    changed = true;
+                }
+            }
+
+            if (current > 0f)
+                pools.put(name, current);
+            else if (pools.remove(name) != null)
+                changed = true;
+        }
+
+        return changed;
+    }
+
+    /**
+     * Per-class absorption an entity can bring to bear against damage of {@code dc}, ordered so the class' own pool
+     * is drained first, then parents (nearest first), then children (breadth first). Each entry's weight is how
+     * effective that relative's absorption is here, following {@code parent_defense_effectiveness} up the parent
+     * chain and {@code parent_damage_defense_effectiveness} down to children -- the same relationship the resistance
+     * and armor calculations use.
+     */
+    private static List<Map.Entry<DamageClass, Float>> getAbsorptionContributors(DamageClass dc)
+    {
+        List<Map.Entry<DamageClass, Float>> contributors = new ArrayList<>();
+        contributors.add(Map.entry(dc, 1f));
+
+        DamageClass current = dc;
+        float weight = 1f;
+        while (current.getParent() != null)
+        {
+            weight *= current.getSimplePropertyById(DCProperties.PARENT_DEFENSE_EFFECTIVENESS_PROPERTY, 1f);
+            contributors.add(Map.entry(current.getParent(), weight));
+            current = current.getParent();
+        }
+
+        Deque<Map.Entry<DamageClass, Float>> queue = new ArrayDeque<>();
+        for (var child : ParentProperty.getChildren(dc))
+            queue.add(Map.entry(child, child.getSimplePropertyById(DCProperties.PARENT_DAMAGE_DEFENSE_EFFECTIVENESS_PROPERTY, 1f)));
+        while (!queue.isEmpty())
+        {
+            var entry = queue.poll();
+            contributors.add(entry);
+            for (var grandchild : ParentProperty.getChildren(entry.getKey()))
+                queue.add(Map.entry(grandchild, entry.getValue() * grandchild.getSimplePropertyById(DCProperties.PARENT_DAMAGE_DEFENSE_EFFECTIVENESS_PROPERTY, 1f)));
+        }
+
+        return contributors;
+    }
+
+    /**
+     * Drains this entity's absorption pools to soak incoming class-{@code dc} damage, exactly like vanilla
+     * absorption but per class and drawing on relatives (own pool first). Mutates the pools and returns how much
+     * damage was absorbed, so the caller can subtract it from the damage that reaches health.
+     */
+    public static float consumeAbsorption(LivingEntity entity, DamageSource source, float damage)
+    {
+        if (damage <= 0f)
+            return 0f;
+        DamageClass dc = RPGDamageOverhaulAPI.getDamageClass(source.type());
+        if (dc == null)
+            return 0f;
+        var pools = DamageClassEntityData.of(entity).rpgdo$getAbsorptionPools();
+        if (pools.isEmpty())
+            return 0f;
+
+        float remaining = damage;
+        float absorbed = 0f;
+        for (var contributor : getAbsorptionContributors(dc))
+        {
+            if (remaining <= 0f)
+                break;
+            float weight = contributor.getValue();
+            if (weight <= 0f)
+                continue;
+            Float pool = pools.get(contributor.getKey().name);
+            if (pool == null || pool <= 0f)
+                continue;
+
+            float capacity = pool * weight;             // effective damage this pool can soak here
+            float soak = Math.min(remaining, capacity);
+            pools.put(contributor.getKey().name, pool - soak / weight);
+            remaining -= soak;
+            absorbed += soak;
+        }
+
+        return absorbed;
     }
 
     public static float modifyDamagePreArmor(float damage, LivingEntity entity, DamageClass dc)
@@ -316,16 +534,20 @@ public class SharedLogic {
                         // ends in "%%" and the arg is pre-multiplied by 100), so those lines must be left
                         // alone - reformatting them turned FoodAttributes' "+20%" into "+2000%%".
                         boolean additive = key.endsWith(".0");
-                        if (additive && !isArmor && (key.startsWith("attribute.modifier.plus") && (attrType == null || !attrType.contains("resistance"))))
+                        // Attributes stored as a 0-1 fraction that should render as a percentage ("+20%"), the way
+                        // resistance already does: armor_penetration_percent and damage_conversion join it.
+                        boolean percentAttr = attrType != null && (attrType.contains("resistance")
+                                || attrType.contains("armor_penetration_percent") || attrType.contains("damage_conversion"));
+                        if (additive && !isArmor && (key.startsWith("attribute.modifier.plus") && !percentAttr))
                         {
                             key = "attribute.modifier.equals.0";
                             if (dbg)
-                                Constants.LOG.info("[TooltipDbg]   normalized plus->equals (non-armor, non-resistance)");
+                                Constants.LOG.info("[TooltipDbg]   normalized plus->equals (non-armor, non-percent)");
                         }
                         if (key.startsWith("attribute.modifier.minus"))
                             key = key.replace("minus", "take");
                         Object[] args = ttc.getArgs();
-                        if (additive && attrType != null && attrType.contains("resistance") && (args[0] instanceof String || args[0] instanceof Component))
+                        if (additive && percentAttr && (args[0] instanceof String || args[0] instanceof Component))
                         {
                             String str;
                             if (args[0] instanceof String s)

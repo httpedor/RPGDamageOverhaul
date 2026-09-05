@@ -5,10 +5,14 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "LivingEntityAbsorptionMixin",
+    "PlayerAbsorptionMixin",
     "PlayerResistanceMixin",
     "SyncBeforeForgeMixin"
   ],
-  "client": [],
+  "client": [
+    "client.GuiAbsorptionMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

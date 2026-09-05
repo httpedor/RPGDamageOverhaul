@@ -1,0 +1,32 @@
+{
+  "priority": 10,
+
+  "gearsockets:ignition": {
+    "requires": ["minecraft:flint", "#minecraft:coals"],
+    "slots": ["weapon"],
+    "properties": [
+      { "type": "gearsockets:damage", "target": "other", "when": "crit", "amount": 2, "damage_type": "rpgdamageoverhaul:fire" }
+    ]
+  },
+
+  "gearsockets:live_wire": {
+    "requires": ["minecraft:redstone", "minecraft:copper_ingot"],
+    "slots": ["armor"],
+    "properties": [
+      { "type": "gearsockets:damage", "damage_type": "rpgdamageoverhaul:lightning", "chance": 0.25, "damage": 4.0, "when": "hit", "target": "other" }
+    ]
+  },
+
+  "gearsockets:resonant_edge": {
+    "requires": ["minecraft:quartz", "minecraft:amethyst_shard"],
+    "slots": ["weapon"],
+    "properties": [
+      { "type": "gearsockets:charge", "threshold": 2, "decay": 100, "per_target": true,
+        "properties": [
+          { "type": "gearsockets:reflect_damage", "fraction": 1.5, "flat": 0.0, "target": "other", "damage_type": "rpgdamageoverhaul:arcane" }
+        ]
+      }
+    ]
+  },
+
+}

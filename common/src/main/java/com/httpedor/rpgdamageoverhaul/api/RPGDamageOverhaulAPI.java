@@ -61,7 +61,12 @@ public class RPGDamageOverhaulAPI {
             case DAMAGE -> "damage";
             case ARMOR -> "armor";
             case ABSORPTION -> "absorption";
+            case ABSORPTION_REGEN -> "absorption_regen";
+            case ABSORPTION_REGEN_MAX -> "absorption_regen_max";
             case RESISTANCE -> "resistance";
+            case ARMOR_PENETRATION -> "armor_penetration";
+            case ARMOR_PENETRATION_PERCENT -> "armor_penetration_percent";
+            case DAMAGE_CONVERSION -> "damage_conversion";
         };
     }
 
@@ -74,7 +79,12 @@ public class RPGDamageOverhaulAPI {
             case "damage" -> DCAttribute.DAMAGE;
             case "armor" -> DCAttribute.ARMOR;
             case "absorption" -> DCAttribute.ABSORPTION;
+            case "absorption_regen" -> DCAttribute.ABSORPTION_REGEN;
+            case "absorption_regen_max" -> DCAttribute.ABSORPTION_REGEN_MAX;
             case "resistance" -> DCAttribute.RESISTANCE;
+            case "armor_penetration" -> DCAttribute.ARMOR_PENETRATION;
+            case "armor_penetration_percent" -> DCAttribute.ARMOR_PENETRATION_PERCENT;
+            case "damage_conversion" -> DCAttribute.DAMAGE_CONVERSION;
             default -> null;
         };
     }
@@ -86,9 +96,13 @@ public class RPGDamageOverhaulAPI {
         if (existing != null)
             return existing;
 
-        var attribute = kind == DCAttribute.RESISTANCE
-                ? new RangedAttribute(id.getPath(), 0, -10, 10)
-                : new RangedAttribute(id.getPath(), 0, 0, 1024);
+        // Resistance and the two fraction-valued attributes store 0-1 style fractions (with headroom);
+        // the flat-valued ones share armor's 0..1024 range.
+        var attribute = switch (kind) {
+            case RESISTANCE -> new RangedAttribute(id.getPath(), 0, -10, 10);
+            case ARMOR_PENETRATION_PERCENT, DAMAGE_CONVERSION -> new RangedAttribute(id.getPath(), 0, 0, 10);
+            default -> new RangedAttribute(id.getPath(), 0, 0, 1024);
+        };
         return Registry.registerForHolder(BuiltInRegistries.ATTRIBUTE, id, attribute);
     }
 

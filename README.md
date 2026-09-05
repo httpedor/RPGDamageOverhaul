@@ -56,18 +56,43 @@ matching classes.
 
 ## Attributes
 
-Every damage class `X` gets four attributes:
+Every damage class `X` gets these attributes:
 
 | Attribute | Range | Meaning |
 |---|---|---|
 | `rpgdamageoverhaul:X.damage` | `0 … 1024` | Flat extra damage of class `X` dealt on hit. |
 | `rpgdamageoverhaul:X.resistance` | `-10 … 10` | Fractional reduction of incoming `X` damage. `1` = immune, `0.5` = half damage, `0` = normal, `-1` = double damage. |
 | `rpgdamageoverhaul:X.armor` | `0 … 1024` | Flat reduction of incoming `X` damage, using the vanilla armor/toughness formula. |
-| `rpgdamageoverhaul:X.absorption` | `0 … 1024` | Per‑class absorption pool, like the Absorption effect but only for class `X`. **(work in progress)** |
+| `rpgdamageoverhaul:X.absorption` | `0 … 1024` | Per‑class absorption pool (2 = one heart), like the Absorption effect but only for class `X`. Gaining the attribute grants the hearts; taking `X` damage (drawing on the class' own pool first, then relatives) drains them. Shown as absorption hearts tinted the class' color. |
+| `rpgdamageoverhaul:X.absorption_regen` | `0 … 1024` | Absorption of class `X` regenerated per second, up to `X.absorption_regen_max`. |
+| `rpgdamageoverhaul:X.absorption_regen_max` | `0 … 1024` | Ceiling that `X.absorption_regen` regenerates the pool up to; regen never fills past it. |
 
 Resistance and armor from a parent class also protect against its children,
 scaled by `parent_defense_effectiveness` / `parent_damage_defense_effectiveness`
 (see the property table).
+
+---
+
+## Invulnerability frames
+
+Vanilla gives an entity a single i‑frame timer covering *all* damage, so whichever
+hit lands first swallows everything else for the next half second. RPGDO replaces
+it with one timer per damage source, keyed by **(damage type, attacker, direct
+entity/projectile)**. In practice:
+
+* A swing that deals 2 fire and 2 physical damage deals **4**, not 2 — each damage
+  type has its own timer.
+* Two players hitting the same zombie both land, because the attacker differs.
+* Three arrows fired back to back all land, because each arrow is a different entity.
+* `minecraft:lava` and `minecraft:cactus` no longer block each other.
+* Spam‑clicking still does nothing: same type, same attacker, no projectile, so it
+  hits the same timer and gets the usual half‑second cooldown.
+
+Everything else about the vanilla timer is kept: the same window length, and a
+harder hit within the window still deals the difference. Note that the vanilla
+`invulnerableTime` field no longer blocks damage on its own, so mods (or vanilla's
+lightning‑trapped skeleton horse) that set it directly to grant temporary
+invulnerability will not get it.
 
 ---
 

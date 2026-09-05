@@ -21,6 +21,7 @@ import com.httpedor.rpgdamageoverhaul.api.DamageClass;
 import com.httpedor.rpgdamageoverhaul.api.RPGDamageOverhaulAPI;
 import com.httpedor.rpgdamageoverhaul.api.DamageClass.DCAttribute;
 import com.httpedor.rpgdamageoverhaul.compat.BetterCombatCompat;
+import com.httpedor.rpgdamageoverhaul.compat.GearSocketsCompat;
 import com.httpedor.rpgdamageoverhaul.damageproperties.EnchantmentAttributesProperty;
 import com.httpedor.rpgdamageoverhaul.damageproperties.onhit.AttributeModifierOnHit;
 import com.httpedor.rpgdamageoverhaul.ducktypes.DCDamageSource;
@@ -62,12 +63,6 @@ public abstract class PlayerMixin extends LivingEntity {
             if (dmg > 0)
                 ret |= target.hurt(dc.createDamageSource(this), (float)dmg);
         }
-        if (Services.PLATFORM.isModLoaded("bettercombat"))
-        {
-            if (BetterCombatCompat.shouldBCHandleAttack((Player)(Object)this))
-                return original.call(target, source, amount) || ret;
-        }
-
         var is = getMainHandItem();
         Map<DamageClass, Double> newDamages = new HashMap<>();
         float originalItemDamage = 0;
@@ -78,6 +73,53 @@ public abstract class PlayerMixin extends LivingEntity {
         });
         for (var mod : mods)
             originalItemDamage += mod.floatValue();
+
+        // GearSockets compat (no-op when the mod is absent): sockets can convert part of the swing into
+        // elemental damage. The converted portion is dealt as its own damage class and removed from the
+        // physical pool below, so the target's per-class armor/resistance applies to each piece. Done before the
+        // Better Combat hand-off so the conversion still happens (and the reduced amount is passed on) when
+        // Better Combat takes over the physical part of the swing.
+        if (GearSocketsCompat.isEnabled())
+        {
+            Map<DamageClass, Float> conversions = new HashMap<>();
+            float converted = GearSocketsCompat.convertDamage(is, originalItemDamage, amount, conversions);
+            if (converted > 0)
+            {
+                amount -= converted;
+                for (var entry : conversions.entrySet())
+                {
+                    float dmg = entry.getValue();
+                    if (isCrit)
+                        dmg *= 1.5f;
+                    if (dmg > 0)
+                        ret |= target.hurt(entry.getKey().createDamageSource(this), dmg);
+                }
+            }
+        }
+
+        // The attacker's own damage_conversion attributes turn part of the physical swing into elemental damage,
+        // dealt per class so the target's armor/resistance applies to each piece, then removed from the pool.
+        Map<DamageClass, Float> attrConversions = new HashMap<>();
+        float attrConverted = SharedLogic.applyDamageConversions(this, amount, attrConversions);
+        if (attrConverted > 0)
+        {
+            amount -= attrConverted;
+            for (var entry : attrConversions.entrySet())
+            {
+                float dmg = entry.getValue();
+                if (isCrit)
+                    dmg *= 1.5f;
+                if (dmg > 0)
+                    ret |= target.hurt(entry.getKey().createDamageSource(this), dmg);
+            }
+        }
+
+        if (Services.PLATFORM.isModLoaded("bettercombat"))
+        {
+            if (BetterCombatCompat.shouldBCHandleAttack((Player)(Object)this))
+                return original.call(target, source, amount) || ret;
+        }
+
         float dmgFromOtherSources = amount - originalItemDamage; // If the original damage is different from the amount, it means that some other mod (enchantment, potion, etc) is applying damage in the attack method. We need to take that into account when applying item overrides, to avoid overwriting those mods.
         RPGDamageOverhaulAPI.applyItemOverrides(is, newDamages, dmgFromOtherSources);
         if (newDamages.isEmpty())

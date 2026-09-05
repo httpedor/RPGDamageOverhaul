@@ -1,0 +1,156 @@
+{
+  "priority": 10,
+
+  "minecraft:coal": {
+    "weapon": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:fire.damage", "operation": "add_multiplied_base", "amount": 0.1 }
+    ]
+  }
+  "minecraft:charcoal": {
+    "weapon": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:fire.damage", "operation": "add_multiplied_base", "amount": 0.1 }
+    ]
+  },
+
+  "minecraft:copper_ingot": {
+    "weapon": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "minecraft:generic.attack_speed", "operation": "add_multiplied_base", "amount": 0.15 }
+    ],
+    "dense": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:lightning.absorption_regen_max", "amount": 2 }
+    ]
+    "weapon/coating": [
+      { "type": "rpgdamageoverhaul:convert_damage", "damage_class": "lightning", "amount": 0.25, "percentage": true }
+    ]
+    "weapon/jagged": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:lightning.damage", "amount": 1.25 }
+    ],
+
+    "plating/coating": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:lightning.resistance", "amount": 0.05 }
+    ]
+  },
+
+  "minecraft:amethyst_shard": {
+    "gem": []
+
+    "weapon/gem": [
+      { "type": "rpgdamageoverhaul:convert_damage", "damage_class": "arcane", "amount": 0.25, "percentage": true },
+      { "type": "gearsockets:enchantability", "amount": 1, "per_shape": "gem" }
+    ],
+    "weapon/jagged": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:arcane.damage", "amount": 1 }
+    ],
+
+    "plating/gem": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:arcane.absorption_regen_max", "amount": 2 }
+    ],
+    "plating/jagged": [
+      { "type": "gearsockets:reflect_damage", "damage_type": "rpgdamageoverhaul:arcane", "flat": 2 }
+    ]
+  },
+
+  "minecraft:netherite_scrap": {
+    "plating/coating": [
+      { "type": "gearsockets:damage_resistance", "attribute": "rpgdamageoverhaul:fire.resistance", 0.12},
+    ]
+    "armor/dense": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "minecraft:generic.armor", "amount": 3.0 }
+    ]
+  },
+
+  "minecraft:prismarine_shard": {
+    "weapon/jagged": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:water.damage", "amount": 2 }
+    ],
+  }
+
+  "minecraft:prismarine_crystals": {
+    "plating": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:water.armor", "amount": 2 }
+    ]
+    "armor": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:water.armor", "amount": 0.1, "operation": "percent" }
+    ]
+    "armor/jagged": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "neoforge:swim_speed", "amount": 0.1, "operation": "percent" },
+      { "type": "gearsockets:reflect_damage", "damage_type": "rpgdamageoverhaul:water", "fraction": 0.15, "chance": 0.4 }
+    ],
+    "armor/dense": []
+  },
+
+  "minecraft:slime_ball": {
+    "weapon": [
+      { "type": "gearsockets:mob_effect", "effect": "minecraft:slowness", "duration": 60, "amplifier": 0 },
+      { "type": "rpgdamageoverhaul:convert_damage", "damage_class": "poison", "amount": 0.25, "percentage": true }
+    ],
+
+    "plating": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:poison.absorption_regen_max", "amount": 2 }
+    ]
+  },
+
+  "minecraft:heart_of_the_sea": {
+    "shared": [
+      { "type": "gearsockets:display", "color": "#4FD0C0" },
+      { "type": "gearsockets:preferences", "preferences": { "gem": 5 } }
+    ],
+
+    "weapon": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:water.damage", "amount": 0.5, "operation": "percent" }
+    ],
+    "chestplate": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:water.resistance", "amount": 0.25 }
+    ]
+  },
+
+  "minecraft:echo_shard": {
+    "blade/dust": [
+      { "type": "rpgdamageoverhaul:convert_damage", "damage_class": "soul", "amount": 0.2, "percentage": true }
+    ],
+    "blade/gem": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:soul.damage", "amount": 2 }
+    ],
+  },
+
+  "minecraft:blaze_powder": {
+    "weapon": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:fire.damage", "amount": 2 }
+    ],
+    "plating": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:fire.armor", "amount": 2 }
+    ]
+  },
+  "minecraft:magma_cream": {
+    "weapon": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:fire.damage", "amount": 0.5, "operation": "percent" }
+    ],
+    "plating": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:fire.absorption_regen_max", "amount": 2 }
+    ]
+  },
+
+  "minecraft:ghast_tear": {
+    "weapon": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:soul.damage", "amount": 2 }
+    ]
+  },
+
+  "minecraft:wither_rose": {
+    "shared": [
+      { "type": "gearsockets:display", "color": "#242424" },
+      { "type": "gearsockets:preferences", "preferences": { "dust": 5 } }
+    ],
+    "blade": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:wither.damage", "amount": 2 }
+    ]
+  },
+
+  "minecraft:obsidian": {
+    "plating/dense": [
+      { "type": "gearsockets:attribute_modifiers", "attribute": "minecraft:generic.armor", "amount": 2.0 },
+      { "type": "gearsockets:attribute_modifiers", "attribute": "minecraft:generic.armor_toughness", "amount": 2.0 },
+      { "type": "gearsockets:attribute_modifiers", "attribute": "rpgdamageoverhaul:arcane.armor", "amount": 3 }
+    ]
+  }
+}

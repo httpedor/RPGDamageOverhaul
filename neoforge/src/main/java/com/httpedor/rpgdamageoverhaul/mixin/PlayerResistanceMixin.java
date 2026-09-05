@@ -31,6 +31,6 @@ public abstract class PlayerResistanceMixin extends LivingEntity {
 	@ModifyVariable(method = "actuallyHurt", at = @At("STORE"), ordinal = 3)
     private float modifyDamage(float damage, @Local(argsOnly = true) DamageSource source)
     {
-        return SharedLogic.getDamagePostResistance(damage, this, source.type());
+        return SharedLogic.getDamagePostResistance(damage, this, source);
     }
 }

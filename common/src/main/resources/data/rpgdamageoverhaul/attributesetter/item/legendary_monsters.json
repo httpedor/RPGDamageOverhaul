@@ -51,13 +51,11 @@
     },
     {
       "attribute": "rpgdamageoverhaul:lightning.damage",
-      "value": 4,
-      "uuid": "a8381523-fc8a-484f-8d6c-a70cfabf3915"
+      "value": 4
     },
     {
       "attribute": "rpgdamageoverhaul:lightning.resistance",
-      "value": 0.25,
-      "uuid": "2b187c16-8fd3-4c4e-b499-16c7d947e945"
+      "value": 0.25
     }
   ],
   "legendary_monsters:mossy_hammer": [
@@ -157,13 +155,11 @@
   "chorus_mask": [
     {
       "attribute": "rpgdamageoverhaul:arcane.armor",
-      "value": 3,
-      "uuid": "d54a1346-02fa-451c-bde5-7a32ab60fa1e"
+      "value": 3
     },
     {
       "attribute": "rpgdamageoverhaul:wither.armor",
-      "value": 3,
-      "uuid": "7578d4f9-ae4d-4ee6-9e73-f2587d18b817"
+      "value": 3
     }
   ]
 }

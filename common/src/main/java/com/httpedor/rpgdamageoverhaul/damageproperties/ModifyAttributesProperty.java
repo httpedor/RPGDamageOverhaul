@@ -44,6 +44,11 @@ public abstract class ModifyAttributesProperty<TK, TV> extends DamageClassProper
                 case "damage" -> DamageClass.DCAttribute.DAMAGE;
                 case "armor" -> DamageClass.DCAttribute.ARMOR;
                 case "absorption" -> DamageClass.DCAttribute.ABSORPTION;
+                case "absorption_regen" -> DamageClass.DCAttribute.ABSORPTION_REGEN;
+                case "absorption_regen_max" -> DamageClass.DCAttribute.ABSORPTION_REGEN_MAX;
+                case "armor_penetration" -> DamageClass.DCAttribute.ARMOR_PENETRATION;
+                case "armor_penetration_percent" -> DamageClass.DCAttribute.ARMOR_PENETRATION_PERCENT;
+                case "damage_conversion" -> DamageClass.DCAttribute.DAMAGE_CONVERSION;
                 default -> null;
             };
             if (dcAttr == null)                {
